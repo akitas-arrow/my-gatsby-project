@@ -1,11 +1,18 @@
 import React from 'react'
 import { createGlobalStyle } from 'styled-components'
 import "modern-css-reset"
-import "fontsource-noto-sans-jp"
+import { BasicTextStyle } from './shared/style.js'
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { faPhoneAlt, faFax } from '@fortawesome/free-solid-svg-icons'
+
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
 
 function Layout({ children }) {
+    library.add(fab, far, faPhoneAlt, faFax)
     return (
         <div>
             <GlobalStyle />
@@ -18,10 +25,7 @@ function Layout({ children }) {
 
 const GlobalStyle = createGlobalStyle`
     body {
-        font-family: "Noto Sans JP";
-        line-height: 2em;
-        letter-spacing: 0.05em;
-        color: #333333;
+        ${BasicTextStyle}
     }
 `
 
