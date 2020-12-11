@@ -16,6 +16,7 @@ export const BasicTextStyle = css`
     font-size: 16px;
     line-height: 1.5em;
     letter-spacing: 0.05em;
+    font-weight: 400;
     color: ${Color.letter};
 `
 
@@ -31,4 +32,10 @@ export const HeadingStyle = css`
 export const SpHeadingStyle = css`
     ${HeadingStyle}
     font-size: 48px;
+`
+
+export const Number = css`
+    ${BasicTextStyle}
+    color: ${Color.letter};
+    font-size: 22px;
 `
