@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Color, HeadingStyle, SpHeadingStyle ,BasicTextStyle} from '../shared/style.js'
+import { Color, HeadingStyle, BasicTextStyle} from '../shared/style.js'
 import "fontsource-noto-sans-jp/500.css"
 import "fontsource-noto-sans-jp/700.css"
 
 function Header() {
     return (
         <Wrapper>
-            <Title>Header</Title>
+            <Title>HEADER</Title>
             <FontAwesomeIcon icon="phone-alt" color={Color.lemon}/>
             <FontAwesomeIcon icon="fax" color={Color.green}/>
             <FontAwesomeIcon icon={['fab', 'youtube']} color={Color.yellow}/>
@@ -26,10 +26,7 @@ const Wrapper = styled.header`
 `
 
 const Title = styled.h1`
-    ${SpHeadingStyle}
-    @media (min-width: 769px) {
         ${HeadingStyle}
-    }
 `
 
 const Text04 = styled.p`

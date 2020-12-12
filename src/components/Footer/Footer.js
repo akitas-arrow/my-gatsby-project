@@ -1,7 +1,8 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
-import { Color, BasicTextStyle, Number } from '../shared/style.js'
+import { Color, BasicTextStyle, MediumTextStyle, PhoneNumberStyle } from '../shared/style.js'
+import SNSIconSet from '../shared/SNSIconSet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Footer() {
@@ -27,8 +28,7 @@ function Footer() {
                 </PhoneNumber>
                 <TextBlock>SNSでも情報発信しています。是非ご覧ください！</TextBlock>
                 <PhoneNumber>
-                    <FontAwesomeIcon icon={['fab', 'youtube']} color={Color.letter}/>&emsp;
-                    <FontAwesomeIcon icon={['fab', 'instagram']} color={Color.letter}/>
+                    <SNSIconSet />
                 </PhoneNumber>
             </Container>
         </Wrapper>
@@ -52,15 +52,14 @@ const ImageStyle = styled.img`
 `
 
 const TextBlock = styled.p`
-    ${BasicTextStyle}
-    font-weight: 600;
+    ${MediumTextStyle}
     text-align: center;
     padding-top: 48px;
 `
 
 const PhoneNumber = styled.p`
     text-align: center;
-    ${Number}
+    ${PhoneNumberStyle}
 `
 
 
