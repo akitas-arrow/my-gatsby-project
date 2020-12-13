@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
-import { Color, BasicTextStyle, MediumTextStyle, PhoneNumberStyle } from '../shared/style.js'
+import { Color, MediumTextStyle, PhoneNumberStyle } from '../shared/style.js'
 import SNSIconSet from '../shared/SNSIconSet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -13,11 +13,16 @@ function Footer() {
             }
         }
     `)
+
     return (
         <Wrapper>
             <Container>
-                <ImageStyle src={data.file.publicURL} alt='有限会社トモエ屋' />
-                <TextBlock>〒453-0063&emsp;&emsp;&emsp;&emsp;名古屋市中村区東宿町2丁目１１２番地</TextBlock>
+                <Logo src={data.file.publicURL} alt='有限会社トモエ屋' />
+                <AddressBlock>
+                    〒453-0063 <br/>
+                    <span>&emsp;&emsp;&emsp;&emsp;</span>
+                    名古屋市中村区東宿町2丁目１１２番地
+                </AddressBlock>
                 <PhoneNumber>
                     <FontAwesomeIcon icon="phone-alt" color={Color.letter}/>
                     &emsp;052-412-5166
@@ -26,10 +31,13 @@ function Footer() {
                     <FontAwesomeIcon icon="fax" color={Color.letter}/>
                     &emsp;052-412-5166
                 </PhoneNumber>
-                <TextBlock>SNSでも情報発信しています。是非ご覧ください！</TextBlock>
-                <PhoneNumber>
+                <TextBlock>
+                    <span>SNSでも情報発信しています。</span>
+                    <span>是非ご覧ください！</span>
+                </TextBlock>
+                <Icons>
                     <SNSIconSet />
-                </PhoneNumber>
+                </Icons>
             </Container>
         </Wrapper>
     )
@@ -41,26 +49,54 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
     border-top: 3px dotted ${Color.peacock};
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
     padding: 112px 0;
+    text-align: center;
 `
 
-const ImageStyle = styled.img`
-    height:56px;
+const Logo = styled.img`
+    height:48px;
     margin: 0 auto;
+    @media (min-width: 768px) {
+        height:56px;
+    }
+`
+
+const AddressBlock = styled.p`
+    ${MediumTextStyle}
+    padding: 48px 0 40px 0;
+    display:inline-block;
+    text-align: left;
+    & br {
+        @media (min-width: 768px) {
+            display: none;
+        }
+    }
+    & span {
+        display: none;
+        @media (min-width: 768px) {
+            display: inline;
+        }
+    }
+`
+
+const PhoneNumber = styled.p`
+    ${PhoneNumberStyle}
 `
 
 const TextBlock = styled.p`
     ${MediumTextStyle}
-    text-align: center;
     padding-top: 48px;
+    font-size: 15px;
+    & span {
+        display: inline-block;
+    }
 `
 
-const PhoneNumber = styled.p`
-    text-align: center;
-    ${PhoneNumberStyle}
+const Icons = styled.div`
+    padding-top: 24px;
+    font-size: 40px;
 `
-
-
 export default Footer

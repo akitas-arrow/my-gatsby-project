@@ -1,50 +1,49 @@
 import React from 'react'
 import styled from 'styled-components'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Color, HeadingStyle, BasicTextStyle} from '../shared/style.js'
-import "fontsource-noto-sans-jp/500.css"
-import "fontsource-noto-sans-jp/700.css"
+import { Color } from '../shared/style.js'
 
 function Header() {
     return (
         <Wrapper>
-            <Title>HEADER</Title>
-            <FontAwesomeIcon icon="phone-alt" color={Color.lemon}/>
-            <FontAwesomeIcon icon="fax" color={Color.green}/>
-            <FontAwesomeIcon icon={['fab', 'youtube']} color={Color.yellow}/>
-            <FontAwesomeIcon icon={['fab', 'instagram']} color={Color.accents}/>
-            <FontAwesomeIcon icon={['far', 'envelope']} color={Color.letter}/>
-            <Text04>400R</Text04>
-            <Text05>500M</Text05>
-            <Text07>700B</Text07>
+            <Toggle>
+                <HamburgerButton>
+                </HamburgerButton>
+            </Toggle>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.header`
-    /* background-color:${Color.peacock}; */
+    width: 100%;
+    /* height: 88px; */
+    padding: 35px 30px;
 `
 
-const Title = styled.h1`
-        ${HeadingStyle}
+const Toggle = styled.div`
+    display: flex;
+    cursor: pointer;
 `
 
-const Text04 = styled.p`
-    ${BasicTextStyle}
-    font-size: 40px;
-    font-weight: 400;
+const HamburgerButton = styled.div`
+    height: 2px;
+    width: 30px;
+    background-color: ${Color.letter};
+    align-self: center;
+    position: relative;
+    ::before,
+    ::after {
+        height: 2px;
+        width: 30px;
+        background-color: ${Color.letter};
+        position: absolute;
+        content: '';
+    }
+    ::before {
+        top: -10px;
+    }
+    ::after {
+        top: 10px;
+    }
 `
-const Text05 = styled.p`
-    ${BasicTextStyle}
-    font-size: 40px;
-    font-weight: 500;
-`
-
-const Text07 = styled.p`
-    ${BasicTextStyle}
-    font-size: 40px;
-    font-weight: 700;
-`
-
 
 export default Header
