@@ -21,7 +21,7 @@ function Footer() {
                 <AddressBlock>
                     〒453-0063 <br/>
                     <span>&emsp;&emsp;&emsp;&emsp;</span>
-                    名古屋市中村区東宿町2丁目１１２番地
+                    名古屋市中村区東宿町2丁目112番地
                 </AddressBlock>
                 <PhoneNumber>
                     <FontAwesomeIcon icon="phone-alt" color={Color.letter}/>
