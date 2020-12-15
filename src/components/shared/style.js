@@ -15,7 +15,7 @@ export const Color = {
 export const BasicTextStyle = css`
     font-family: "Noto Sans JP";
     font-size: 16px;
-    line-height: 1.5em;
+    line-height: 2em;
     letter-spacing: 0.05em;
     font-weight: 400;
     color: ${Color.letter};

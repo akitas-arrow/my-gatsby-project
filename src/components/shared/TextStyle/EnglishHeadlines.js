@@ -17,6 +17,7 @@ const HeadingText = styled.h2`
     font-style: italic;
     color: ${Color.peacock};
     font-size: 48px;
+    line-height: 1.5em;
     @media (min-width: 768px) {
         font-size: 64px;       
     }
