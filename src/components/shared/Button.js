@@ -20,8 +20,11 @@ const ButtonContainer = styled(Link)`
     line-height: 56px;
     padding: 0 80px;
     border: 1px solid ${Color.peacock};
+    position: relative;
     ::after {
-        
+        position: absolute;
+        background-color: ${Color.lemon};
+        content: '';
     }
 `
 
