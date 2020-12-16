@@ -12,6 +12,8 @@ function Button({ children }) {
 }
 
 const ButtonContainer = styled(Link)`
+    box-sizing: border-box;
+    cursor: pointer;
     ${MediumTextStyle}
     display: inline-block;
     color: ${Color.peacock};
@@ -21,10 +23,30 @@ const ButtonContainer = styled(Link)`
     padding: 0 80px;
     border: 1px solid ${Color.peacock};
     position: relative;
-    ::after {
+    user-select: none;
+    transition: transform 0.3s;
+    ::before {
+        content: "";
+        z-index: -1;
+        width: 100%;
+        height: 100%;
         position: absolute;
         background-color: ${Color.lemon};
-        content: '';
+        top: 0;
+        left: 0;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform 0.3s;
+    }
+    :hover::before {
+        transform: scaleX(1);
+        transform: translate(4px, 4px);
+    }
+    :active {
+        transform: translate(4px, 4px);
+    }
+    :active::before {
+        transform: translate(0, 0);
     }
 `
 
