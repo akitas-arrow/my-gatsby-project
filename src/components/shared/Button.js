@@ -12,10 +12,11 @@ function Button({ children }) {
 }
 
 const ButtonContainer = styled(Link)`
+    margin: 72px auto 0;
     box-sizing: border-box;
     cursor: pointer;
     ${MediumTextStyle}
-    display: inline-block;
+    display: table;
     color: ${Color.peacock};
     font-size: 15px;
     height: 56px;
@@ -24,8 +25,8 @@ const ButtonContainer = styled(Link)`
     border: 1px solid ${Color.peacock};
     position: relative;
     user-select: none;
-    transition: transform 0.3s;
     ::before {
+        display: block;
         content: "";
         z-index: -1;
         width: 100%;
@@ -36,7 +37,6 @@ const ButtonContainer = styled(Link)`
         left: 0;
         transform: scaleX(0);
         transform-origin: left center;
-        transition: transform 0.3s;
     }
     :hover::before {
         transform: scaleX(1);
