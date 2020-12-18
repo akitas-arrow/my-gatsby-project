@@ -1,12 +1,24 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
+import styled from 'styled-components'
+import { BoldTextStyle, Color } from './shared/style'
 
-function ServiceItem({src, title, description}) {
-
+function ServiceItem({src, title, description, type}) {
+    // const data = useStaticQuery(graphql`
+    //     query ($src:String!) {
+    //         file(relativePath:{eq:$src}){
+    //             childImageSharp {
+    //                 fluid(maxWidth: 800) {
+    //                     ...GatsbyImageSharpFluid
+    //                 }
+    //             }
+    //         }
+    //     }
+    // `)
     const data = useStaticQuery(graphql`
-        query ($src:String!) {
-            file(relativePath:{eq:$src}){
+        query {
+            file(relativePath:{eq:"service001.png"}){
                 childImageSharp {
                     fluid(maxWidth: 800) {
                         ...GatsbyImageSharpFluid
@@ -15,14 +27,38 @@ function ServiceItem({src, title, description}) {
             }
         }
     `)
-    
+
     return (
-        <div>
+        <Container>
             <Img fluid={data.file.childImageSharp.fluid}/>
-            <p>{title}</p>
+            <Title type={type}>{title}</Title>
             <p>{description}</p>
-        </div>
+        </Container>
     )
 }
+
+const Container = styled.div`
+    /* background-color: pink; */
+    text-align: center;
+    width: 100%;
+    margin-top: 48px;
+    @media (min-width: 768px) {
+        width: calc((100% - 40px) / 2);
+        margin-top: 72px;
+    }
+    @media (min-width: 1024px) {
+        width: calc((100% - 80px) / 3);
+    }
+`
+
+const Title = styled.p`
+    ${BoldTextStyle}
+    font-size: 18px;
+    /* padding-top: 24px; */
+    border-bottom: 3px dotted ${props => Color[props.type]};
+    @media (min-width: 1024px) {
+        font-size: 22px;
+    }
+`
 
 export default ServiceItem

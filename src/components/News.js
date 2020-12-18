@@ -3,6 +3,9 @@ import styled from "styled-components"
 import EnglishHeadlines from "../components/shared/TextStyle/EnglishHeadlines"
 import { MediumTextStyle } from '../components/shared/style'
 import Button from '../components/shared/Button'
+import Wrapper from '../components/shared/Wrapper'
+import Container from '../components/shared/Container'
+import JapaneseHeadlines from '../components/shared/TextStyle/JapaneseHeadlines'
 
 function News() {
     return (
@@ -29,27 +32,6 @@ function News() {
     </Wrapper>
     )
 }
-
-const Wrapper = styled.div`
-    padding: 72px 24px;
-    @media (min-width: 768px) {
-        padding: 120px 24px;
-    }
-`
-
-const Container = styled.div`
-    margin: 0 auto;
-    max-width: 1100px;
-    width: 100%;
-`
-
-const JapaneseHeadlines = styled.h2`
-    ${MediumTextStyle}
-    font-size: 15px;
-    @media (min-width: 768px) {
-        font-size: 18px;
-    }
-`
 
 const BlogItem = styled.div`
     display: flex;

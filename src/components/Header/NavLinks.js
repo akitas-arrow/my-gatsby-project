@@ -7,7 +7,7 @@ function NavLinks() {
     return (
         <>
             <NavItem to='/'>お知らせ</NavItem>
-            <NavItem to='/lineUp'>商品一覧</NavItem>
+            <NavItem to='/lineUp'>取扱商品</NavItem>
             <NavItem to='/about'>会社案内</NavItem>
         </>
     )

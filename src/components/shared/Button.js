@@ -35,18 +35,7 @@ const ButtonContainer = styled(Link)`
         background-color: ${Color.lemon};
         top: 0;
         left: 0;
-        transform: scaleX(0);
-        transform-origin: left center;
-    }
-    :hover::before {
-        transform: scaleX(1);
         transform: translate(4px, 4px);
-    }
-    :active {
-        transform: translate(4px, 4px);
-    }
-    :active::before {
-        transform: translate(0, 0);
     }
 `
 
