@@ -5,32 +5,32 @@ import styled from 'styled-components'
 import { BoldTextStyle, Color } from './shared/style'
 
 function ServiceItem({src, title, description, type}) {
-    // const data = useStaticQuery(graphql`
-    //     query ($src:String!) {
-    //         file(relativePath:{eq:$src}){
-    //             childImageSharp {
-    //                 fluid(maxWidth: 800) {
-    //                     ...GatsbyImageSharpFluid
-    //                 }
-    //             }
-    //         }
-    //     }
-    // `)
     const data = useStaticQuery(graphql`
         query {
-            file(relativePath:{eq:"service001.png"}){
-                childImageSharp {
-                    fluid(maxWidth: 800) {
-                        ...GatsbyImageSharpFluid
+            allFile {
+                edges {
+                    node {
+                        relativePath
+                        childImageSharp {
+                            fluid(maxWidth: 800) {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
                     }
                 }
             }
         }
     `)
 
+    const image = data.allFile.edges.find(edge => {
+        return edge.node.relativePath.includes(src)
+    })
+
+    if (!image) return
+
     return (
         <Container>
-            <Img fluid={data.file.childImageSharp.fluid}/>
+            <Img fluid={image.node.childImageSharp.fluid}/>
             <Title type={type}>{title}</Title>
             <p>{description}</p>
         </Container>
