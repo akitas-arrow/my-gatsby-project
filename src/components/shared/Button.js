@@ -12,6 +12,8 @@ function Button({ children }) {
 }
 
 const ButtonContainer = styled(Link)`
+    position: absolute;
+    z-index: 1;
     margin: 72px auto 0;
     box-sizing: border-box;
     cursor: pointer;

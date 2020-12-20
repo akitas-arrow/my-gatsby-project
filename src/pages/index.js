@@ -4,6 +4,7 @@ import styled from "styled-components"
 import News from "../components/News"
 import Service from "../components/Service"
 import LineUp from "../components/LineUp"
+import About from "../components/About"
 
 const IndexPage = () => {
 
@@ -13,6 +14,7 @@ const IndexPage = () => {
       <News />
       <Service />
       <LineUp />
+      <About />
     </Layout>
   )
 }

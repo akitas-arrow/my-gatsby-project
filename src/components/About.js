@@ -7,13 +7,13 @@ import EnglishHeadlines from './shared/TextStyle/EnglishHeadlines'
 import JapaneseHeadlines from './shared/TextStyle/JapaneseHeadlines'
 import Button from './shared/Button'
 
-function LineUp() {
+function About() {
     return (
         <>
         <Wrapper>
             <Container>
-                <EnglishHeadlines type='right'>LINE UP</EnglishHeadlines>
-                <JapaneseHeadlines type='right'>取扱商品</JapaneseHeadlines>
+                <EnglishHeadlines>ABOUT</EnglishHeadlines>
+                <JapaneseHeadlines>会社案内</JapaneseHeadlines>
             </Container>
         </Wrapper>
         <BgWrapper>
@@ -50,7 +50,7 @@ const BgWrapper = styled.div`
     }
     @media (min-width: 1024px) {
         padding-top: 72px;
-        background:  linear-gradient(90deg, #fff 0%, #fff 10%, ${Color.peacock} 10%, ${Color.peacock} 100%);
+        background:  linear-gradient(90deg, ${Color.peacock} 0%, ${Color.peacock} 90%, #fff 90%, #fff 100%);
     }
 `
 
@@ -61,7 +61,7 @@ const Box = styled.div`
     width: 100%;
     @media (min-width: 1024px) {
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
     }
 `
 
@@ -78,4 +78,4 @@ const Text = styled.p`
     color: #fff;
 `
 
-export default LineUp
+export default About

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 function Container({ children }) {
     return (
-        <Box>
+        <Box >
             { children }
         </Box>
     )

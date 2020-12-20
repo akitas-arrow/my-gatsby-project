@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import "fontsource-source-sans-pro"
 import { BasicTextStyle, Color } from '../style.js'
 
-function EnglishHeadlines({ children }) {
+function EnglishHeadlines({ children, type }) {
     return (
-        <HeadingText>
+        <HeadingText type={type}>
             {children}
         </HeadingText>
     )
@@ -18,6 +18,7 @@ const HeadingText = styled.h2`
     color: ${Color.peacock};
     font-size: 48px;
     line-height: 1em;
+    text-align: ${props => props.type || 'left'};
     @media (min-width: 768px) {
         font-size: 64px;       
     }
