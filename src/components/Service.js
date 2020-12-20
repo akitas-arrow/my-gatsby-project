@@ -39,6 +39,7 @@ function Service() {
         },
     ]
     return (
+        // <Wrapper bg='#FFFBF2'>
         <Wrapper>
             <Container>
                 <Title>このような方々に<br/>ご利用頂いております</Title>

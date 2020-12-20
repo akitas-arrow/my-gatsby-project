@@ -4,7 +4,9 @@ import styled from "styled-components"
 import News from "../components/News"
 import Service from "../components/Service"
 import LineUp from "../components/LineUp"
+import LineUpPattern from "../components/LineUpPattern"
 import About from "../components/About"
+import AboutPattern from "../components/AboutPattern"
 
 const IndexPage = () => {
 
@@ -13,6 +15,8 @@ const IndexPage = () => {
       <TopImage />
       <News />
       <Service />
+      {/* <LineUpPattern />
+      <AboutPattern /> */}
       <LineUp />
       <About />
     </Layout>

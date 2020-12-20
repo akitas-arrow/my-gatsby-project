@@ -22,7 +22,7 @@ function About() {
                         <Text>
                             ○○や○○など、各メーカーの商品を取り揃えております。テキストテキストテキストテキストテキストほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
                         </Text>
-                        <Button slug='/about' border='white'>
+                        <Button>
                             詳細を見る
                         </Button>
                 </TextBlock>
@@ -42,7 +42,8 @@ const Wrapper = styled.div`
     }
 `
 const BgWrapper = styled.div`
-    background-color: ${Color.peacock};
+    /* background-color: ${Color.peacock}; */
+    position: relative;
     padding: 192px 24px 72px;
     margin-bottom: 72px;
     @media (min-width: 768px) {
@@ -50,7 +51,16 @@ const BgWrapper = styled.div`
     }
     @media (min-width: 1024px) {
         padding-top: 72px;
-        background:  linear-gradient(90deg, ${Color.peacock} 0%, ${Color.peacock} 90%, #fff 90%, #fff 100%);
+        /* background:  linear-gradient(90deg, ${Color.peacock} 0%, ${Color.peacock} 90%, #fff 90%, #fff 100%); */
+    }
+    ::before {
+        position:absolute;
+        content: '';
+        width: 90%;
+        height: 3px;
+        left: 0;
+        bottom: 0;
+        background-color: ${Color.peacock};
     }
 `
 
@@ -75,7 +85,7 @@ const TextBlock = styled.div`
 
 const Text = styled.p`
     ${BasicTextStyle}
-    color: #fff;
+    /* color: #fff; */
 `
 
 export default About

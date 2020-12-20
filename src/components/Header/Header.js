@@ -97,7 +97,7 @@ const NavBox = styled.div`
         height: 100%;
         text-align: center;
         position: fixed;
-        background-color: #e9eff4;
+        background-color: #f3f3f3;
         flex-direction: column;
         transition: all 0.3s ease-in;
         top: 0;

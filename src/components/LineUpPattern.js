@@ -7,13 +7,13 @@ import EnglishHeadlines from './shared/TextStyle/EnglishHeadlines'
 import JapaneseHeadlines from './shared/TextStyle/JapaneseHeadlines'
 import Button from './shared/Button'
 
-function About() {
+function LineUp() {
     return (
         <>
         <Wrapper>
             <Container>
-                <EnglishHeadlines>ABOUT</EnglishHeadlines>
-                <JapaneseHeadlines>会社案内</JapaneseHeadlines>
+                <EnglishHeadlines type='right'>LINE UP</EnglishHeadlines>
+                <JapaneseHeadlines type='right'>取扱商品</JapaneseHeadlines>
             </Container>
         </Wrapper>
         <BgWrapper>
@@ -22,7 +22,7 @@ function About() {
                         <Text>
                             ○○や○○など、各メーカーの商品を取り揃えております。テキストテキストテキストテキストテキストほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
                         </Text>
-                        <Button slug='/about' border='white'>
+                        <Button>
                             詳細を見る
                         </Button>
                 </TextBlock>
@@ -42,7 +42,8 @@ const Wrapper = styled.div`
     }
 `
 const BgWrapper = styled.div`
-    background-color: ${Color.peacock};
+    /* background-color: ${Color.peacock}; */
+    position: relative;
     padding: 192px 24px 72px;
     margin-bottom: 72px;
     @media (min-width: 768px) {
@@ -50,22 +51,31 @@ const BgWrapper = styled.div`
     }
     @media (min-width: 1024px) {
         padding-top: 72px;
-        background:  linear-gradient(90deg, ${Color.peacock} 0%, ${Color.peacock} 90%, #fff 90%, #fff 100%);
+        /* background:  linear-gradient(90deg, #fff 0%, #fff 10%, ${Color.peacock} 10%, ${Color.peacock} 100%); */
+    }
+    ::before {
+        position:absolute;
+        content: '';
+        width: 90%;
+        height: 3px;
+        right: 0;
+        bottom: 0;
+        background-color: ${Color.peacock};
     }
 `
 
 const Box = styled.div`
+    position: relative;
     margin: 0 auto;
     max-width: 1100px;
     width: 100%;
     @media (min-width: 1024px) {
         display: flex;
-        justify-content: flex-start;
+        justify-content: flex-end;
     }
 `
 
 const TextBlock = styled.div`
-    position: relative;
     /* background-color: pink; */
     width: 100%;
     @media (min-width: 1024px) {
@@ -75,7 +85,7 @@ const TextBlock = styled.div`
 
 const Text = styled.p`
     ${BasicTextStyle}
-    color: #fff;
+    /* color: #fff; */
 `
 
-export default About
+export default LineUp

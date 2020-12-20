@@ -22,7 +22,7 @@ function LineUp() {
                         <Text>
                             ○○や○○など、各メーカーの商品を取り揃えております。テキストテキストテキストテキストテキストほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
                         </Text>
-                        <Button>
+                        <Button slug='/lineUp' border='white'>
                             詳細を見る
                         </Button>
                 </TextBlock>
@@ -55,7 +55,6 @@ const BgWrapper = styled.div`
 `
 
 const Box = styled.div`
-    position: relative;
     margin: 0 auto;
     max-width: 1100px;
     width: 100%;
@@ -66,6 +65,7 @@ const Box = styled.div`
 `
 
 const TextBlock = styled.div`
+    position: relative;
     /* background-color: pink; */
     width: 100%;
     @media (min-width: 1024px) {

@@ -3,15 +3,16 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { MediumTextStyle, Color } from './style'
 
-function Button({ children }) {
+function Button({ border, slug, children }) {
     return (
-        <ButtonContainer>
+        <ButtonContainer to={slug} border={border}>
             { children }
         </ButtonContainer>
     )
 }
 
 const ButtonContainer = styled(Link)`
+    text-decoration: none;
     position: absolute;
     z-index: 1;
     margin: 72px auto 0;
@@ -22,22 +23,31 @@ const ButtonContainer = styled(Link)`
     color: ${Color.peacock};
     font-size: 15px;
     height: 56px;
-    line-height: 56px;
-    padding: 0 80px;
-    border: 1px solid ${Color.peacock};
+    line-height: 44px;
+    padding: 2px 84px 10px 76px;
+    background-color: ${Color.lemon};
     position: relative;
     user-select: none;
+    transition: all 0.3s;
     ::before {
+        border: 1px solid ${props => Color[props.border] || Color.peacock};
         display: block;
         content: "";
         z-index: -1;
         width: 100%;
         height: 100%;
         position: absolute;
-        background-color: ${Color.lemon};
+        top: -4px;
+        left: -4px;
+        transition: all 0.3s ease;
+    }
+    :hover {
+        line-height: 56px; 
+        padding: 0 80px;
+    }
+    :hover::before {
         top: 0;
         left: 0;
-        transform: translate(4px, 4px);
     }
 `
 
