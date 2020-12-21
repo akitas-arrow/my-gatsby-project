@@ -1,19 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BasicTextStyle, Color } from './shared/style'
+import { BasicTextStyle, Color } from '../shared/style'
 // import Wrapper from './shared/Wrapper'
-import Container from './shared/Container'
-import EnglishHeadlines from './shared/TextStyle/EnglishHeadlines'
-import JapaneseHeadlines from './shared/TextStyle/JapaneseHeadlines'
-import Button from './shared/Button'
+import Container from '../shared/Container'
+import EnglishHeadlines from '../shared/TextStyle/EnglishHeadlines'
+import JapaneseHeadlines from '../shared/TextStyle/JapaneseHeadlines'
+import Button from '../shared/Button'
 
-function LineUp() {
+function About() {
     return (
         <>
         <Wrapper>
             <Container>
-                <EnglishHeadlines type='right'>LINE UP</EnglishHeadlines>
-                <JapaneseHeadlines type='right'>取扱商品</JapaneseHeadlines>
+                <EnglishHeadlines>ABOUT</EnglishHeadlines>
+                <JapaneseHeadlines>会社案内</JapaneseHeadlines>
             </Container>
         </Wrapper>
         <BgWrapper>
@@ -22,7 +22,7 @@ function LineUp() {
                         <Text>
                             ○○や○○など、各メーカーの商品を取り揃えております。テキストテキストテキストテキストテキストほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
                         </Text>
-                        <Button>
+                        <Button slug='/about' border='white'>
                             詳細を見る
                         </Button>
                 </TextBlock>
@@ -42,8 +42,7 @@ const Wrapper = styled.div`
     }
 `
 const BgWrapper = styled.div`
-    /* background-color: ${Color.peacock}; */
-    position: relative;
+    background-color: ${Color.peacock};
     padding: 192px 24px 72px;
     margin-bottom: 72px;
     @media (min-width: 768px) {
@@ -51,31 +50,22 @@ const BgWrapper = styled.div`
     }
     @media (min-width: 1024px) {
         padding-top: 72px;
-        /* background:  linear-gradient(90deg, #fff 0%, #fff 10%, ${Color.peacock} 10%, ${Color.peacock} 100%); */
-    }
-    ::before {
-        position:absolute;
-        content: '';
-        width: 90%;
-        height: 3px;
-        right: 0;
-        bottom: 0;
-        background-color: ${Color.peacock};
+        background:  linear-gradient(90deg, ${Color.peacock} 0%, ${Color.peacock} 90%, #fff 90%, #fff 100%);
     }
 `
 
 const Box = styled.div`
-    position: relative;
     margin: 0 auto;
     max-width: 1100px;
     width: 100%;
     @media (min-width: 1024px) {
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
     }
 `
 
 const TextBlock = styled.div`
+    position: relative;
     /* background-color: pink; */
     width: 100%;
     @media (min-width: 1024px) {
@@ -85,7 +75,7 @@ const TextBlock = styled.div`
 
 const Text = styled.p`
     ${BasicTextStyle}
-    /* color: #fff; */
+    color: #fff;
 `
 
-export default LineUp
+export default About

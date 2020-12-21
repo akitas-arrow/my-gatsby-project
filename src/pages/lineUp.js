@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 import Wrapper from '../components/shared/Wrapper'
 import Container from '../components/shared/Container'
 import PageTitle from '../components/shared/TextStyle/PageTitle'
-import LineUpItem from '../components/LineUpItem'
+import LineUpItem from '../components/LineUp/LineUpItem'
 
 function lineUp() {
     const lineUpItems = [

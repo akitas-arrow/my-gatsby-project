@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import styled from 'styled-components'
-import { BoldTextStyle, Color } from './shared/style'
+import { BoldTextStyle, Color } from '../shared/style'
 
 function ServiceItem({src, title, description, type}) {
     const data = useStaticQuery(graphql`

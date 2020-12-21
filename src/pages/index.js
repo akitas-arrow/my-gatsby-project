@@ -1,12 +1,12 @@
 import React from "react"
 import Layout from "../components/Layout"
 import styled from "styled-components"
-import News from "../components/News"
-import Service from "../components/Service"
-import LineUp from "../components/LineUp"
-// import LineUpPattern from "../components/LineUpPattern"
-import About from "../components/About"
-// import AboutPattern from "../components/AboutPattern"
+import News from "../components/Home/News"
+import Service from "../components/Home/Service"
+import LineUp from "../components/Home/LineUp"
+// import LineUpPattern from "../components/Home/LineUpPattern"
+import About from "../components/Home/About"
+// import AboutPattern from "../components/Home/AboutPattern"
 
 const IndexPage = () => {
 

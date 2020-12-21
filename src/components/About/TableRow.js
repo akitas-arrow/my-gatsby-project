@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color, BasicTextStyle, MediumTextStyle } from './shared/style'
+import { Color, BasicTextStyle, MediumTextStyle } from '../shared/style'
 
 function TableRow({th, td}) {
     return (

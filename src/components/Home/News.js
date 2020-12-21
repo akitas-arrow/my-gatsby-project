@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from "styled-components"
-import EnglishHeadlines from "../components/shared/TextStyle/EnglishHeadlines"
-import { MediumTextStyle } from '../components/shared/style'
-import Button from '../components/shared/Button'
-import Wrapper from '../components/shared/Wrapper'
-import Container from '../components/shared/Container'
-import JapaneseHeadlines from '../components/shared/TextStyle/JapaneseHeadlines'
+import EnglishHeadlines from "../shared/TextStyle/EnglishHeadlines"
+import { MediumTextStyle } from '../shared/style'
+import Button from '../shared/Button'
+import Wrapper from '../shared/Wrapper'
+import Container from '../shared/Container'
+import JapaneseHeadlines from '../shared/TextStyle/JapaneseHeadlines'
 
 function News() {
     return (

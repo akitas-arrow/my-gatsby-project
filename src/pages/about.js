@@ -4,7 +4,7 @@ import { Color, MediumTextStyle } from '../components/shared/style'
 import Layout from '../components/Layout'
 import Wrapper from '../components/shared/Wrapper'
 import Container from '../components/shared/Container'
-import TableRow from '../components/TableRow'
+import TableRow from '../components/About/TableRow'
 import PageTitle from '../components/shared/TextStyle/PageTitle'
 
 function about() {
@@ -72,11 +72,15 @@ function about() {
 
     return (
         <Layout>
-            <Wrapper>
+            <Wrapper paddingBottom='0'>
                 <Container>
                     <PageTitle>
                         会社案内
                     </PageTitle>
+                </Container>
+            </Wrapper>
+            <Wrapper>
+                <Container>
                     <MenuTitle>
                         会社概要
                     </MenuTitle>
@@ -108,6 +112,10 @@ function about() {
                             }
                         </Table>
                     </Tables>
+                </Container>
+            </Wrapper>
+            <Wrapper>
+                <Container>
                     <MenuTitle>
                         ごあいさつ
                     </MenuTitle>
@@ -122,9 +130,9 @@ function about() {
                                 是非弊社を日用品の調達パートナーとしてご用命ください。
                             </p>
                             <p>
-                            代表取締役社長
-                            <br/>
-                            瀧　一裕
+                                代表取締役社長
+                                <br/>
+                                瀧　一裕
                             </p>
                         </TextBlock>
                     </Box>
@@ -136,13 +144,13 @@ function about() {
 
 
 const MenuTitle = styled.h4`
-    padding-top: 72px;
+    /* padding-top: 72px; */
     padding-bottom: 48px;
     text-align: center;
     ${MediumTextStyle}
     font-size: 18px;
     @media (min-width: 768px) {
-        padding-top: 112px;
+        /* padding-top: 112px; */
         padding-bottom: 64px;
         font-size: 26px;
     }

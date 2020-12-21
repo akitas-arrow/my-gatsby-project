@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import Wrapper from './shared/Wrapper'
-import Container from './shared/Container'
+import Wrapper from '../shared/Wrapper'
+import Container from '../shared/Container'
 
 function LineUpItem({title, description, items}) {
     return (

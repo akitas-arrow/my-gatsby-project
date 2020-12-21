@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BoldTextStyle, Color } from '../components/shared/style'
+import { BoldTextStyle, Color } from '../shared/style'
 import ServiceItem from "./ServiceItem"
-import Wrapper from "./shared/Wrapper"
-import Container from "./shared/Container"
+import Wrapper from "../shared/Wrapper"
+import Container from "../shared/Container"
 
 function Service() {
     const items = [
