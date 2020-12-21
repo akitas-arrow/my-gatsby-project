@@ -4,9 +4,9 @@ import styled from "styled-components"
 import News from "../components/News"
 import Service from "../components/Service"
 import LineUp from "../components/LineUp"
-import LineUpPattern from "../components/LineUpPattern"
+// import LineUpPattern from "../components/LineUpPattern"
 import About from "../components/About"
-import AboutPattern from "../components/AboutPattern"
+// import AboutPattern from "../components/AboutPattern"
 
 const IndexPage = () => {
 
