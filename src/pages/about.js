@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color, MediumTextStyle, BoldTextStyle } from '../components/shared/style'
+import { Color, MediumTextStyle } from '../components/shared/style'
 import Layout from '../components/Layout'
 import Wrapper from '../components/shared/Wrapper'
 import Container from '../components/shared/Container'
 import TableRow from '../components/TableRow'
+import PageTitle from '../components/shared/TextStyle/PageTitle'
 
 function about() {
     const data1 = [
@@ -133,19 +134,6 @@ function about() {
     )
 }
 
-const PageTitle = styled.h2`
-    ${BoldTextStyle}
-    color: ${Color.peacock};
-    text-align: center;
-    /* height: 176px; */
-    padding-top: 72px;
-    font-size: 22px;
-    @media (min-width: 768px) {
-        /* height: 268px; */
-        padding-top: 112px;
-        font-size: 30px;
-    }
-`
 
 const MenuTitle = styled.h4`
     padding-top: 72px;
