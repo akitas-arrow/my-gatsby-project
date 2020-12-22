@@ -1,21 +1,25 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from "styled-components"
-import { MediumTextStyle } from '../shared/style'
+import { MediumTextStyle, Color } from '../shared/style'
 
-function BlogItem({title, date}) {
+function BlogItem({title, date, link}) {
     return (
-        <Box>
+        <Box to={`/${link}`}>
             <Date>{date}</Date>
             <Name>{title}</Name>
         </Box>
     )
 }
 
-const Box = styled.div`
+const Box = styled(Link)`
+    display: block;
     display: flex;
     flex-direction: column;
     padding-top: 32px;
     max-width: 1100px;
+    text-decoration: none;
+    color: ${Color.letter};
     @media (min-width: 768px) {
         flex-direction: row;
         max-width: 608px;

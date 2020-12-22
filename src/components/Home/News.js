@@ -21,6 +21,7 @@ function News() {
                     node {
                         title
                         createdAt(formatString: "YYYY.MM.DD")
+                        id
                     }
                 }
             }
@@ -39,6 +40,7 @@ function News() {
                                 key={index}
                                 title={edge.node.title}
                                 date={edge.node.createdAt}
+                                link={`news/${edge.node.id}`}
                             />
                         )
                     })
