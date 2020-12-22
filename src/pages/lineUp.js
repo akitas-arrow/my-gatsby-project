@@ -45,14 +45,26 @@ function lineUp() {
             </Wrapper>
             {
                 lineUpItems.map((item, index) => {
-                    return (
-                        <LineUpItem 
-                            key={index}
-                            title={item.title}
-                            description={item.description}
-                            items={item.items}
-                        />
-                    )
+                    if (index % 2 === 0) {
+                        return (
+                            <LineUpItem 
+                                key={index}
+                                title={item.title}
+                                description={item.description}
+                                items={item.items}
+                            />
+                        )
+                    } else {
+                        return (
+                            <LineUpItem 
+                                key={index}
+                                title={item.title}
+                                description={item.description}
+                                items={item.items}
+                                direction='row'
+                            />
+                        )
+                    }
                 })
             }
         </Layout>

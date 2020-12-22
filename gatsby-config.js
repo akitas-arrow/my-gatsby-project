@@ -1,3 +1,6 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -25,6 +28,16 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/tomoeya-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: 'gatsby-source-microcms',
+      options: {
+        apiKey: process.env.X_API_KEY,
+        serviceId: 'test-tomoeya',
+        apis: [{
+          endpoint: 'news',
+        }],
       },
     },
     `gatsby-plugin-styled-components`

@@ -1,28 +1,39 @@
 import React from 'react'
 import styled from 'styled-components'
 import Wrapper from '../shared/Wrapper'
-import Container from '../shared/Container'
-import {MediumTextStyle, BoldTextStyle} from '../shared/style'
+import { MediumTextStyle, BoldTextStyle, Color } from '../shared/style'
 
-function LineUpItem({title, description, items}) {
+function LineUpItem({title, description, items, direction}) {
     return (
         <Wrapper>
-            <Container>
+            <Box direction={direction}>
                 <Image></Image>
                 <TextBlock>
                     <Title>
                         {title}
                     </Title>
-                    <p>
+                    <Text>
                         {description}
-                    </p>
+                    </Text>
                     <ItemHeader>取扱商品</ItemHeader>
-                    <p>{items}</p>
+                    <Item>{items}</Item>
                 </TextBlock>
-            </Container>
+            </Box>
         </Wrapper>
     )
 }
+
+const Box = styled.div`
+    margin: 0 auto;
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 1024px) {
+        flex-direction: ${props => props.direction || 'row-reverse'};
+        justify-content: space-between;
+    }
+`
 
 const Image = styled.div`
     max-width:608px;
@@ -45,20 +56,25 @@ const TextBlock = styled.div`
 `
 
 const Title = styled.h4`
-    /* padding-top: 72px; */
-    padding-bottom: 48px;
-    /* text-align: center; */
+    padding-bottom: 40px;
     ${BoldTextStyle}
     font-size: 18px;
     @media (min-width: 768px) {
-        /* padding-top: 112px; */
-        padding-bottom: 64px;
         font-size: 26px;
     }
 `
 
 const ItemHeader = styled.p`
     ${MediumTextStyle}
+    padding-top: 32px;
 `
 
+const Text = styled.p`
+    padding-bottom: 32px;
+    border-bottom: 3px dotted ${Color.peacock};
+`
+
+const Item = styled.p`
+    padding-top: 16px;
+`
 export default LineUpItem
