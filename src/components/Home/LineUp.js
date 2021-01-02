@@ -6,14 +6,17 @@ import Container from '../shared/Container'
 import EnglishHeadlines from '../shared/TextStyle/EnglishHeadlines'
 import JapaneseHeadlines from '../shared/TextStyle/JapaneseHeadlines'
 import Button from '../shared/Button'
+import HeadingBlock from '../shared/TextStyle/HeadingBlock'
 
 function LineUp() {
     return (
         <>
         <Wrapper>
             <Container>
-                <EnglishHeadlines type='right'>LINE UP</EnglishHeadlines>
-                <JapaneseHeadlines type='right'>取扱商品</JapaneseHeadlines>
+                <HeadingBlock>
+                    <EnglishHeadlines type='right'>LINE UP</EnglishHeadlines>
+                    <JapaneseHeadlines type='right'>取扱商品</JapaneseHeadlines>
+                </HeadingBlock>
             </Container>
         </Wrapper>
         <BgWrapper>
@@ -22,7 +25,7 @@ function LineUp() {
                         <Text>
                             ○○や○○など、各メーカーの商品を取り揃えております。テキストテキストテキストテキストテキストほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
                         </Text>
-                        <Button slug='/lineUp' border='white'>
+                        <Button slug='/lineUp' bg='white' color='main'>
                             詳細を見る
                         </Button>
                 </TextBlock>
@@ -42,7 +45,7 @@ const Wrapper = styled.div`
     }
 `
 const BgWrapper = styled.div`
-    background-color: ${Color.peacock};
+    background-color: ${Color.bg};
     padding: 192px 24px 72px;
     margin-bottom: 72px;
     @media (min-width: 768px) {
@@ -50,7 +53,7 @@ const BgWrapper = styled.div`
     }
     @media (min-width: 1024px) {
         padding-top: 72px;
-        background:  linear-gradient(90deg, #fff 0%, #fff 10%, ${Color.peacock} 10%, ${Color.peacock} 100%);
+        background:  linear-gradient(90deg, #fff 0%, #fff 10%, ${Color.bg} 10%, ${Color.bg} 100%);
     }
 `
 
@@ -75,7 +78,6 @@ const TextBlock = styled.div`
 
 const Text = styled.p`
     ${BasicTextStyle}
-    color: #fff;
 `
 
 export default LineUp

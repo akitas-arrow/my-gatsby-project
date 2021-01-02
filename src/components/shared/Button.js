@@ -3,9 +3,9 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { MediumTextStyle, Color } from './style'
 
-function Button({ border, slug, children }) {
+function Button({ bg, color, slug, children }) {
     return (
-        <ButtonContainer to={slug} border={border}>
+        <ButtonContainer to={slug} bg={bg} color={color}>
             { children }
         </ButtonContainer>
     )
@@ -20,17 +20,17 @@ const ButtonContainer = styled(Link)`
     cursor: pointer;
     ${MediumTextStyle}
     display: table;
-    color: ${Color.peacock};
+    color: ${props => Color[props.color] || Color.white};
     font-size: 15px;
     height: 56px;
     line-height: 44px;
     padding: 2px 84px 10px 76px;
-    background-color: ${Color.lemon};
+    background-color: ${props => Color[props.bg] || Color.main};
     position: relative;
     user-select: none;
     transition: all 0.3s;
     ::before {
-        border: 1px solid ${props => Color[props.border] || Color.peacock};
+        border: 1px solid ${Color.main};
         display: block;
         content: "";
         z-index: -1;

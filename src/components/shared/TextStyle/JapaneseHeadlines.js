@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MediumTextStyle } from '../style'
+import { Color, MediumTextStyle } from '../style'
 
 function JapaneseHeadlines({ children, type }) {
     return (
@@ -12,10 +12,15 @@ function JapaneseHeadlines({ children, type }) {
 
 const HeadingText = styled.h2`
     ${MediumTextStyle}
-    font-size: 15px;
-    text-align: ${props => props.type || 'left'};
+    color: ${Color.main};
+    font-size: 22px;
+    position : absolute;
+    top: 1.2em;
+    &[type='right'] {
+        right: 0;
+    }
     @media (min-width: 768px) {
-        font-size: 18px;
+        font-size: 30px;
     }
 `
 

@@ -6,6 +6,7 @@ import Wrapper from '../shared/Wrapper'
 import Container from '../shared/Container'
 import JapaneseHeadlines from '../shared/TextStyle/JapaneseHeadlines'
 import BlogItem from './BlogItem'
+import HeadingBlock from '../shared/TextStyle/HeadingBlock'
 
 function News() {
     const data = useStaticQuery(graphql`
@@ -31,8 +32,10 @@ function News() {
     return (
         <Wrapper>
             <Container>
-                <EnglishHeadlines>NEWS</EnglishHeadlines>
-                <JapaneseHeadlines>お知らせ</JapaneseHeadlines>
+                <HeadingBlock>
+                    <EnglishHeadlines>NEWS</EnglishHeadlines>
+                    <JapaneseHeadlines>お知らせ</JapaneseHeadlines>
+                </HeadingBlock>
                 {
                     data.allMicrocmsNews.edges.map((edge, index) => {
                         return (

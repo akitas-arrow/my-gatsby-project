@@ -6,14 +6,17 @@ import Container from '../shared/Container'
 import EnglishHeadlines from '../shared/TextStyle/EnglishHeadlines'
 import JapaneseHeadlines from '../shared/TextStyle/JapaneseHeadlines'
 import Button from '../shared/Button'
+import HeadingBlock from '../shared/TextStyle/HeadingBlock'
 
 function About() {
     return (
         <>
         <Wrapper>
             <Container>
-                <EnglishHeadlines>ABOUT</EnglishHeadlines>
-                <JapaneseHeadlines>会社案内</JapaneseHeadlines>
+                <HeadingBlock>
+                    <EnglishHeadlines>ABOUT</EnglishHeadlines>
+                    <JapaneseHeadlines>会社案内</JapaneseHeadlines>
+                </HeadingBlock>
             </Container>
         </Wrapper>
         <BgWrapper>
@@ -22,7 +25,7 @@ function About() {
                         <Text>
                             ○○や○○など、各メーカーの商品を取り揃えております。テキストテキストテキストテキストテキストほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
                         </Text>
-                        <Button slug='/about' border='white'>
+                        <Button slug='/about' bg='white' color='main'>
                             詳細を見る
                         </Button>
                 </TextBlock>
@@ -42,7 +45,7 @@ const Wrapper = styled.div`
     }
 `
 const BgWrapper = styled.div`
-    background-color: ${Color.peacock};
+    background-color: ${Color.bg};
     padding: 192px 24px 72px;
     margin-bottom: 72px;
     @media (min-width: 768px) {
@@ -50,7 +53,7 @@ const BgWrapper = styled.div`
     }
     @media (min-width: 1024px) {
         padding-top: 72px;
-        background:  linear-gradient(90deg, ${Color.peacock} 0%, ${Color.peacock} 90%, #fff 90%, #fff 100%);
+        background:  linear-gradient(90deg, ${Color.bg} 0%, ${Color.bg} 90%, #fff 90%, #fff 100%);
     }
 `
 
@@ -75,7 +78,6 @@ const TextBlock = styled.div`
 
 const Text = styled.p`
     ${BasicTextStyle}
-    color: #fff;
 `
 
 export default About

@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import "fontsource-source-sans-pro"
+import "@fontsource/roboto-mono/700.css"
+// import "fontsource-source-sans-pro"
 import { BasicTextStyle, Color } from '../style.js'
 
 function EnglishHeadlines({ children, type }) {
@@ -13,18 +14,18 @@ function EnglishHeadlines({ children, type }) {
 
 const HeadingText = styled.h2`
     ${BasicTextStyle}
-    font-family: "Source Sans Pro";
-    font-style: italic;
-    color: ${Color.peacock};
-    font-size: 48px;
+    font-family: "Roboto Mono";
+    font-weight: 700;
+    color: ${Color.sub};
+    font-size: 56px;
     line-height: 1em;
     text-align: ${props => props.type || 'left'};
     @media (min-width: 768px) {
-        font-size: 64px;       
-    }
-    @media (min-width: 1025px) {
         font-size: 80px;       
     }
+    /* @media (min-width: 1025px) {
+        font-size: 80px;       
+    } */
 `
 
 export default EnglishHeadlines

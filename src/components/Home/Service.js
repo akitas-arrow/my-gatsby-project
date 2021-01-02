@@ -11,31 +11,31 @@ function Service() {
             src: 'service001.png',
             title: 'レストラン・給食センター',
             description: '万全の衛生対策で楽しく美味しい食を演出',
-            color: 'yellow',
+            // color: 'yellow',
         },
         {
             src: 'service002.png',
             title: 'カフェ・パティスリー',
             description: '万全の衛生対策で楽しく美味しい食を演出',
-            color: 'peacock',
+            // color: 'peacock',
         },
         {
             src: 'service003.png',
             title: 'ホテル・結婚式場',
             description: '万全の衛生対策で楽しく美味しい食を演出',
-            color: 'peacock'
+            // color: 'peacock'
         },
         {
             src: 'service004.png',
             title: '幼稚園・学校',
             description: '万全の衛生対策で楽しく美味しい食を演出',
-            color: 'peacock',
+            // color: 'peacock',
         },
         {
             src: 'service005.png',
             title: '病院・介護施設',
             description: '万全の衛生対策で楽しく美味しい食を演出',
-            color: 'yellow',
+            // color: 'yellow',
         },
     ]
     return (
@@ -52,7 +52,7 @@ function Service() {
                             title={item.title}
                             description={item.description}
                             src={item.src}
-                            type={item.color}
+                            // type={item.color}
                         />
                         )
                     })
@@ -69,13 +69,14 @@ const Title = styled.h3`
     align-items: center;
     text-align: center;
     ${BoldTextStyle}
+    color: ${Color.main};
     font-size: 16px;
     ::before,
     ::after {
         content: '';
         width: 40px;
         height: 2px;
-        background-color:${Color.peacock};
+        background-color:${Color.main};
     }
     ::before {
         transform: rotate(68deg);

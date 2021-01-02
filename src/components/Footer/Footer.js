@@ -45,11 +45,11 @@ function Footer() {
 
 const Wrapper = styled.div`
     width: 100%;
-    background-color: #FFFBF2;
+    /* background-color: #FFFBF2; */
 `
 
 const Container = styled.div`
-    /* border-top: 3px dotted ${Color.peacock}; */
+    border-top: 3px dotted ${Color.main};
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;

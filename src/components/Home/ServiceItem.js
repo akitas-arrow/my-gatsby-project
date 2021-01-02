@@ -55,7 +55,8 @@ const Title = styled.p`
     ${BoldTextStyle}
     font-size: 18px;
     /* padding-top: 24px; */
-    border-bottom: 3px dotted ${props => Color[props.type]};
+    /* border-bottom: 3px dotted ${props => Color[props.type]}; */
+    border-bottom: 3px dotted ${Color.main};
     @media (min-width: 1024px) {
         font-size: 22px;
     }

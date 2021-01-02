@@ -11,7 +11,10 @@ export const Color = {
     yellow: '#f2cf01',
     accents: '#44aeea',
     letter: '#333333',
-    white: '#fff'
+    white: '#fff',
+    main: '#2b5f60',
+    bg: '#f2f8ef',
+    sub: '#ddf1e2',
 }
 
 export const BasicTextStyle = css`
