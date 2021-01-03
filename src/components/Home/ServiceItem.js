@@ -54,6 +54,7 @@ const Container = styled.div`
 const Title = styled.p`
     ${BoldTextStyle}
     font-size: 18px;
+    /* color: ${Color.main}; */
     /* padding-top: 24px; */
     /* border-bottom: 3px dotted ${props => Color[props.type]}; */
     border-bottom: 3px dotted ${Color.main};
