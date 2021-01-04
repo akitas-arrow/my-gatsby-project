@@ -20,14 +20,14 @@ function Header() {
                     <NavBox open>
                         <NavLinks />
                         <Icons>
-                            <SNSIconSet/>
+                            <SNSIconSet size='lg'/>
                         </Icons>
                     </NavBox>
                 ) : (
                     <NavBox>
                         <NavLinks />
                         <Icons>
-                            <SNSIconSet/>
+                            <SNSIconSet size='lg'/>
                         </Icons>
                     </NavBox>
                 )

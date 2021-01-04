@@ -12,7 +12,7 @@ function PageTitle({ children }) {
 
 const Title = styled.h2`
     ${BoldTextStyle}
-    color: ${Color.peacock};
+    color: ${Color.main};
     text-align: center;
     /* height: 176px; */
     padding-top: 72px;

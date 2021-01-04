@@ -24,7 +24,7 @@ function TableRow({th, td}) {
 const TableHeader = styled.th`
     ${MediumTextStyle}
     border: none;
-    border-bottom: 1px solid ${Color.green};
+    border-bottom: 1px solid ${Color.main};
     width: 152px;
     @media (max-width: 480px) {
         display: block;
@@ -37,7 +37,7 @@ const TableHeader = styled.th`
 const TableData = styled.td`
     ${BasicTextStyle}
     border: none;
-    border-bottom: 1px solid ${Color.green};
+    border-bottom: 1px solid ${Color.main};
     @media (max-width: 480px) {
         display: block;
         width: 100%;

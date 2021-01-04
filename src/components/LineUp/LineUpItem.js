@@ -71,7 +71,7 @@ const ItemHeader = styled.p`
 
 const Text = styled.p`
     padding-bottom: 32px;
-    border-bottom: 3px dotted ${Color.peacock};
+    border-bottom: 3px dotted ${Color.main};
 `
 
 const Item = styled.p`
