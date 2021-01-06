@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Color } from './style.js'
 import styled from 'styled-components'
 
-function SNSIconSet({ size }) {
+function SNSIconSet({size}) {
     return (
         <>
             <Anchor

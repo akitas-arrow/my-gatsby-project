@@ -36,7 +36,9 @@ function Footer() {
                     <span>是非ご覧ください！</span>
                 </TextBlock>
                 <Icons>
-                    <SNSIconSet />
+                    <SNSIconSet
+                        // size='1x'
+                    />
                 </Icons>
             </Container>
         </Wrapper>

@@ -5,7 +5,7 @@ import { MediumTextStyle, BoldTextStyle, Color } from '../shared/style'
 
 function LineUpItem({title, description, items, direction}) {
     return (
-        <Wrapper>
+        <Wrapper bg={Color.bg}>
             <Box direction={direction}>
                 <Image></Image>
                 <TextBlock>
