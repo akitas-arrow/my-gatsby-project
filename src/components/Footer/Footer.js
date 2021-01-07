@@ -51,7 +51,7 @@ const Wrapper = styled.div`
 `
 
 const Container = styled.div`
-    border-top: 3px dotted ${Color.main};
+    /* border-top: 3px dotted ${Color.main}; */
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;

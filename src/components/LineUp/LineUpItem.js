@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import Wrapper from '../shared/Wrapper'
+// import Wrapper from '../shared/Wrapper'
 import { MediumTextStyle, BoldTextStyle, Color } from '../shared/style'
 
 function LineUpItem({title, description, items, direction}) {
     return (
-        <Wrapper bg={Color.bg}>
+        <>
+        <Wrapper>
             <Box direction={direction}>
                 <Image></Image>
                 <TextBlock>
@@ -20,8 +21,20 @@ function LineUpItem({title, description, items, direction}) {
                 </TextBlock>
             </Box>
         </Wrapper>
+        <WhiteMargin>
+
+        </WhiteMargin>
+        </>
     )
 }
+
+const Wrapper = styled.div`
+
+`
+
+const WhiteMargin = styled.div`
+
+`
 
 const Box = styled.div`
     margin: 0 auto;
