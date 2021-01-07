@@ -42,7 +42,7 @@ const ButtonContainer = styled(Link)`
         transition: all 0.3s ease;
     }
     :hover {
-        line-height: 56px; 
+        line-height: 56px;
         padding: 0 80px;
     }
     :hover::before {

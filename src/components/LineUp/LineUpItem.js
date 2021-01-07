@@ -6,7 +6,7 @@ import { MediumTextStyle, BoldTextStyle, Color } from '../shared/style'
 function LineUpItem({title, description, items, direction}) {
     return (
         <>
-        <Wrapper>
+        <Wrapper direction={direction}>
             <Box direction={direction}>
                 <Image></Image>
                 <TextBlock>
@@ -21,19 +21,48 @@ function LineUpItem({title, description, items, direction}) {
                 </TextBlock>
             </Box>
         </Wrapper>
-        <WhiteMargin>
-
-        </WhiteMargin>
         </>
     )
 }
 
 const Wrapper = styled.div`
-
-`
-
-const WhiteMargin = styled.div`
-
+    width: 100%;
+    background-color: ${Color.bg};
+    overflow: hidden;
+    padding: 72px 24px;
+    position: relative;
+    @media (min-width: 1024px) {
+        padding: 120px 24px;
+    }
+    ::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top: 72px solid ${Color.white};
+        border-left: 100vw solid transparent;
+        &[direction='row'] {
+            border-top: 72px solid ${Color.white};
+            border-left: none;
+            border-right: 100vw solid transparent;
+        }
+        @media (min-width: 1024px) {
+            border-top: 120px solid ${Color.white};
+        }
+    }
+    ::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 72px solid ${Color.white};
+        border-right: 100vw solid transparent;
+        @media (min-width: 1024px) {
+            border-bottom: 120px solid ${Color.white};
+        }
+    }
 `
 
 const Box = styled.div`

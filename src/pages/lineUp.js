@@ -47,7 +47,7 @@ function lineUp() {
                 lineUpItems.map((item, index) => {
                     if (index % 2 === 0) {
                         return (
-                            <LineUpItem 
+                            <LineUpItem
                                 key={index}
                                 title={item.title}
                                 description={item.description}
@@ -56,7 +56,7 @@ function lineUp() {
                         )
                     } else {
                         return (
-                            <LineUpItem 
+                            <LineUpItem
                                 key={index}
                                 title={item.title}
                                 description={item.description}
