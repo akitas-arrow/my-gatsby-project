@@ -13,7 +13,7 @@ function News() {
         query {
             allMicrocmsNews (
                 sort:{
-                    fields:[createdAt],
+                    fields:[date],
                     order:DESC,
                 },
                 limit:3
@@ -21,8 +21,8 @@ function News() {
                 edges {
                     node {
                         title
-                        createdAt(formatString: "YYYY.MM.DD")
-                        id
+                        date(formatString: "YYYY.MM.DD")
+                        newsId
                     }
                 }
             }
@@ -42,8 +42,8 @@ function News() {
                             <BlogItem
                                 key={index}
                                 title={edge.node.title}
-                                date={edge.node.createdAt}
-                                link={`news/${edge.node.id}`}
+                                date={edge.node.date}
+                                link={`news/${edge.node.newsId}`}
                             />
                         )
                     })
