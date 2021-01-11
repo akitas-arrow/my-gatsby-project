@@ -14,11 +14,9 @@ const Title = styled.h2`
     ${BoldTextStyle}
     color: ${Color.main};
     text-align: center;
-    /* height: 176px; */
     padding-top: 72px;
     font-size: 22px;
     @media (min-width: 768px) {
-        /* height: 268px; */
         padding-top: 112px;
         font-size: 30px;
     }
