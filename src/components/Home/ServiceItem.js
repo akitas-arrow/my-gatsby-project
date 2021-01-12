@@ -38,7 +38,6 @@ function ServiceItem({src, title, description, type}) {
 }
 
 const Container = styled.div`
-    /* background-color: pink; */
     text-align: center;
     width: 100%;
     margin-top: 48px;
@@ -54,9 +53,6 @@ const Container = styled.div`
 const Title = styled.p`
     ${BoldTextStyle}
     font-size: 18px;
-    /* color: ${Color.main}; */
-    /* padding-top: 24px; */
-    /* border-bottom: 3px dotted ${props => Color[props.type]}; */
     border-bottom: 3px dotted ${Color.main};
     @media (min-width: 1024px) {
         font-size: 22px;

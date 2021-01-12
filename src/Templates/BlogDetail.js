@@ -4,7 +4,8 @@ import { graphql } from 'gatsby'
 import Wrapper from '../components/shared/Wrapper'
 import Container from '../components/shared/Container'
 import styled from 'styled-components'
-import {BoldTextStyle, Color} from '../components/shared/style'
+import {MediumTextStyle,BoldTextStyle, Color} from '../components/shared/style'
+import Button from '../components/shared/Button'
 
 export const query = graphql`
     query($slug : String!) {
@@ -40,6 +41,7 @@ function BlogDetail({ data }) {
                         dangerouslySetInnerHTML={{__html: `${data.microcmsNews.body}`}}
                     >
                 </TextBox>
+                <Button slug='/news'>記事一覧に戻る</Button>
             </Wrapper>
         </Layout>
     )
@@ -77,7 +79,7 @@ const Title = styled.h2`
 
 const Date = styled.p`
     width: 90%;
-    ${BoldTextStyle}
+    ${MediumTextStyle}
     color: ${Color.main};
 `
 

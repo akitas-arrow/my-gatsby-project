@@ -26,7 +26,7 @@ function LineUp() {
                             ○○や○○など、各メーカーの商品を取り揃えております。テキストテキストテキストテキストテキストほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
                         </Text>
                         <Button slug='/lineUp' bg='white' color='main'>
-                            詳細を見る
+                            取扱商品を見る
                         </Button>
                 </TextBlock>
             </Box>

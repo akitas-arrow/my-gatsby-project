@@ -49,7 +49,7 @@ function News() {
                     })
                 }
                 <Button slug='/news'>
-                一覧を見る
+                    記事一覧を見る
                 </Button>
             </Container>
     </Wrapper>

@@ -20,12 +20,12 @@ const ButtonContainer = styled(Link)`
     cursor: pointer;
     ${MediumTextStyle}
     display: table;
-    color: ${props => Color[props.color] || Color.white};
+    color: ${props => Color[props.color] || Color.main};
     font-size: 15px;
     height: 56px;
     line-height: 44px;
-    padding: 2px 84px 10px 76px;
-    background-color: ${props => Color[props.bg] || Color.main};
+    padding: 0px 86px 12px 74px;
+    background-color: ${props => Color[props.bg] || Color.sub};
     position: relative;
     user-select: none;
     transition: all 0.3s;
@@ -37,8 +37,8 @@ const ButtonContainer = styled(Link)`
         width: 100%;
         height: 100%;
         position: absolute;
-        top: -4px;
-        left: -4px;
+        top: -6px;
+        left: -6px;
         transition: all 0.3s ease;
     }
     :hover {

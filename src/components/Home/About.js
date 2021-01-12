@@ -26,7 +26,7 @@ function About() {
                             ○○や○○など、各メーカーの商品を取り揃えております。テキストテキストテキストテキストテキストほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
                         </Text>
                         <Button slug='/about' bg='white' color='main'>
-                            詳細を見る
+                            会社案内を見る
                         </Button>
                 </TextBlock>
             </Box>
