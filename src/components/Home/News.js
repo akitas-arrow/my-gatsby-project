@@ -48,7 +48,7 @@ function News() {
                         )
                     })
                 }
-                <Button>
+                <Button slug='/news'>
                 一覧を見る
                 </Button>
             </Container>

@@ -31,4 +31,12 @@ exports.createPages = async ({ graphql, actions }) => {
             },
         });
     });
+
+    paginate({
+        createPage,
+        items: result.data.allMicrocmsNews.edges,
+        itemsPerPage: 8,
+        pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? "/news" : "/news/page"),
+        component: blogsTemplate,
+    })
 };

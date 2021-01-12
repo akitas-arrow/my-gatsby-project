@@ -6,7 +6,7 @@ import { MediumTextStyle } from '../shared/style'
 function NavLinks() {
     return (
         <>
-            <NavItem to='/'>お知らせ</NavItem>
+            <NavItem to='/news'>お知らせ</NavItem>
             <NavItem to='/lineUp'>取扱商品</NavItem>
             <NavItem to='/about'>会社案内</NavItem>
         </>
