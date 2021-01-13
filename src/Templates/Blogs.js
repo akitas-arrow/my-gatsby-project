@@ -6,7 +6,7 @@ import Container from '../components/shared/Container'
 import PageTitle from '../components/shared/TextStyle/PageTitle'
 import styled from 'styled-components'
 import BlogItem from '../components/Blogs/BlogItem'
-import PaginationButton from '../components/Blogs/PaginationButton'
+import Pagination from '../components/Blogs/Pagination'
 
 export const query = graphql`
     query($skip: Int!, $limit: Int!) {
@@ -56,7 +56,7 @@ function Blogs({ data, pageContext }) {
                             })
                         }
                     </Box>
-                    <PaginationButton pageContext={pageContext}/>
+                    <Pagination pageContext={pageContext}/>
                 </Container>
             </BlogsWrapper>
         </Layout>

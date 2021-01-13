@@ -13,8 +13,8 @@ function Button({ bg, color, slug, children }) {
 
 const ButtonContainer = styled(Link)`
     text-decoration: none;
-    position: absolute;
-    z-index: 1;
+    /* position: absolute; */
+    /* z-index: 1; */
     margin: 72px auto 0;
     box-sizing: border-box;
     cursor: pointer;
@@ -30,10 +30,10 @@ const ButtonContainer = styled(Link)`
     user-select: none;
     transition: all 0.3s;
     ::before {
-        border: 1px solid ${Color.main};
+        border: 2px solid ${Color.main};
         display: block;
         content: "";
-        z-index: -1;
+        /* z-index: -1; */
         width: 100%;
         height: 100%;
         position: absolute;

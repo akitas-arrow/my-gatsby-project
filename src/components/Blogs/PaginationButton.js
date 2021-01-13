@@ -1,18 +1,12 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-function PaginationButton({ pageContext }) {
-  const pages = [...Array(pageContext.numberOfPages)].map((_, i) => i + 1)
+function PaginationButton({link, num, humanPageNumber}) {
+  if(num === humanPageNumber) {
+    return <button>{num}</button>
+  }
 
-  return (
-    <div>
-    </div>
-  )
+  return <Link to={link}>{num}</Link>
 }
-
-const Button = styled(Link)`
-
-`
 
 export default PaginationButton

@@ -18,7 +18,6 @@ function BlogItem({title, link, url, date}) {
 }
 
 const Box = styled(Link)`
-    /* background-color: pink; */
     display: block;
     cursor: pointer;
     padding: 24px;
@@ -27,7 +26,6 @@ const Box = styled(Link)`
     text-decoration: none;
     @media (min-width: 768px) {
       width: 50%;
-      /* width: calc((100% - 40px) / 2); */
       margin-bottom: 80px;
     }
     :hover {
