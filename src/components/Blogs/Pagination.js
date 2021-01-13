@@ -7,37 +7,73 @@ import Prev from './Prev'
 import Next from './Next'
 
 function Pagination({ pageContext }) {
+  const numberOfPages = pageContext.numberOfPages;
+  const humanPageNumber = pageContext.humanPageNumber;
   let pageNumbers = [];
-  for(let i = 1; i <= pageContext.numberOfPages; i++) {
+  for(let i = 1; i <= numberOfPages; i++) {
     pageNumbers.push(i)
   }
-  console.log(pageContext.pageNumber)
-  return (
-    <>
-      <Prev previousPagePath={pageContext.previousPagePath}/>
 
-      {pageNumbers.map(num => {
-        if(num === 1) {
+  if(numberOfPages < 6) {
+    return (
+      <>
+        <Prev previousPagePath={pageContext.previousPagePath}/>
+        {pageNumbers.map(num => {
+          if(num === 1) {
+            return(
+              <PaginationButton
+                key={num} link='/news' num={num}
+                humanPageNumber={pageContext.humanPageNumber}
+              />
+            )
+          }
           return(
             <PaginationButton
-              link='/news'
-              num={num}
+              key={num} link={`/news/page/${num}`} num={num}
               humanPageNumber={pageContext.humanPageNumber}
             />
           )
+        })}
+        <Next nextPagePath={pageContext.nextPagePath}/>
+      </>
+    )
+  } else {
+    if(numberOfPages >= 8) {
+      if (humanPageNumber <= 3) {
+        pageNumbers = []
+        for (let i = 1; i <= 5; i++) {
+					pageNumbers.push(i)
         }
         return(
-          <PaginationButton
-            link={`/news/page/${num}`}
-            num={num}
-            humanPageNumber={pageContext.humanPageNumber}
-          />
+          <>
+            <Prev previousPagePath={pageContext.previousPagePath}/>
+            {pageNumbers.map(num => {
+              if(num === 1) {
+                return(
+                  <PaginationButton
+                    key={num} link='/news' num={num}
+                    humanPageNumber={pageContext.humanPageNumber}
+                  />
+                )
+              }
+              return(
+                <PaginationButton
+                  key={num} link={`/news/page/${num}`} num={num}
+                  humanPageNumber={pageContext.humanPageNumber}
+                />
+              )
+            })}
+            <p>...</p>
+            <PaginationButton
+              link={`/news/page/${numberOfPages}`} num={numberOfPages}
+              humanPageNumber={pageContext.humanPageNumber}
+            />
+            <Next nextPagePath={pageContext.nextPagePath}/>
+          </>
         )
-      })}
-
-      <Next nextPagePath={pageContext.nextPagePath}/>
-    </>
-  )
+      }
+    }
+  }
 }
 
 export default Pagination
