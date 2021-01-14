@@ -7,6 +7,7 @@ import Prev from './Prev'
 import Next from './Next'
 
 function Pagination({ pageContext }) {
+  // const numberOfPages = 7;
   const numberOfPages = pageContext.numberOfPages;
   const humanPageNumber = pageContext.humanPageNumber;
   let pageNumbers = [];
@@ -14,6 +15,7 @@ function Pagination({ pageContext }) {
     pageNumbers.push(i)
   }
 
+  //1-5ページの時=>prev[1,2,3,4,5]next
   if(numberOfPages < 6) {
     return (
       <>
@@ -38,7 +40,9 @@ function Pagination({ pageContext }) {
       </>
     )
   } else {
+    //8ページ以上の時
     if(numberOfPages >= 8) {
+      //8ページ以上 && 1-3ページを表示している時=>prev[1,2,3,4,5]...[最後のページ]next
       if (humanPageNumber <= 3) {
         pageNumbers = []
         for (let i = 1; i <= 5; i++) {
@@ -68,6 +72,136 @@ function Pagination({ pageContext }) {
               link={`/news/page/${numberOfPages}`} num={numberOfPages}
               humanPageNumber={pageContext.humanPageNumber}
             />
+            <Next nextPagePath={pageContext.nextPagePath}/>
+          </>
+        )
+      //8ページ以上 && 最後の4ページのいずれかを表示している時=>(10ページの場合)prev[1]...[6,7,8,9,10]next
+      } else if (humanPageNumber >= numberOfPages - 3) {
+        pageNumbers = []
+				for (let i = numberOfPages - 4; i <= numberOfPages; i++) {
+					pageNumbers.push(i)
+        }
+        return (
+          <>
+            <Prev previousPagePath={pageContext.previousPagePath}/>
+            <PaginationButton
+              link='/news' num={1}
+              humanPageNumber={pageContext.humanPageNumber}
+            />
+            <p>...</p>
+            {pageNumbers.map(num => {
+              if(num === 1) {
+                return(
+                  <PaginationButton
+                    key={num} link='/news' num={num}
+                    humanPageNumber={pageContext.humanPageNumber}
+                  />
+                )
+              }
+              return(
+                <PaginationButton
+                  key={num} link={`/news/page/${num}`} num={num}
+                  humanPageNumber={pageContext.humanPageNumber}
+                />
+              )
+            })}
+            <Next nextPagePath={pageContext.nextPagePath}/>
+          </>
+        )
+      //8ページ以上 && 中間のページを表示している時=>(10ページの場合)prev[1]...[4,5,6,7]...[10]next
+      } else {
+        pageNumbers = []
+				for (let i = humanPageNumber - 1; i <= humanPageNumber + 2; i++) {
+					pageNumbers.push(i)
+        }
+        return (
+          <>
+            <Prev previousPagePath={pageContext.previousPagePath}/>
+            <PaginationButton
+              link='/news' num={1}
+              humanPageNumber={pageContext.humanPageNumber}
+            />
+            <p>...</p>
+            {pageNumbers.map(num => {
+              if(num === 1) {
+                return(
+                  <PaginationButton
+                    key={num} link='/news' num={num}
+                    humanPageNumber={pageContext.humanPageNumber}
+                  />
+                )
+              }
+              return(
+                <PaginationButton
+                  key={num} link={`/news/page/${num}`} num={num}
+                  humanPageNumber={pageContext.humanPageNumber}
+                />
+              )
+            })}
+            <p>...</p>
+            <PaginationButton
+              link={`/news/page/${numberOfPages}`} num={numberOfPages}
+              humanPageNumber={pageContext.humanPageNumber}
+            />
+            <Next nextPagePath={pageContext.nextPagePath}/>
+          </>
+        )
+      }
+    //6-7ページの時
+    } else {
+      //6-7ページ && 1-3ページを表示している時 => prev[1,2,3,4,5]next
+      if (humanPageNumber <= 3) {
+        pageNumbers = []
+        for (let i = 1; i <= 5; i++) {
+					pageNumbers.push(i)
+        }
+        return (
+          <>
+            <Prev previousPagePath={pageContext.previousPagePath}/>
+            {pageNumbers.map(num => {
+              if(num === 1) {
+                return(
+                  <PaginationButton
+                    key={num} link='/news' num={num}
+                    humanPageNumber={pageContext.humanPageNumber}
+                  />
+                )
+              }
+              return(
+                <PaginationButton
+                  key={num} link={`/news/page/${num}`} num={num}
+                  humanPageNumber={pageContext.humanPageNumber}
+                />
+              )
+            })}
+            <Next nextPagePath={pageContext.nextPagePath}/>
+          </>
+        )
+      //6-7ページ && 4ページ以降を表示している時 => prev[3,4,5,6,7]next
+      } else {
+        pageNumbers = []
+        for (let i = numberOfPages - 4; i <= numberOfPages; i++) {
+					pageNumbers.push(i)
+        }
+        return (
+          <>
+            <Prev previousPagePath={pageContext.previousPagePath}/>
+            {pageNumbers.map(num => {
+              if(num === 1) {
+                return(
+                  <PaginationButton
+                    key={num} link='/news' num={num}
+                    humanPageNumber={pageContext.humanPageNumber}
+                  />
+                )
+              }
+              return(
+                <PaginationButton
+                  key={num} link={`/news/page/${num}`} num={num}
+                  humanPageNumber={pageContext.humanPageNumber}
+                />
+              )
+            })}
             <Next nextPagePath={pageContext.nextPagePath}/>
           </>
         )
