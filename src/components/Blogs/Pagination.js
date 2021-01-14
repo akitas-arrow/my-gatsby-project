@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-// import { Link } from 'gatsby'
 import {Color, MediumTextStyle} from '../shared/style'
 import PaginationButton from './PaginationButton'
 import Prev from './Prev'
@@ -20,22 +19,24 @@ function Pagination({ pageContext }) {
     return (
       <>
         <Prev previousPagePath={pageContext.previousPagePath}/>
-        {pageNumbers.map(num => {
-          if(num === 1) {
+        <PageList>
+          {pageNumbers.map(num => {
+            if(num === 1) {
+              return(
+                <PaginationButton
+                  key={num} link='/news' num={num}
+                  humanPageNumber={pageContext.humanPageNumber}
+                />
+              )
+            }
             return(
               <PaginationButton
-                key={num} link='/news' num={num}
+                key={num} link={`/news/page/${num}`} num={num}
                 humanPageNumber={pageContext.humanPageNumber}
               />
             )
-          }
-          return(
-            <PaginationButton
-              key={num} link={`/news/page/${num}`} num={num}
-              humanPageNumber={pageContext.humanPageNumber}
-            />
-          )
-        })}
+          })}
+        </PageList>
         <Next nextPagePath={pageContext.nextPagePath}/>
       </>
     )
@@ -51,27 +52,29 @@ function Pagination({ pageContext }) {
         return(
           <>
             <Prev previousPagePath={pageContext.previousPagePath}/>
-            {pageNumbers.map(num => {
-              if(num === 1) {
+            <PageList>
+              {pageNumbers.map(num => {
+                if(num === 1) {
+                  return(
+                    <PaginationButton
+                      key={num} link='/news' num={num}
+                      humanPageNumber={pageContext.humanPageNumber}
+                    />
+                  )
+                }
                 return(
                   <PaginationButton
-                    key={num} link='/news' num={num}
+                    key={num} link={`/news/page/${num}`} num={num}
                     humanPageNumber={pageContext.humanPageNumber}
                   />
                 )
-              }
-              return(
-                <PaginationButton
-                  key={num} link={`/news/page/${num}`} num={num}
-                  humanPageNumber={pageContext.humanPageNumber}
-                />
-              )
-            })}
-            <p>...</p>
-            <PaginationButton
-              link={`/news/page/${numberOfPages}`} num={numberOfPages}
-              humanPageNumber={pageContext.humanPageNumber}
-            />
+              })}
+              <Skip>...</Skip>
+              <PaginationButton
+                link={`/news/page/${numberOfPages}`} num={numberOfPages}
+                humanPageNumber={pageContext.humanPageNumber}
+              />
+            </PageList>
             <Next nextPagePath={pageContext.nextPagePath}/>
           </>
         )
@@ -84,27 +87,29 @@ function Pagination({ pageContext }) {
         return (
           <>
             <Prev previousPagePath={pageContext.previousPagePath}/>
-            <PaginationButton
-              link='/news' num={1}
-              humanPageNumber={pageContext.humanPageNumber}
-            />
-            <p>...</p>
-            {pageNumbers.map(num => {
-              if(num === 1) {
+            <PageList>
+              <PaginationButton
+                link='/news' num={1}
+                humanPageNumber={pageContext.humanPageNumber}
+              />
+              <Skip>...</Skip>
+              {pageNumbers.map(num => {
+                if(num === 1) {
+                  return(
+                    <PaginationButton
+                      key={num} link='/news' num={num}
+                      humanPageNumber={pageContext.humanPageNumber}
+                    />
+                  )
+                }
                 return(
                   <PaginationButton
-                    key={num} link='/news' num={num}
+                    key={num} link={`/news/page/${num}`} num={num}
                     humanPageNumber={pageContext.humanPageNumber}
                   />
                 )
-              }
-              return(
-                <PaginationButton
-                  key={num} link={`/news/page/${num}`} num={num}
-                  humanPageNumber={pageContext.humanPageNumber}
-                />
-              )
-            })}
+              })}
+            </PageList>
             <Next nextPagePath={pageContext.nextPagePath}/>
           </>
         )
@@ -117,32 +122,34 @@ function Pagination({ pageContext }) {
         return (
           <>
             <Prev previousPagePath={pageContext.previousPagePath}/>
-            <PaginationButton
-              link='/news' num={1}
-              humanPageNumber={pageContext.humanPageNumber}
-            />
-            <p>...</p>
-            {pageNumbers.map(num => {
-              if(num === 1) {
+            <PageList>
+              <PaginationButton
+                link='/news' num={1}
+                humanPageNumber={pageContext.humanPageNumber}
+              />
+              <Skip>...</Skip>
+              {pageNumbers.map(num => {
+                if(num === 1) {
+                  return(
+                    <PaginationButton
+                      key={num} link='/news' num={num}
+                      humanPageNumber={pageContext.humanPageNumber}
+                    />
+                  )
+                }
                 return(
                   <PaginationButton
-                    key={num} link='/news' num={num}
+                    key={num} link={`/news/page/${num}`} num={num}
                     humanPageNumber={pageContext.humanPageNumber}
                   />
                 )
-              }
-              return(
-                <PaginationButton
-                  key={num} link={`/news/page/${num}`} num={num}
-                  humanPageNumber={pageContext.humanPageNumber}
-                />
-              )
-            })}
-            <p>...</p>
-            <PaginationButton
-              link={`/news/page/${numberOfPages}`} num={numberOfPages}
-              humanPageNumber={pageContext.humanPageNumber}
-            />
+              })}
+              <Skip>...</Skip>
+              <PaginationButton
+                link={`/news/page/${numberOfPages}`} num={numberOfPages}
+                humanPageNumber={pageContext.humanPageNumber}
+              />
+            </PageList>
             <Next nextPagePath={pageContext.nextPagePath}/>
           </>
         )
@@ -158,22 +165,24 @@ function Pagination({ pageContext }) {
         return (
           <>
             <Prev previousPagePath={pageContext.previousPagePath}/>
-            {pageNumbers.map(num => {
-              if(num === 1) {
+            <PageList>
+              {pageNumbers.map(num => {
+                if(num === 1) {
+                  return(
+                    <PaginationButton
+                      key={num} link='/news' num={num}
+                      humanPageNumber={pageContext.humanPageNumber}
+                    />
+                  )
+                }
                 return(
                   <PaginationButton
-                    key={num} link='/news' num={num}
+                    key={num} link={`/news/page/${num}`} num={num}
                     humanPageNumber={pageContext.humanPageNumber}
                   />
                 )
-              }
-              return(
-                <PaginationButton
-                  key={num} link={`/news/page/${num}`} num={num}
-                  humanPageNumber={pageContext.humanPageNumber}
-                />
-              )
-            })}
+              })}
+            </PageList>
             <Next nextPagePath={pageContext.nextPagePath}/>
           </>
         )
@@ -186,22 +195,24 @@ function Pagination({ pageContext }) {
         return (
           <>
             <Prev previousPagePath={pageContext.previousPagePath}/>
-            {pageNumbers.map(num => {
-              if(num === 1) {
+            <PageList>
+              {pageNumbers.map(num => {
+                if(num === 1) {
+                  return(
+                    <PaginationButton
+                      key={num} link='/news' num={num}
+                      humanPageNumber={pageContext.humanPageNumber}
+                    />
+                  )
+                }
                 return(
                   <PaginationButton
-                    key={num} link='/news' num={num}
+                    key={num} link={`/news/page/${num}`} num={num}
                     humanPageNumber={pageContext.humanPageNumber}
                   />
                 )
-              }
-              return(
-                <PaginationButton
-                  key={num} link={`/news/page/${num}`} num={num}
-                  humanPageNumber={pageContext.humanPageNumber}
-                />
-              )
-            })}
+              })}
+            </PageList>
             <Next nextPagePath={pageContext.nextPagePath}/>
           </>
         )
@@ -209,5 +220,14 @@ function Pagination({ pageContext }) {
     }
   }
 }
+
+const PageList = styled.div`
+  display: flex;
+  margin-left: 16px;
+`
+
+const Skip = styled.p`
+  margin-right: 16px;
+`
 
 export default Pagination

@@ -56,7 +56,9 @@ function Blogs({ data, pageContext }) {
                             })
                         }
                     </Box>
-                    <Pagination pageContext={pageContext}/>
+                    <PaginationBlock>
+                        <Pagination pageContext={pageContext}/>
+                    </PaginationBlock>
                 </Container>
             </BlogsWrapper>
         </Layout>
@@ -74,6 +76,12 @@ const Box = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+`
+
+const PaginationBlock = styled.div`
+    /* background-color: pink; */
+    display: flex;
+    justify-content: center;
 `
 
 export default Blogs
