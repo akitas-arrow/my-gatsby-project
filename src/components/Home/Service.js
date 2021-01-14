@@ -11,35 +11,29 @@ function Service() {
             src: 'service001.png',
             title: 'レストラン・給食センター',
             description: '万全の衛生対策で楽しく美味しい食を演出',
-            // color: 'yellow',
         },
         {
             src: 'service002.png',
             title: 'カフェ・パティスリー',
             description: '万全の衛生対策で楽しく美味しい食を演出',
-            // color: 'peacock',
         },
         {
             src: 'service003.png',
             title: 'ホテル・結婚式場',
             description: '万全の衛生対策で楽しく美味しい食を演出',
-            // color: 'peacock'
         },
         {
             src: 'service004.png',
             title: '幼稚園・学校',
             description: '万全の衛生対策で楽しく美味しい食を演出',
-            // color: 'peacock',
         },
         {
             src: 'service005.png',
             title: '病院・介護施設',
             description: '万全の衛生対策で楽しく美味しい食を演出',
-            // color: 'yellow',
         },
     ]
     return (
-        // <Wrapper bg='#FFFBF2'>
         <Wrapper>
             <Container>
                 <Title>このような方々に<br/>ご利用頂いております</Title>
@@ -52,7 +46,6 @@ function Service() {
                             title={item.title}
                             description={item.description}
                             src={item.src}
-                            // type={item.color}
                         />
                         )
                     })

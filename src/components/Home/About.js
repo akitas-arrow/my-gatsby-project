@@ -53,7 +53,7 @@ const BgWrapper = styled.div`
     }
     @media (min-width: 1024px) {
         padding-top: 72px;
-        background:  linear-gradient(90deg, ${Color.bg} 0%, ${Color.bg} 90%, #fff 90%, #fff 100%);
+        background:  linear-gradient(90deg, ${Color.sub} 0%, ${Color.sub} 90%, #fff 90%, #fff 100%);
     }
 `
 
