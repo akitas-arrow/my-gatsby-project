@@ -1,16 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
 import { BasicTextStyle, Color } from '../shared/style'
-// import Wrapper from './shared/Wrapper'
+// import Wrapper from '../shared/Wrapper'
 import Container from '../shared/Container'
 import EnglishHeadlines from '../shared/TextStyle/EnglishHeadlines'
 import JapaneseHeadlines from '../shared/TextStyle/JapaneseHeadlines'
 import Button from '../shared/Button'
 import HeadingBlock from '../shared/TextStyle/HeadingBlock'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from "gatsby-image"
 
 function About() {
+    const data = useStaticQuery(graphql`
+        query {
+            file(relativePath:{eq:"dummy-image.png"}) {
+                childImageSharp {
+                    fluid{
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `)
     return (
-        <>
         <Wrapper>
             <Container>
                 <HeadingBlock>
@@ -18,42 +30,32 @@ function About() {
                     <JapaneseHeadlines>会社案内</JapaneseHeadlines>
                 </HeadingBlock>
             </Container>
-        </Wrapper>
-        <BgWrapper>
             <Box>
                 <TextBlock>
-                        <Text>
-                            ○○や○○など、各メーカーの商品を取り揃えております。テキストテキストテキストテキストテキストほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
-                        </Text>
-                        <Button slug='/about' bg='white' color='main'>
-                            会社案内を見る
-                        </Button>
+                    <Text>
+                        ○○や○○など、各メーカーの商品を取り揃えております。テキストテキストテキストテキストテキストほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+                    </Text>
+                    <Button slug='/about' bg='white' color='main'>
+                        会社案内を見る
+                    </Button>
                 </TextBlock>
+                <ImageBlock>
+                    <Img fluid={data.file.childImageSharp.fluid}/>
+                </ImageBlock>
             </Box>
-        </BgWrapper>
-        </>
+            <Bg>
+            </Bg>
+        </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-    padding: 72px 24px 192px;
-    @media (min-width: 768px) {
-        padding: 120px 24px 192px;
-    }
-    @media (min-width: 1024px) {
-        padding: 120px 24px 56px;
-    }
-`
-const BgWrapper = styled.div`
-    background-color: ${Color.bg};
-    padding: 192px 24px 72px;
+    position: relative;
+    padding: 72px 24px;
     margin-bottom: 72px;
     @media (min-width: 768px) {
-        margin-bottom: 120px;
-    }
-    @media (min-width: 1024px) {
-        padding-top: 72px;
-        background:  linear-gradient(90deg, ${Color.sub} 0%, ${Color.sub} 90%, #fff 90%, #fff 100%);
+    padding: 120px 24px;
+    margin-bottom: 120px;
     }
 `
 
@@ -61,15 +63,16 @@ const Box = styled.div`
     margin: 0 auto;
     max-width: 1100px;
     width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
     @media (min-width: 1024px) {
-        display: flex;
-        justify-content: flex-start;
+        flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
     }
 `
 
 const TextBlock = styled.div`
-    position: relative;
-    /* background-color: pink; */
     width: 100%;
     @media (min-width: 1024px) {
         width: calc((100% - 40px) / 2);
@@ -79,5 +82,34 @@ const TextBlock = styled.div`
 const Text = styled.p`
     ${BasicTextStyle}
 `
+const ImageBlock = styled.div`
+    width: 100%;
+    padding: 48px 0;
+    @media (min-width: 768px) {
+        padding: 72px 0;
+    }
+    @media (min-width: 1024px) {
+        padding: 0;
+        width: calc((100% - 40px) / 2);
+    }
+`
+
+const Bg = styled.div`
+        position: absolute;
+        bottom: 0;
+        background-color: ${Color.sub};
+        left: 0;
+        z-index: -1;
+        height: 60%;
+        width: 100%;
+        @media (min-width: 768px) {
+            height: 50%;
+        }
+    @media (min-width:1024px){
+        height: calc(100% - 280px);
+        width: 90%;
+    }
+`
 
 export default About
+
