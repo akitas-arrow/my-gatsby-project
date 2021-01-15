@@ -6,6 +6,7 @@ import Wrapper from '../components/shared/Wrapper'
 import Container from '../components/shared/Container'
 import TableRow from '../components/About/TableRow'
 import PageTitle from '../components/shared/TextStyle/PageTitle'
+import ProfileImage from '../components/About/ProfileImage'
 
 function about() {
     const data1 = [
@@ -120,7 +121,7 @@ function about() {
                         ごあいさつ
                     </MenuTitle>
                     <Box>
-                        <Image></Image>
+                        <ProfileImage />
                         <TextBlock>
                             <p>
                                 名古屋市中村区を拠点に洗剤、トイレットペーパー、ポリ袋など日用品を販売する卸問屋です。地の利を生かし地域の小売業をはじめホテル、飲食業の事業所様、病院、介護施設にご利用いただいております。おかげさまで操業70有余年、事業を継続してこられたことはお客様よりご愛顧受け賜りましたおかげと感謝いたします。今後も長年の経験と新鮮な情報の両面から常にお客様の立場になり最適な商品やサービスのご提供に努めてまいります。
@@ -170,7 +171,7 @@ const Tables = styled.div`
 const Table = styled.table`
     margin: 0 auto;
     border: none;
-    border-bottom: 1px solid ${Color.green};
+    border-bottom: 1px solid ${Color.main};
     border-collapse: collapse;
     width: 100%;
     max-width: 608px;
@@ -192,17 +193,7 @@ const Box = styled.div`
         justify-content: space-between;
     }
 `
-const Image = styled.div`
-    /* background-color: pink; */
-    width: 100%;
-    margin: 0 auto;
-    max-width: 608px;
-    @media (min-width: 1025px) {
-        max-width: none;
-        margin: 0;
-        width: calc((100% - 80px) / 2);
-    }
-`
+
 const TextBlock = styled.div`
     /* background-color: pink; */
     margin: 0 auto;

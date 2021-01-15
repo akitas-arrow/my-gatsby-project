@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { BasicTextStyle, Color } from '../shared/style'
-// import Wrapper from '../shared/Wrapper'
 import Container from '../shared/Container'
 import EnglishHeadlines from '../shared/TextStyle/EnglishHeadlines'
 import JapaneseHeadlines from '../shared/TextStyle/JapaneseHeadlines'
