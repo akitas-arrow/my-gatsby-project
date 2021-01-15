@@ -10,6 +10,7 @@ import { faPhoneAlt, faFax, faChevronLeft, faChevronRight } from '@fortawesome/f
 
 import Header from './Header/Header'
 import Footer from './Footer/Footer'
+import ContactButton from './shared/ContactButton'
 
 function Layout({ children }) {
     library.add(fab, far, faPhoneAlt, faFax, faChevronLeft, faChevronRight)
@@ -17,6 +18,7 @@ function Layout({ children }) {
         <div>
             <GlobalStyle />
             <Header />
+            <ContactButton />
                 { children }
             <Footer />
         </div>
