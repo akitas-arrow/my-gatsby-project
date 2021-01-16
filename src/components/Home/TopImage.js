@@ -38,7 +38,7 @@ const Box = styled.div`
   width: 100%;
   padding-top: 88px;
   @media (min-width:1025px) {
-    padding-top: 120px;
+    /* padding-top: 120px; */
   }
 `
 

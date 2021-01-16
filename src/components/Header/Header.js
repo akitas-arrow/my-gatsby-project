@@ -53,7 +53,8 @@ const Wrapper = styled.header`
     justify-content: space-between;
     padding: 0 32px;
     @media (min-width: 1025px) {
-        height: 120px;
+        /* height: 120px; */
+        background-color: ${Color.white};
     }
 `
 
@@ -122,8 +123,8 @@ const Icons = styled.div`
         font-size: 22px;
     }
     @media (min-width: 1025px) {
-        height: 120px;
-        line-height: 120px;
+        /* height: 120px; */
+        /* line-height: 120px; */
         margin-left: 32px;
     }
 `
