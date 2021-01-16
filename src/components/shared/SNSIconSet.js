@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Color } from './style.js'
 import styled from 'styled-components'
 
-function SNSIconSet({size}) {
+function SNSIconSet({ size, color }) {
     return (
         <>
             <Anchor
@@ -12,7 +12,7 @@ function SNSIconSet({size}) {
             >
                 <FontAwesomeIcon
                     icon={['fab', 'youtube']}
-                    color={Color.letter}
+                    color={Color[color]}
                     size={size}
                 />
             </Anchor>
@@ -22,7 +22,7 @@ function SNSIconSet({size}) {
             >
                 <FontAwesomeIcon
                     icon={['fab', 'instagram']}
-                    color={Color.letter}
+                    color={Color[color]}
                     size={size}
                 />
             </Anchor>

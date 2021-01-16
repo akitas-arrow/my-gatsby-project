@@ -22,6 +22,7 @@ function Header() {
                         <Icons>
                             <SNSIconSet
                                 size='lg'
+                                color='main'
                             />
                         </Icons>
                     </NavBox>
@@ -31,6 +32,7 @@ function Header() {
                         <Icons>
                             <SNSIconSet
                                 size='lg'
+                                color='main'
                             />
                         </Icons>
                     </NavBox>
@@ -67,7 +69,7 @@ const Toggle = styled.div`
 const HamburgerButton = styled.div`
     height: 2px;
     width: 30px;
-    background-color: ${Color.letter};
+    background-color: ${Color.main};
     align-self: center;
     position: relative;
     transition: all 0.3s linear;
@@ -76,7 +78,7 @@ const HamburgerButton = styled.div`
     ::after {
         height: 2px;
         width: 30px;
-        background-color: ${Color.letter};
+        background-color: ${Color.main};
         position: absolute;
         content: '';
         transition: all 0.3s linear;

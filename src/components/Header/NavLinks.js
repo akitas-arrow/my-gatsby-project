@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { MediumTextStyle } from '../shared/style'
+import { MediumTextStyle, Color } from '../shared/style'
 
 function NavLinks() {
     return (
@@ -15,6 +15,7 @@ function NavLinks() {
 
 const NavItem = styled(Link)`
     ${MediumTextStyle}
+    color: ${Color.main};
     height: 88px;
     line-height: 88px;
     text-decoration: none;

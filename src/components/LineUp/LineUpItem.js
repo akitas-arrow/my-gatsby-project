@@ -1,14 +1,41 @@
 import React from 'react'
 import styled from 'styled-components'
-// import Wrapper from '../shared/Wrapper'
 import { MediumTextStyle, BoldTextStyle, Color } from '../shared/style'
+import { useStaticQuery, graphql } from 'gatsby'
+import Img from 'gatsby-image'
+import backgroundImage from '../../images/wrap.jpeg'
 
-function LineUpItem({title, description, items, direction}) {
+function LineUpItem({title, description, items, src, direction, color}) {
+    const data = useStaticQuery(graphql`
+        query {
+            allFile {
+                edges {
+                    node {
+                        relativePath
+                        childImageSharp {
+                            fluid(maxWidth: 800) {
+                                ...GatsbyImageSharpFluid
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `)
+
+    const image = data.allFile.edges.find(edge => {
+        return edge.node.relativePath.includes(src)
+    })
+
+    if (!image) return
+
     return (
         <>
-        <Wrapper direction={direction}>
+        <Wrapper direction={direction} color={color} backgroundImage={backgroundImage}>
             <Box direction={direction}>
-                <Image></Image>
+                <ImageBlock>
+                    <Img fluid={image.node.childImageSharp.fluid}/>
+                </ImageBlock>
                 <TextBlock>
                     <Title>
                         {title}
@@ -26,42 +53,27 @@ function LineUpItem({title, description, items, direction}) {
 }
 
 const Wrapper = styled.div`
+    margin-top: 48px;
+    z-index: 0;
     width: 100%;
-    background-color: ${Color.bg};
-    overflow: hidden;
-    padding: 72px 24px;
+    padding: 48px 24px;
+    /* padding: 72px 24px; */
     position: relative;
     @media (min-width: 1024px) {
-        padding: 120px 24px;
+        padding: 72px 24px;
+        /* padding: 120px 24px; */
     }
     ::before {
-        content: '';
-        display: block;
+        content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        border-top: 72px solid ${Color.white};
-        border-left: 100vw solid transparent;
-        &[direction='row'] {
-            border-top: 72px solid ${Color.white};
-            border-left: none;
-            border-right: 100vw solid transparent;
-        }
-        @media (min-width: 1024px) {
-            border-top: 120px solid ${Color.white};
-        }
-    }
-    ::after {
-        content: '';
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        border-bottom: 72px solid ${Color.white};
-        border-right: 100vw solid transparent;
-        @media (min-width: 1024px) {
-            border-bottom: 120px solid ${Color.white};
-        }
+        top: 0; bottom: 0; left: 0; right: 0;
+        z-index: -1;
+        background-color:${props => Color[props.color]};
+        /* background-color:${props => props.direction === 'row' ? 'rgba(242,248,239,0.6)' : 'rgba(221,241,226,0.6)'}; */
+        /* transform: skewY(4deg); */
+        transform: ${props => props.direction === 'row' ? 'skewY(-5deg)' : 'skewY(-5deg)'};
+        /* background-image:url(${props => props.backgroundImage});
+        background-blend-mode: color-burn; */
     }
 `
 
@@ -74,10 +86,12 @@ const Box = styled.div`
     @media (min-width: 1024px) {
         flex-direction: ${props => props.direction || 'row-reverse'};
         justify-content: space-between;
+        align-items: center;
     }
 `
 
-const Image = styled.div`
+const ImageBlock = styled.div`
+    width: 100%;
     max-width:608px;
     margin: 0 auto;
     @media (min-width: 1024px) {

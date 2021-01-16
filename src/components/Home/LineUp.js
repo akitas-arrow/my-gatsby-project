@@ -66,8 +66,9 @@ const Box = styled.div`
     flex-direction: column;
     @media (min-width: 1024px) {
         flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
+        justify-content: space-between;
+        align-items: flex-end;
+        /* align-items: center; */
     }
 `
 
@@ -96,7 +97,7 @@ const ImageBlock = styled.div`
 const Bg = styled.div`
         position: absolute;
         bottom: 0;
-        background-color: ${Color.sub};
+        background-color: ${Color.bg};
         right: 0;
         z-index: -1;
         height: 60%;

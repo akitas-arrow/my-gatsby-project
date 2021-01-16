@@ -37,7 +37,7 @@ function Footer() {
                 </TextBlock>
                 <Icons>
                     <SNSIconSet
-                        // size='1x'
+                        color='letter'
                     />
                 </Icons>
             </Container>

@@ -13,7 +13,8 @@ export const Color = {
     letter: '#333333',
     white: '#fff',
     main: '#2b5f60',
-    bg: '#f2f8ef',
+    // bg: '#f2f8ef',
+    bg: 'rgba(221,241,226,0.6)',
     sub: '#ddf1e2',
 }
 
