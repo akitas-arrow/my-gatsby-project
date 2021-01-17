@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { MediumTextStyle, BoldTextStyle, Color } from '../shared/style'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import backgroundImage from '../../images/wrap.jpeg'
 
 function LineUpItem({title, description, items, src, direction, color}) {
     const data = useStaticQuery(graphql`
@@ -30,8 +29,7 @@ function LineUpItem({title, description, items, src, direction, color}) {
     if (!image) return
 
     return (
-        <>
-        <Wrapper direction={direction} color={color} backgroundImage={backgroundImage}>
+        <Wrapper direction={direction} color={color}>
             <Box direction={direction}>
                 <ImageBlock>
                     <Img fluid={image.node.childImageSharp.fluid}/>
@@ -48,20 +46,16 @@ function LineUpItem({title, description, items, src, direction, color}) {
                 </TextBlock>
             </Box>
         </Wrapper>
-        </>
     )
 }
 
 const Wrapper = styled.div`
-    margin-top: 48px;
     z-index: 0;
     width: 100%;
-    padding: 48px 24px;
-    /* padding: 72px 24px; */
+    padding: 72px 24px;
     position: relative;
     @media (min-width: 1024px) {
-        padding: 72px 24px;
-        /* padding: 120px 24px; */
+        padding: 120px 24px;
     }
     ::before {
         content: "";
@@ -69,11 +63,7 @@ const Wrapper = styled.div`
         top: 0; bottom: 0; left: 0; right: 0;
         z-index: -1;
         background-color:${props => Color[props.color]};
-        /* background-color:${props => props.direction === 'row' ? 'rgba(242,248,239,0.6)' : 'rgba(221,241,226,0.6)'}; */
-        /* transform: skewY(4deg); */
         transform: ${props => props.direction === 'row' ? 'skewY(-5deg)' : 'skewY(-5deg)'};
-        /* background-image:url(${props => props.backgroundImage});
-        background-blend-mode: color-burn; */
     }
 `
 
@@ -112,10 +102,13 @@ const TextBlock = styled.div`
 `
 
 const Title = styled.h4`
-    padding-bottom: 40px;
+    padding: 24px 0;
     ${BoldTextStyle}
+    color: ${Color.main};
     font-size: 18px;
     @media (min-width: 768px) {
+        padding-top: 0;
+        padding-bottom: 40px;
         font-size: 26px;
     }
 `

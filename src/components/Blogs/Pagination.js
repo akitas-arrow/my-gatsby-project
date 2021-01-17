@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Color, MediumTextStyle} from '../shared/style'
 import PaginationButton from './PaginationButton'
 import Prev from './Prev'
 import Next from './Next'

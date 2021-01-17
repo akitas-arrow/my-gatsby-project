@@ -7,6 +7,7 @@ import PageTitle from '../components/shared/TextStyle/PageTitle'
 import styled from 'styled-components'
 import BlogItem from '../components/Blogs/BlogItem'
 import Pagination from '../components/Blogs/Pagination'
+import ContactButton from '../components/shared/ContactButton'
 
 export const query = graphql`
     query($skip: Int!, $limit: Int!) {
@@ -32,11 +33,10 @@ export const query = graphql`
 function Blogs({ data, pageContext }) {
     return (
         <Layout>
+            <ContactButton />
             <Wrapper paddingBottom='0'>
                 <Container>
-                    <PageTitle>
-                        お知らせ
-                    </PageTitle>
+                    <PageTitle jp='お知らせ' eng='NEWS'/>
                 </Container>
             </Wrapper>
             <BlogsWrapper>

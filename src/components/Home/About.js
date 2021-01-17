@@ -96,7 +96,7 @@ const ImageBlock = styled.div`
 const Bg = styled.div`
         position: absolute;
         bottom: 0;
-        background-color: ${Color.bg};
+        background-color: ${Color.sheer};
         left: 0;
         z-index: -1;
         height: 60%;

@@ -1,10 +1,11 @@
 import React from 'react'
-// import styled from 'styled-components'
+import styled from 'styled-components'
 import Layout from '../components/Layout'
 import Wrapper from '../components/shared/Wrapper'
 import Container from '../components/shared/Container'
 import PageTitle from '../components/shared/TextStyle/PageTitle'
 import LineUpItem from '../components/LineUp/LineUpItem'
+import ContactButton from '../components/shared/ContactButton'
 
 function lineUp() {
     const lineUpItems = [
@@ -41,43 +42,48 @@ function lineUp() {
     ]
     return (
         <Layout>
-            <Wrapper paddingBottom='0'>
+            <ContactButton />
+            <Wrapper>
                 <Container>
-                    <PageTitle>
-                        取扱商品
-                    </PageTitle>
+                    <PageTitle jp='取扱商品' eng='LINE UP'/>
                 </Container>
             </Wrapper>
-            {
-                lineUpItems.map((item, index) => {
-                    if (index % 2 === 0) {
-                        return (
-                            <LineUpItem
-                                key={index}
-                                title={item.title}
-                                description={item.description}
-                                items={item.items}
-                                src={item.src}
-                                color='bg'
-                            />
-                        )
-                    } else {
-                        return (
-                            <LineUpItem
-                                key={index}
-                                title={item.title}
-                                description={item.description}
-                                items={item.items}
-                                src={item.src}
-                                color='white'
-                                direction='row'
-                            />
-                        )
-                    }
-                })
-            }
+            <Box>
+                {
+                    lineUpItems.map((item, index) => {
+                        if (index % 2 === 0) {
+                            return (
+                                <LineUpItem
+                                    key={index}
+                                    title={item.title}
+                                    description={item.description}
+                                    items={item.items}
+                                    src={item.src}
+                                    color='sheer'
+                                />
+                            )
+                        } else {
+                            return (
+                                <LineUpItem
+                                    key={index}
+                                    title={item.title}
+                                    description={item.description}
+                                    items={item.items}
+                                    src={item.src}
+                                    color='white'
+                                    direction='row'
+                                />
+                            )
+                        }
+                    })
+                }
+            </Box>
         </Layout>
     )
 }
+
+const Box = styled.div`
+
+`
 
 export default lineUp

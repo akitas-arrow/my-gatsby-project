@@ -7,6 +7,7 @@ import Container from '../components/shared/Container'
 import TableRow from '../components/About/TableRow'
 import PageTitle from '../components/shared/TextStyle/PageTitle'
 import ProfileImage from '../components/About/ProfileImage'
+import ContactButton from '../components/shared/ContactButton'
 
 function about() {
     const data1 = [
@@ -73,11 +74,10 @@ function about() {
 
     return (
         <Layout>
+            <ContactButton />
             <Wrapper paddingBottom='0'>
                 <Container>
-                    <PageTitle>
-                        会社案内
-                    </PageTitle>
+                    <PageTitle jp='会社案内' eng='ABOUT'/>
                 </Container>
             </Wrapper>
             <Wrapper>

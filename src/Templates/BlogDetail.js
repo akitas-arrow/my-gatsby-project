@@ -6,6 +6,7 @@ import Container from '../components/shared/Container'
 import styled from 'styled-components'
 import {MediumTextStyle,BoldTextStyle, Color} from '../components/shared/style'
 import Button from '../components/shared/Button'
+import ContactButton from '../components/shared/ContactButton'
 
 export const query = graphql`
     query($slug : String!) {
@@ -23,6 +24,7 @@ export const query = graphql`
 function BlogDetail({ data }) {
     return (
         <Layout>
+            <ContactButton />
             <TopWrapper>
                     <Img src={`${data.microcmsNews.thumbnail.url}?fit=crop&w=1100&h=480`} />
                     <TitleBlock>

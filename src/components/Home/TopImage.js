@@ -37,9 +37,6 @@ const Box = styled.div`
   height: 100vh;
   width: 100%;
   padding-top: 88px;
-  @media (min-width:1025px) {
-    /* padding-top: 120px; */
-  }
 `
 
 const Image = styled(Img)`

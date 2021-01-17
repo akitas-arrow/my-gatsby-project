@@ -6,7 +6,7 @@ import {BasicTextStyle,MediumTextStyle, Color} from '../shared/style'
 function BlogItem({title, link, url, date}) {
   return (
     <Box to={`/${link}`}>
-      <Img src={`${url}?fit=crop&w=780&h=520`}/>
+      <img src={`${url}?fit=crop&w=780&h=520`}/>
       <Date>
         {date}
       </Date>
@@ -29,12 +29,8 @@ const Box = styled(Link)`
       margin-bottom: 80px;
     }
     :hover {
-      background-color:${Color.bg};
+      background-color:${Color.sheer};
     }
-`
-
-const Img = styled.img`
-
 `
 
 const Date = styled.p`

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import "@fontsource/roboto-mono/700.css"
-// import "fontsource-source-sans-pro"
 import { BasicTextStyle, Color } from '../style.js'
 
 function EnglishHeadlines({ children, type }) {
@@ -21,11 +20,8 @@ const HeadingText = styled.h2`
     line-height: 1em;
     text-align: ${props => props.type || 'left'};
     @media (min-width: 768px) {
-        font-size: 80px;       
+        font-size: 80px;
     }
-    /* @media (min-width: 1025px) {
-        font-size: 80px;       
-    } */
 `
 
 export default EnglishHeadlines

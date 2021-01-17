@@ -4,18 +4,12 @@ import "fontsource-noto-sans-jp/500.css"
 import "fontsource-noto-sans-jp/700.css"
 
 export const Color = {
-    peacock: '#018a9a',
-    // lemon: '#FFFBF2',
-    lemon: '#f7f06e',
-    green: '#6bb6bb',
-    yellow: '#f2cf01',
-    accents: '#44aeea',
     letter: '#333333',
     white: '#fff',
     main: '#2b5f60',
-    // bg: '#f2f8ef',
-    bg: 'rgba(221,241,226,0.6)',
+    sheer: 'rgba(221,241,226,0.6)',
     sub: '#ddf1e2',
+    bg: '#f2f8ef'
 }
 
 export const BasicTextStyle = css`
