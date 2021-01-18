@@ -96,7 +96,7 @@ const ImageBlock = styled.div`
 const Bg = styled.div`
         position: absolute;
         bottom: 0;
-        background: ${Color.gradient02};
+        background: ${Color.gradient};
         left: 0;
         z-index: -1;
         height: 60%;
