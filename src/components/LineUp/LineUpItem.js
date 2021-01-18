@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MediumTextStyle, BoldTextStyle, Color } from '../shared/style'
+import { BoldTextStyle, Color } from '../shared/style'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -62,7 +62,7 @@ const Wrapper = styled.div`
         position: absolute;
         top: 0; bottom: 0; left: 0; right: 0;
         z-index: -1;
-        background-color:${props => Color[props.color]};
+        background:${props => Color[props.color]};
         transform: ${props => props.direction === 'row' ? 'skewY(-5deg)' : 'skewY(-5deg)'};
     }
 `
@@ -105,16 +105,16 @@ const Title = styled.h4`
     padding: 24px 0;
     ${BoldTextStyle}
     color: ${Color.main};
-    font-size: 18px;
+    font-size: 20px;
     @media (min-width: 768px) {
         padding-top: 0;
-        padding-bottom: 40px;
-        font-size: 26px;
+        /* padding-bottom: 40px; */
+        font-size: 30px;
     }
 `
 
 const ItemHeader = styled.p`
-    ${MediumTextStyle}
+    ${BoldTextStyle}
     padding-top: 32px;
 `
 

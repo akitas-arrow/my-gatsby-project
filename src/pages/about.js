@@ -115,7 +115,7 @@ function about() {
                     </Tables>
                 </Container>
             </Wrapper>
-            <Wrapper>
+            <Bg>
                 <Container>
                     <MenuTitle>
                         ごあいさつ
@@ -138,11 +138,28 @@ function about() {
                         </TextBlock>
                     </Box>
                 </Container>
-            </Wrapper>
+            </Bg>
         </Layout>
     )
 }
 
+const Bg = styled.div`
+    z-index: 0;
+    width: 100%;
+    padding: 72px 24px;
+    position: relative;
+    @media (min-width: 1024px) {
+        padding: 120px 24px;
+    }
+    ::before {
+        content: "";
+        position: absolute;
+        top: 0; bottom: 0; left: 0; right: 0;
+        z-index: -1;
+        background:${Color.gradient};
+        transform: skewY(-5deg);
+    }
+`
 
 const MenuTitle = styled.h4`
     /* padding-top: 72px; */
@@ -150,10 +167,26 @@ const MenuTitle = styled.h4`
     text-align: center;
     ${MediumTextStyle}
     font-size: 18px;
+    color: ${Color.main};
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @media (min-width: 768px) {
         /* padding-top: 112px; */
         padding-bottom: 64px;
         font-size: 26px;
+    }
+    ::before,::after {
+        content: '';
+        width: 40px;
+        height: 2px;
+        background-color:${Color.main};
+    }
+    ::before {
+        margin-right: 16px;
+    }
+    ::after {
+        margin-left: 16px;
     }
 `
 

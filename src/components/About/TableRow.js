@@ -26,6 +26,7 @@ const TableHeader = styled.th`
     border: none;
     border-bottom: 1px solid ${Color.main};
     width: 152px;
+    color: ${Color.main};
     @media (max-width: 480px) {
         display: block;
         width: 100%;

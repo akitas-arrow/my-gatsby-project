@@ -9,7 +9,10 @@ export const Color = {
     main: '#2b5f60',
     sheer: 'rgba(221,241,226,0.6)',
     sub: '#ddf1e2',
-    bg: '#f2f8ef'
+    bg: '#f2f8ef',
+    // gradient: 'linear-gradient(90deg, rgba(221,241,226,0.6) 0%, rgba(242,252,254,0.6) 100%)'
+    gradient: 'linear-gradient(90deg, rgba(221,241,226,0.6) 0%, rgba(252,255,214,0.6) 100%)',
+    gradient02: 'linear-gradient(90deg, rgba(43,95,96,0.45) 0%, rgba(221,241,226,0.6) 30%, rgba(252,255,214,0.6) 100%)',
 }
 
 export const BasicTextStyle = css`

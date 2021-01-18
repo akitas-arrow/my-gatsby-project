@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import { MediumTextStyle, Color } from '../shared/style'
+import { Color, BoldTextStyle } from '../shared/style'
 
 function NavLinks() {
     return (
@@ -14,7 +14,7 @@ function NavLinks() {
 }
 
 const NavItem = styled(Link)`
-    ${MediumTextStyle}
+    ${BoldTextStyle}
     color: ${Color.main};
     height: 88px;
     line-height: 88px;
@@ -27,6 +27,9 @@ const NavItem = styled(Link)`
         /* height: 120px; */
         /* line-height: 120px; */
         margin-left: 32px;
+        :hover{
+            background: linear-gradient(transparent 55%, ${Color.sub} 55%, ${Color.sub} 70%, transparent 70%);
+        }
     }
 `
 
