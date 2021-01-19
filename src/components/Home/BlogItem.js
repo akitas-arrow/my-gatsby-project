@@ -20,15 +20,10 @@ const Box = styled(Link)`
     max-width: 1100px;
     text-decoration: none;
     color: ${Color.letter};
-    transition: .3s;
-    transform: scale(1);
     @media (min-width: 768px) {
         flex-direction: row;
         max-width: 608px;
         margin: 0 auto;
-    }
-    :hover {
-        transform: scale(1.1);
     }
 `
 
@@ -43,6 +38,9 @@ const Date = styled.p`
 
 const Name = styled.p`
     ${MediumTextStyle}
+    :hover {
+        background: linear-gradient(transparent 70%, ${Color.sub} 70%);
+    }
 `
 
 export default BlogItem

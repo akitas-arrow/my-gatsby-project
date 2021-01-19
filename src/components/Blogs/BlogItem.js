@@ -29,7 +29,7 @@ const Box = styled(Link)`
       margin-bottom: 80px;
     }
     :hover {
-      background-color:${Color.sheer};
+      background:${Color.sheer};
     }
 `
 

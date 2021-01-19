@@ -24,7 +24,7 @@ function contact() {
               <FontAwesomeIcon icon="phone-alt" color={Color.main}/>
               &emsp;052-412-5166
             </PhoneNumber>
-            <p>平日8:00‐17:00</p>
+            <p>平日8:00ー17:00</p>
           </TextBlock>
         </Container>
       </Bg>
