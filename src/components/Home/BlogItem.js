@@ -20,10 +20,15 @@ const Box = styled(Link)`
     max-width: 1100px;
     text-decoration: none;
     color: ${Color.letter};
+    transition: .3s;
+    transform: scale(1);
     @media (min-width: 768px) {
         flex-direction: row;
         max-width: 608px;
         margin: 0 auto;
+    }
+    :hover {
+        transform: scale(1.1);
     }
 `
 
