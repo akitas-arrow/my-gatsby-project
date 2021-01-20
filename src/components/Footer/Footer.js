@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Color, MediumTextStyle, PhoneNumberStyle } from '../shared/style.js'
 import SNSIconSet from '../shared/SNSIconSet'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Wrapper from '../shared/Wrapper'
 
 function Footer() {
     const data = useStaticQuery(graphql`
@@ -45,17 +46,10 @@ function Footer() {
     )
 }
 
-const Wrapper = styled.div`
-    width: 100%;
-    /* background-color: #FFFBF2; */
-`
-
 const Container = styled.div`
-    /* border-top: 3px dotted ${Color.main}; */
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 112px 0;
     text-align: center;
 `
 
