@@ -84,12 +84,13 @@ const Text = styled.p`
 `
 const ImageBlock = styled.div`
     width: 100%;
-    padding: 48px 0;
+    margin: 48px 0;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     @media (min-width: 768px) {
-        padding: 72px 0;
+        margin: 72px 0;
     }
     @media (min-width: 1024px) {
-        padding: 0;
+        margin: 0;
         width: calc((100% - 40px) / 2);
     }
 `

@@ -14,28 +14,32 @@ function Button({ bg, color, slug, children }) {
 const ButtonContainer = styled(Link)`
     text-decoration: none;
     /* position: absolute; */
-    /* z-index: 1; */
+    z-index: 1;
     margin: 72px auto 0;
     box-sizing: border-box;
     cursor: pointer;
     ${MediumTextStyle}
     display: table;
-    color: ${props => Color[props.color] || Color.main};
+    /* color: ${props => Color[props.color] || Color.main}; */
+    color:${Color.white};
     font-size: 15px;
     height: 56px;
     line-height: 44px;
-    padding: 0px 86px 12px 74px;
-    background-color: ${props => Color[props.bg] || Color.sub};
+    padding: 0px 78px 12px 66px;
+    /* background-color: ${props => Color[props.bg] || Color.sub}; */
+    background: transparent;
+    border: 2px solid ${Color.main};
     position: relative;
     user-select: none;
     transition: all 0.3s;
     ::before {
-        border: 2px solid ${Color.main};
+        box-sizing: border-box;
+        background: ${Color.main};
         display: block;
         content: "";
-        /* z-index: -1; */
+        z-index: -1;
         width: 100%;
-        height: 100%;
+        height: 56px;
         position: absolute;
         top: -6px;
         left: -6px;
@@ -43,11 +47,17 @@ const ButtonContainer = styled(Link)`
     }
     :hover {
         line-height: 56px;
-        padding: 0 80px;
+        padding: 0 72px;
     }
     :hover::before {
         top: 0;
         left: 0;
+    }
+    @media(min-width: 375px) {
+        padding: 0px 86px 12px 74px;
+        :hover {
+            padding: 0 80px;
+        }
     }
 `
 

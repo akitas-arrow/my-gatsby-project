@@ -19,6 +19,7 @@ const Next = ({nextPagePath}) => {
 }
 
 const Box = styled.div`
+  width: 81px;
 `
 
 const Button = styled(Link)`

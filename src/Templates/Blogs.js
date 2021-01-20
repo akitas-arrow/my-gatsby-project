@@ -8,6 +8,7 @@ import styled from 'styled-components'
 import BlogItem from '../components/Blogs/BlogItem'
 import Pagination from '../components/Blogs/Pagination'
 import ContactButton from '../components/shared/ContactButton'
+import SpPagination from '../components/Blogs/SpPagination'
 
 export const query = graphql`
     query($skip: Int!, $limit: Int!) {
@@ -59,6 +60,9 @@ function Blogs({ data, pageContext }) {
                     <PaginationBlock>
                         <Pagination pageContext={pageContext}/>
                     </PaginationBlock>
+                    <SpPaginationBlock>
+                        <SpPagination pageContext={pageContext}/>
+                    </SpPaginationBlock>
                 </Container>
             </BlogsWrapper>
         </Layout>
@@ -79,9 +83,20 @@ const Box = styled.div`
 `
 
 const PaginationBlock = styled.div`
-    /* background-color: pink; */
+    display: none;
+    @media (min-width:768px){
+        display: flex;
+        justify-content: center;
+    }
+`
+
+const SpPaginationBlock = styled.div`
     display: flex;
-    justify-content: center;
+    padding: 0 24px;
+    justify-content: space-between;
+    @media (min-width:768px){
+        display: none;
+    }
 `
 
 export default Blogs

@@ -116,6 +116,7 @@ function about() {
                 </Container>
             </Wrapper>
             <Bg>
+                <Hexagon>
                 <Container>
                     <MenuTitle>
                         ごあいさつ
@@ -138,6 +139,7 @@ function about() {
                         </TextBlock>
                     </Box>
                 </Container>
+                </Hexagon>
             </Bg>
         </Layout>
     )
@@ -146,18 +148,51 @@ function about() {
 const Bg = styled.div`
     z-index: 0;
     width: 100%;
-    padding: 72px 24px;
-    position: relative;
+    padding: 72px 0px;
+    background: ${Color.gradient};
+    overflow: hidden;
     @media (min-width: 1024px) {
-        padding: 120px 24px;
+        padding: 120px 0px;
     }
+`
+
+const Hexagon = styled.div`
+    width: 100%;
+    height: 100%;
+    background: ${Color.white};
+    padding: 0 24px;
+    position: relative;
     ::before {
-        content: "";
+        content: '';
+        width: 0;
+        height: 0;
         position: absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
-        z-index: -1;
-        background:${Color.gradient};
-        transform: skewY(-5deg);
+        top: -72px;
+        left: 0;
+        border-top: 0px solid transparent;
+        border-left: 50vw solid transparent;
+        border-bottom: 72px solid ${Color.white};
+        border-right: 50vw solid transparent;
+        @media (min-width: 1024px) {
+            top: -120px;
+            border-bottom: 120px solid ${Color.white};
+        }
+    }
+    ::after {
+        content: '';
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: -72px;
+        left: 0;
+        border-top: 72px solid ${Color.white};
+        border-left: 50vw solid transparent;
+        border-bottom: 0px solid transparent;
+        border-right: 50vw solid transparent;
+        @media (min-width: 1024px) {
+            bottom: -120px;
+            border-top: 120px solid ${Color.white};
+        }
     }
 `
 
