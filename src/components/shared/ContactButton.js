@@ -1,43 +1,53 @@
 import React from 'react'
-import {Color} from './style'
+import {Color, BoldTextStyle} from './style'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {Link} from 'gatsby'
 import styled from 'styled-components'
 
 function ContactButton() {
     return (
-        <Button to='/contact'>
-            <div>
+        <Box to='/contact'>
+                <SpText>Contact</SpText>
+            <Button>
                 <Text>お問い合わせ</Text>
                 <Icon icon={['far', 'envelope']} color={Color.white}/>
-            </div>
-        </Button>
+            </Button>
+        </Box>
     )
 }
 
-const Button = styled(Link)`
+const Box = styled(Link)`
     position: relative;
     position: fixed;
-    display: block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    bottom: 16px;
-    right: 16px;
-    width: 80px;
-    height: 80px;
+    padding: 16px;
+    bottom: 0;
+    right: 0;
+    z-index:10;
+    text-decoration: none;
+`
+
+const Button = styled.div`
+    width: 72px;
+    height: 72px;
     background-color: ${Color.main};
     border-radius: 50%;
-    z-index:10;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    text-align: center;
-    text-decoration: none;
     @media (min-width: 1024px) {
-        bottom: 32px;
-        right: 32px;
-        width: 120px;
-        height: 120px;
+        width: 112px;
+        height: 112px;
+    }
+`
+const SpText = styled.p`
+    ${BoldTextStyle}
+    font-size: 14px;
+    text-align: center;
+    color: ${Color.main};
+    @media (min-width: 1024px) {
+        display: none;
     }
 `
 
@@ -45,13 +55,16 @@ const Text = styled.p`
     display: none;
     @media (min-width: 1024px) {
         display: block;
-        position: static;
+        ${BoldTextStyle}
+        font-size: 14px;
+        text-align: center;
         color: ${Color.white};
     }
+
 `
 
 const Icon = styled(FontAwesomeIcon)`
-    font-size: 40px;
+    font-size: 24px;
 `
 
 export default ContactButton
