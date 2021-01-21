@@ -9,6 +9,7 @@ import BlogItem from '../components/Blogs/BlogItem'
 import Pagination from '../components/Blogs/Pagination'
 import ContactButton from '../components/shared/ContactButton'
 import SpPagination from '../components/Blogs/SpPagination'
+import SEO from '../components/shared/seo'
 
 export const query = graphql`
     query($skip: Int!, $limit: Int!) {
@@ -34,6 +35,10 @@ export const query = graphql`
 function Blogs({ data, pageContext }) {
     return (
         <Layout>
+            <SEO
+                title={`お知らせ ページ${pageContext.humanPageNumber}`}
+                description="名古屋市にある家庭用から業務用の洗剤などの日用品や雑貨の卸問屋【トモエ屋】のお知らせページです。洗剤やトイレットペーパー、シャンプーなど日用品や雑貨を取り扱っております。"
+            />
             <ContactButton />
             <Wrapper paddingBottom='0'>
                 <Container>

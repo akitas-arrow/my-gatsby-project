@@ -30,7 +30,7 @@ function ServiceItem({src, title, description, type}) {
 
     return (
         <Container>
-            <Img fluid={image.node.childImageSharp.fluid}/>
+            <Image fluid={image.node.childImageSharp.fluid}/>
             <Title type={type}>{title}</Title>
             <p>{description}</p>
         </Container>
@@ -47,6 +47,15 @@ const Container = styled.div`
     }
     @media (min-width: 1024px) {
         width: calc((100% - 80px) / 3);
+    }
+`
+
+const Image = styled(Img)`
+    margin: 0 auto;
+    max-width:300px;
+    width: 90%;
+    @media (min-width:768px) {
+        max-width: none;
     }
 `
 

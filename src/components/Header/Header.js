@@ -48,12 +48,12 @@ const Wrapper = styled.header`
     top: 0;
     left: 0;
     width: 100%;
-    height: 88px;
+    height: 72px;
     display: flex;
     justify-content: space-between;
     padding: 0 32px;
     @media (min-width: 1025px) {
-        /* height: 120px; */
+        height: 88px;
         background-color: ${Color.white};
     }
 `

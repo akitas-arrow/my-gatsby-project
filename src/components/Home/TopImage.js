@@ -36,12 +36,12 @@ const Box = styled.div`
   position: relative;
   height: 100vh;
   width: 100%;
-  padding-top: 88px;
+  /* padding-top: 88px; */
 `
 
 const Image = styled(Img)`
   width: 100%;
-  height: calc(100vh - 88px);
+  height: 100vh;
   object-fit: cover;
   object-position: 50% 50%;
 `

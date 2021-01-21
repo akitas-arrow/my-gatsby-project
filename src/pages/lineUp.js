@@ -6,6 +6,7 @@ import Container from '../components/shared/Container'
 import PageTitle from '../components/shared/TextStyle/PageTitle'
 import LineUpItem from '../components/LineUp/LineUpItem'
 import ContactButton from '../components/shared/ContactButton'
+import SEO from '../components/shared/seo'
 
 function lineUp() {
     const lineUpItems = [
@@ -42,6 +43,10 @@ function lineUp() {
     ]
     return (
         <Layout>
+            <SEO
+                title="取扱商品"
+                description="名古屋市にある家庭用から業務用の洗剤などの日用品や雑貨の卸問屋【トモエ屋】の取扱商品ページです。洗剤やトイレットペーパー、シャンプーなど日用品や雑貨を取り扱っております。"
+            />
             <ContactButton />
             <Wrapper>
                 <Container>

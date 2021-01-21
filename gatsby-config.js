@@ -3,9 +3,10 @@ require('dotenv').config({
 });
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: "名古屋市の家庭用・業務用の日用品の卸問屋【トモエ屋】",
+    description: "トモエ屋は名古屋市中村区を拠点に洗剤、トイレットペーパー、ポリ袋など家庭用から業務用までの日用品を販売する卸問屋です。毎日必要な消耗品や日常使用する備品をお値打ち、迅速にお届けいたします。",
+    // image: "/XXX.jpg",
+    // url: "https://www.reffect.co.jp",
   },
   flags: {
   PRESERVE_WEBPACK_CACHE: true,

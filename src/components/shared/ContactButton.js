@@ -65,6 +65,9 @@ const Text = styled.p`
 
 const Icon = styled(FontAwesomeIcon)`
     font-size: 24px;
+    @media (min-width: 1024px) {
+        font-size: 32px;
+    }
 `
 
 export default ContactButton

@@ -20,16 +20,16 @@ function Logo() {
 
 const LogoWrapper = styled(Link) `
     z-index: 3;
-    padding: 26.5px 0;
+    padding: 20px 0;
     @media (min-width: 1025px) {
-        /* padding: 37.5px 0; */
+        padding: 26.5px 0;
     }
 `
 
 const LogoImage = styled.img`
-    height:35px;
+    height: 32px;
     @media (min-width: 1025px) {
-        /* height:45px; */
+        height:35px;
     }
 `
 

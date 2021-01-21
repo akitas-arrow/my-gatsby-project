@@ -7,6 +7,7 @@ import styled from 'styled-components'
 import {MediumTextStyle,BoldTextStyle, Color} from '../components/shared/style'
 import Button from '../components/shared/Button'
 import ContactButton from '../components/shared/ContactButton'
+import SEO from '../components/shared/seo'
 
 export const query = graphql`
     query($slug : String!) {
@@ -24,6 +25,10 @@ export const query = graphql`
 function BlogDetail({ data }) {
     return (
         <Layout>
+            <SEO
+                title={data.microcmsNews.title}
+                description="名古屋市にある家庭用から業務用の洗剤などの日用品や雑貨の卸問屋【トモエ屋】のお知らせページです。洗剤やトイレットペーパー、シャンプーなど日用品や雑貨を取り扱っております。"
+            />
             <ContactButton />
             <Wrapper>
                 <TitleBlock>

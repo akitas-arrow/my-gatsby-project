@@ -6,11 +6,13 @@ import About from "../components/Home/About"
 import LineUp from "../components/Home/LineUp"
 import ContactButton from "../components/shared/ContactButton"
 import TopImage from "../components/Home/TopImage"
+import SEO from '../components/shared/seo'
 
 const IndexPage = () => {
 
   return (
     <Layout>
+      <SEO/>
       <ContactButton />
       <TopImage />
       <News />

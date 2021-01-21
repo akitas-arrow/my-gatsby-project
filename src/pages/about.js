@@ -8,6 +8,7 @@ import TableRow from '../components/About/TableRow'
 import PageTitle from '../components/shared/TextStyle/PageTitle'
 import ProfileImage from '../components/About/ProfileImage'
 import ContactButton from '../components/shared/ContactButton'
+import SEO from '../components/shared/seo'
 
 function about() {
     const data1 = [
@@ -74,6 +75,10 @@ function about() {
 
     return (
         <Layout>
+            <SEO
+                title="会社案内"
+                description="名古屋市にある家庭用から業務用の洗剤などの日用品や雑貨の卸問屋【トモエ屋】についてのご紹介ページです。毎日必要な消耗品や日常使用する備品をお値打ち、迅速にお届けいたします。ぜひ弊社を日用品の調達先パートナーとしてご用命ください。"
+            />
             <ContactButton />
             <Wrapper paddingBottom='0'>
                 <Container>
