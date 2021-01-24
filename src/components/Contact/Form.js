@@ -26,7 +26,7 @@ function Form() {
             フリガナ<Required>必須</Required>
             <Input
               type='text' name='furigana' id='furigana' required
-              // pattern='^[ァ-ンヴー|　| ]+$ , [\u30A1-\u30FF]*'
+              pattern='^[ァ-ヶー　]+$'
             />
             <Ex>例）トモエヤ　ハナコ</Ex>
           </Label>
