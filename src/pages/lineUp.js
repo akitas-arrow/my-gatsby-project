@@ -88,7 +88,7 @@ function lineUp() {
 }
 
 const Box = styled.div`
-
+    margin-bottom: 72px;
 `
 
 export default lineUp

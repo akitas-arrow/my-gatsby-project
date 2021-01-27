@@ -243,7 +243,7 @@ const Tables = styled.div`
 const Table = styled.table`
     margin: 0 auto;
     border: none;
-    border-bottom: 1px solid ${Color.sub};
+    border-bottom: 1px solid ${Color.bg};
     border-collapse: collapse;
     width: 100%;
     max-width: 608px;

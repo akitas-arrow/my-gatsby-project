@@ -51,6 +51,7 @@ function About() {
 const Wrapper = styled.div`
     position: relative;
     padding: 72px 24px;
+    margin-bottom: 72px;
     @media (min-width: 768px) {
     padding: 120px 24px;
     }

@@ -29,7 +29,7 @@ const NavItem = styled(Link)`
         /* line-height: 120px; */
         margin-left: 32px;
         :hover{
-            background: linear-gradient(transparent 55%, ${Color.sub} 55%, ${Color.sub} 70%, transparent 70%);
+            background: linear-gradient(transparent 55%, ${Color.bg} 55%, ${Color.bg} 70%, transparent 70%);
         }
     }
 `

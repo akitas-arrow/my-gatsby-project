@@ -16,31 +16,35 @@ function Footer() {
     `)
 
     return (
-        <Wrapper>
+        <Wrapper bg={Color.sheer}>
             <Container>
-                <Logo src={data.file.publicURL} alt='有限会社トモエ屋' />
-                <AddressBlock>
-                    〒453-0063 <br/>
-                    <span>&emsp;&emsp;&emsp;&emsp;</span>
-                    名古屋市中村区東宿町2丁目112番地
-                </AddressBlock>
-                <PhoneNumber>
-                    <FontAwesomeIcon icon="phone-alt" color={Color.letter}/>
-                    &emsp;052-412-5166
-                </PhoneNumber>
-                <PhoneNumber>
-                    <FontAwesomeIcon icon="fax" color={Color.letter}/>
-                    &emsp;052-412-5166
-                </PhoneNumber>
-                <TextBlock>
-                    <span>SNSでも情報発信しています。</span>
-                    <span>是非ご覧ください！</span>
-                </TextBlock>
-                <Icons>
-                    <SNSIconSet
-                        color='letter'
-                    />
-                </Icons>
+                <Box>
+                    <Logo src={data.file.publicURL} alt='有限会社トモエ屋' />
+                    <AddressBlock>
+                        〒453-0063 <br/>
+                        名古屋市中村区東宿町2丁目112番地
+                    </AddressBlock>
+                </Box>
+                <Box>
+                    <PhoneNumber>
+                        <FontAwesomeIcon icon="phone-alt" color={Color.sub}/>
+                        &emsp;052-412-5166
+                    </PhoneNumber>
+                    <PhoneNumber>
+                        <FontAwesomeIcon icon="fax" color={Color.sub}/>
+                        &emsp;052-412-5166
+                    </PhoneNumber>
+                </Box>
+                <Box>
+                    <TextBlock>
+                        <span>SNSでも情報発信しています。<br/>是非ご覧ください！</span>
+                    </TextBlock>
+                    <Icons>
+                        <SNSIconSet
+                            color='sub'
+                        />
+                    </Icons>
+                </Box>
             </Container>
         </Wrapper>
     )
@@ -51,6 +55,19 @@ const Container = styled.div`
     max-width: 1100px;
     margin: 0 auto;
     text-align: center;
+    @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
+`
+
+const Box = styled.div`
+    /* background-color: pink; */
+    width: 100%;
+    @media (min-width: 768px) {
+        width: calc((100% - 80px) / 3);
+    }
 `
 
 const Logo = styled.img`
@@ -58,37 +75,36 @@ const Logo = styled.img`
     margin: 0 auto;
     @media (min-width: 768px) {
         height:56px;
+        margin: 0;
     }
 `
 
 const AddressBlock = styled.p`
     ${MediumTextStyle}
+    color: ${Color.sub};
     padding: 48px 0 40px 0;
     display:inline-block;
     text-align: left;
-    & br {
-        @media (min-width: 768px) {
-            display: none;
-        }
-    }
-    & span {
-        display: none;
-        @media (min-width: 768px) {
-            display: inline;
-        }
+    @media (min-width: 768px) {
+        padding: 24px 0 0 0;
     }
 `
 
 const PhoneNumber = styled.p`
     ${PhoneNumberStyle}
+    color:${Color.sub};
 `
 
 const TextBlock = styled.p`
     ${MediumTextStyle}
     padding-top: 48px;
     font-size: 15px;
+    color: ${Color.sub};
     & span {
         display: inline-block;
+    }
+    @media (min-width:768px) {
+        padding-top: 0;
     }
 `
 
