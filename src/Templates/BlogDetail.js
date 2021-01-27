@@ -61,7 +61,6 @@ const TitleBlock = styled.div`
 
 const Title = styled.h2`
     ${BoldTextStyle}
-    color: ${Color.main};
     font-size: 22px;
     @media (min-width: 768px) {
         font-size: 30px;
@@ -70,7 +69,6 @@ const Title = styled.h2`
 
 const Date = styled.p`
     ${MediumTextStyle}
-    color: ${Color.main};
 `
 
 const TextBox = styled.div`

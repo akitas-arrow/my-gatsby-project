@@ -106,7 +106,6 @@ const Title = styled.p`
   align-items: center;
   justify-content: center;
   ${BoldTextStyle}
-  color: ${Color.main};
   font-size: 18px;
   @media (min-width: 768px) {
     font-size: 20px;
@@ -118,11 +117,10 @@ const InputItem = styled.div`
 `
 const Label = styled.label`
   ${BoldTextStyle}
-  color: ${Color.main};
 `
 
 const Required = styled.span`
-  background: ${Color.sub};
+  background: ${Color.bg};
   padding: 0 8px;
   margin-left: 16px;
 `
@@ -135,7 +133,7 @@ const Input = styled.input`
   border: 2px solid #ddd;
   box-sizing: border-box;
   :focus {
-    border: 2px solid ${Color.main};
+    border: 2px solid ${Color.sub};
     outline: 0;
   }
 `
@@ -155,7 +153,7 @@ const Textarea = styled.textarea`
   border: 2px solid #ddd;
   box-sizing: border-box;
   :focus {
-    border: 2px solid ${Color.main};
+    border: 2px solid ${Color.sub};
     outline: 0;
   }
 `
@@ -169,12 +167,11 @@ const Button = styled.button`
     cursor: pointer;
     ${MediumTextStyle}
     display: table;
-    color: ${Color.main};
     font-size: 15px;
     height: 56px;
     line-height: 44px;
     padding: 0px 86px 12px 74px;
-    background-color: ${Color.sub};
+    background-color: ${Color.bg};
     border: none;
     outline: none;
     position: relative;

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color, MediumTextStyle } from '../components/shared/style'
+import { Color, BoldTextStyle } from '../components/shared/style'
 import Layout from '../components/Layout'
 import Wrapper from '../components/shared/Wrapper'
 import Container from '../components/shared/Container'
@@ -205,9 +205,8 @@ const MenuTitle = styled.h4`
     /* padding-top: 72px; */
     padding-bottom: 48px;
     text-align: center;
-    ${MediumTextStyle}
+    ${BoldTextStyle}
     font-size: 18px;
-    color: ${Color.main};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -244,7 +243,7 @@ const Tables = styled.div`
 const Table = styled.table`
     margin: 0 auto;
     border: none;
-    border-bottom: 1px solid ${Color.main};
+    border-bottom: 1px solid ${Color.sub};
     border-collapse: collapse;
     width: 100%;
     max-width: 608px;

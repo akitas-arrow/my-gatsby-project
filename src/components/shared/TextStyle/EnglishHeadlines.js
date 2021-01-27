@@ -15,7 +15,7 @@ const HeadingText = styled.h2`
     ${BasicTextStyle}
     font-family: "Roboto Mono";
     font-weight: 700;
-    color: ${Color.sub};
+    color: ${Color.bg};
     font-size: 56px;
     line-height: 1em;
     text-align: ${props => props.type || 'left'};

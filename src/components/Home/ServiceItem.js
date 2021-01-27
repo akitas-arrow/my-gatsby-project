@@ -2,7 +2,7 @@ import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import styled from 'styled-components'
-import { BoldTextStyle, Color } from '../shared/style'
+import { BoldTextStyle, MediumTextStyle, Color } from '../shared/style'
 
 function ServiceItem({src, title, description, type}) {
     const data = useStaticQuery(graphql`
@@ -32,7 +32,7 @@ function ServiceItem({src, title, description, type}) {
         <Container>
             <Image fluid={image.node.childImageSharp.fluid}/>
             <Title type={type}>{title}</Title>
-            <p>{description}</p>
+            <p className="description">{description}</p>
         </Container>
     )
 }
@@ -48,6 +48,9 @@ const Container = styled.div`
     @media (min-width: 1024px) {
         width: calc((100% - 80px) / 3);
     }
+    .description {
+        ${MediumTextStyle}
+    }
 `
 
 const Image = styled(Img)`
@@ -62,7 +65,7 @@ const Image = styled(Img)`
 const Title = styled.p`
     ${BoldTextStyle}
     font-size: 18px;
-    border-bottom: 3px dotted ${Color.main};
+    border-bottom: 3px dotted ${Color.sub};
     @media (min-width: 1024px) {
         font-size: 22px;
     }

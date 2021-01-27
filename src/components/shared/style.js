@@ -6,13 +6,13 @@ import "fontsource-noto-sans-jp/700.css"
 export const Color = {
     letter: '#333333',
     white: '#fff',
-    main: '#2b5f60',
-    sheer: 'rgba(221,241,226,0.6)',
-    sub: '#ddf1e2',
-    bg: '#f2f8ef',
-    // gradient: 'linear-gradient(90deg, rgba(221,241,226,0.6) 0%, rgba(242,252,254,0.6) 100%)'
-    gradient: 'linear-gradient(90deg, rgba(221,241,226,0.6) 0%, rgba(252,255,214,0.6) 100%)',
-    gradient02: 'linear-gradient(90deg, rgba(43,95,96,0.45) 0%, rgba(221,241,226,0.6) 30%, rgba(252,255,214,0.6) 100%)',
+    main: '#24504a',
+    sub: '#3db695',
+    bg: '#c5ede3',
+    sheer: 'rgba(197, 237, 227, 0.5)',
+    // gradient: 'linear-gradient(90deg, rgba(221,241,226,1) 0%, rgba(242,252,254,1) 100%)',
+    gradient: 'linear-gradient(135deg, rgba(197,237,227,1) 0%, rgba(242,252,254,1) 100%)',
+    // gradient: 'linear-gradient(135deg, rgba(197,237,227,0.5) 50%, rgba(61,182,149,0.4) 100%)'
 }
 
 export const BasicTextStyle = css`
@@ -21,7 +21,7 @@ export const BasicTextStyle = css`
     line-height: 2em;
     letter-spacing: 0.05em;
     font-weight: 400;
-    color: ${Color.letter};
+    color: ${Color.main};
 `
 
 export const MediumTextStyle = css`
@@ -36,7 +36,7 @@ export const BoldTextStyle = css`
 
 export const PhoneNumberStyle = css`
     ${BasicTextStyle}
-    color: ${Color.letter};
+    color: ${Color.main};
     font-size: 22px;
     font-weight: 500;
 `

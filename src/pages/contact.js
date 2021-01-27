@@ -50,7 +50,6 @@ const MenuTitle = styled.p`
 `
 const PhoneNumber = styled.p`
     ${PhoneNumberStyle}
-    color: ${Color.main};
     @media (min-width:768px) {
       font-size: 26px;
     }

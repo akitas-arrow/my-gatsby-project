@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BoldTextStyle, Color } from '../shared/style'
+import { BoldTextStyle, MediumTextStyle, Color } from '../shared/style'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -104,7 +104,6 @@ const TextBlock = styled.div`
 const Title = styled.h4`
     padding: 24px 0;
     ${BoldTextStyle}
-    color: ${Color.main};
     font-size: 20px;
     @media (min-width: 768px) {
         padding-top: 0;
@@ -119,11 +118,13 @@ const ItemHeader = styled.p`
 `
 
 const Text = styled.p`
+    ${MediumTextStyle}
     padding-bottom: 32px;
     border-bottom: 3px dotted ${Color.main};
 `
 
 const Item = styled.p`
+    ${MediumTextStyle}
     padding-top: 16px;
 `
 export default LineUpItem

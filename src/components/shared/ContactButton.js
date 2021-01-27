@@ -29,7 +29,7 @@ const Box = styled(Link)`
 const Button = styled.div`
     width: 72px;
     height: 72px;
-    background-color: ${Color.main};
+    background-color: ${Color.sub};
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -45,7 +45,7 @@ const SpText = styled.p`
     ${BoldTextStyle}
     font-size: 14px;
     text-align: center;
-    color: ${Color.main};
+    color: ${Color.sub};
     @media (min-width: 1024px) {
         display: none;
     }

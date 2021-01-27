@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BasicTextStyle, Color } from '../shared/style'
+import { BasicTextStyle,MediumTextStyle, Color } from '../shared/style'
 import Container from '../shared/Container'
 import EnglishHeadlines from '../shared/TextStyle/EnglishHeadlines'
 import JapaneseHeadlines from '../shared/TextStyle/JapaneseHeadlines'
@@ -80,7 +80,7 @@ const TextBlock = styled.div`
 `
 
 const Text = styled.p`
-    ${BasicTextStyle}
+    ${MediumTextStyle}
 `
 const ImageBlock = styled.div`
     width: 100%;
@@ -98,7 +98,7 @@ const ImageBlock = styled.div`
 const Bg = styled.div`
         position: absolute;
         bottom: 0;
-        background: ${Color.gradient};
+        background: ${Color.bg};
         right: 0;
         z-index: -1;
         height: 60%;

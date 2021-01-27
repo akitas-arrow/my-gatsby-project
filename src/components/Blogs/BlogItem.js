@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
-import {BasicTextStyle,MediumTextStyle, Color} from '../shared/style'
+import {MediumTextStyle, Color} from '../shared/style'
 
 function BlogItem({title, link, url, date}) {
   return (
@@ -34,13 +34,11 @@ const Box = styled(Link)`
 `
 
 const Date = styled.p`
-  ${BasicTextStyle}
-  color: ${Color.main};
+  ${MediumTextStyle}
 `
 
 const Title = styled.p`
   ${MediumTextStyle}
-  color: ${Color.main};
   @media (min-width: 768px) {
       font-size: 18px;
     }

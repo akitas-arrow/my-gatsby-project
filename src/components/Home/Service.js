@@ -62,14 +62,14 @@ const Title = styled.h3`
     align-items: center;
     text-align: center;
     ${BoldTextStyle}
-    color: ${Color.main};
     font-size: 16px;
+    color:${Color.sub};
     ::before,
     ::after {
         content: '';
         width: 40px;
         height: 2px;
-        background-color:${Color.main};
+        background-color:${Color.bg};
     }
     ::before {
         transform: rotate(68deg);

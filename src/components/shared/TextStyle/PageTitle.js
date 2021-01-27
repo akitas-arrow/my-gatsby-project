@@ -26,7 +26,7 @@ const Box = styled.div`
 
 const JpTitle = styled.h2`
     ${BoldTextStyle}
-    color: ${Color.main};
+    color: ${Color.sub};
     font-size: 14px;
     line-height: 1.5em;
     @media (min-width: 768px) {
@@ -38,7 +38,7 @@ const EngTitle = styled.p`
     ${BasicTextStyle}
     font-family: "Roboto Mono";
     font-weight: 700;
-    color: ${Color.main};
+    color: ${Color.sub};
     line-height: 1.5em;
     font-size: 26px;
     @media(min-width: 768px) {

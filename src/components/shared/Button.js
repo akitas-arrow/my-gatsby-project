@@ -20,21 +20,22 @@ const ButtonContainer = styled(Link)`
     cursor: pointer;
     ${MediumTextStyle}
     display: table;
-    /* color: ${props => Color[props.color] || Color.main}; */
-    color:${Color.white};
+    color: ${props => Color[props.color] || Color.main};
+    /* color:${Color.white}; */
     font-size: 15px;
     height: 56px;
     line-height: 44px;
     padding: 0px 78px 12px 66px;
-    /* background-color: ${props => Color[props.bg] || Color.sub}; */
-    background: transparent;
-    border: 2px solid ${Color.main};
+    background-color: ${props => Color[props.bg] || Color.bg};
+    /* background: transparent; */
+    /* border: 2px solid ${Color.main}; */
     position: relative;
     user-select: none;
     transition: all 0.3s;
     ::before {
         box-sizing: border-box;
-        background: ${Color.main};
+        /* background: ${Color.main}; */
+        border: 2px solid ${Color.main};
         display: block;
         content: "";
         z-index: -1;

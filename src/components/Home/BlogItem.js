@@ -7,7 +7,7 @@ function BlogItem({title, date, link}) {
     return (
         <Box to={`/${link}`}>
             <Date>{date}</Date>
-            <Name>{title}</Name>
+            <Name className="name">{title}</Name>
         </Box>
     )
 }
@@ -25,11 +25,15 @@ const Box = styled(Link)`
         max-width: 608px;
         margin: 0 auto;
     }
+    :hover {
+        .name {
+            background: linear-gradient(transparent 70%, ${Color.bg} 70%);
+        }
+    }
 `
 
 const Date = styled.p`
     padding-bottom: 8px;
-    /* background-color: orange; */
     @media (min-width: 768px) {
         padding-bottom: 0;
         padding-right: 112px;
@@ -38,9 +42,9 @@ const Date = styled.p`
 
 const Name = styled.p`
     ${MediumTextStyle}
-    :hover {
-        background: linear-gradient(transparent 70%, ${Color.sub} 70%);
-    }
+    /* :hover {
+        background: linear-gradient(transparent 70%, ${Color.bg} 70%);
+    } */
 `
 
 export default BlogItem
