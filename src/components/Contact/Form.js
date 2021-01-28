@@ -11,7 +11,14 @@ function Form() {
         <FontAwesomeIcon icon={['far', 'envelope']} color={Color.main} size='2x'/>
         &emsp;お問い合わせフォーム
       </Title>
-      <FormBlock>
+      <FormBlock
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+        <input type="hidden" name="bot-field" />
         <InputItem>
           <Label>
             お名前<Required>必須</Required>

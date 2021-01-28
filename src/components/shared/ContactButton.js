@@ -7,7 +7,7 @@ import styled from 'styled-components'
 function ContactButton() {
     return (
         <Box to='/contact'>
-                <SpText>Contact</SpText>
+                <SpText>お問い合わせ</SpText>
             <Button>
                 <Text>お問い合わせ</Text>
                 <Icon icon={['far', 'envelope']} color={Color.white}/>
@@ -36,6 +36,7 @@ const Button = styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin: 0 auto;
     @media (min-width: 1024px) {
         width: 112px;
         height: 112px;
@@ -43,7 +44,7 @@ const Button = styled.div`
 `
 const SpText = styled.p`
     ${BoldTextStyle}
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
     color: ${Color.sub};
     @media (min-width: 1024px) {
