@@ -84,7 +84,7 @@ const Text = styled.p`
 const ImageBlock = styled.div`
     width: 100%;
     margin: 48px 0;
-    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     @media (min-width: 768px) {
         margin: 72px 0;
     }

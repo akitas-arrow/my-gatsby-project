@@ -34,6 +34,7 @@ const Box = styled(Link)`
 
 const Date = styled.p`
     padding-bottom: 8px;
+    color:${Color.main};
     @media (min-width: 768px) {
         padding-bottom: 0;
         padding-right: 112px;

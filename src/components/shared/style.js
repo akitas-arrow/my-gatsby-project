@@ -4,7 +4,7 @@ import "fontsource-noto-sans-jp/500.css"
 import "fontsource-noto-sans-jp/700.css"
 
 export const Color = {
-    letter: '#333333',
+    // letter: '#333333',
     white: '#fff',
     main: '#24504a',
     sub: '#3db695',
