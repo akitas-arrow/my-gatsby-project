@@ -8,27 +8,27 @@ import Container from "../shared/Container"
 function Service() {
     const items = [
         {
-            src: 'service001.png',
-            title: 'レストラン・給食センター',
+            src: 'service01.png',
+            title: 'レストラン・カフェ',
             description: '万全の衛生対策で楽しく美味しい食を演出',
         },
         {
-            src: 'service002.png',
-            title: 'カフェ・パティスリー',
+            src: 'service02.png',
+            title: '給食センター',
             description: '万全の衛生対策で楽しく美味しい食を演出',
         },
         {
-            src: 'service003.png',
+            src: 'service03.png',
             title: 'ホテル・結婚式場',
             description: '万全の衛生対策で楽しく美味しい食を演出',
         },
         {
-            src: 'service004.png',
+            src: 'service04.png',
             title: '幼稚園・学校',
             description: '万全の衛生対策で楽しく美味しい食を演出',
         },
         {
-            src: 'service005.png',
+            src: 'service05.png',
             title: '病院・介護施設',
             description: '万全の衛生対策で楽しく美味しい食を演出',
         },
