@@ -8,7 +8,7 @@ function TopImage() {
 
   const data = useStaticQuery(graphql`
     query {
-      TopImage01:file(relativePath:{eq:"topimg04.png"}) {
+      TopImage01:file(relativePath:{eq:"topimg08.png"}) {
         childImageSharp {
           fluid(maxWidth:2000) {
             ...GatsbyImageSharpFluid
@@ -44,7 +44,7 @@ const Box = styled.div`
 
 const Title = styled.h1`
   ${BoldTextStyle}
-  color: ${Color.white};
+  color: ${Color.main};
   position: absolute;
   width: 80%;
   top: 50%;
