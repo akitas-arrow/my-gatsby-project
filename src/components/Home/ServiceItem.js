@@ -12,7 +12,7 @@ function ServiceItem({src, title, description, type}) {
                     node {
                         relativePath
                         childImageSharp {
-                            fluid(maxWidth: 800) {
+                            fluid(maxWidth: 600) {
                                 ...GatsbyImageSharpFluid
                             }
                         }

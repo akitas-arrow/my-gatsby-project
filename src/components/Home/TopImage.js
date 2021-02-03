@@ -8,7 +8,7 @@ function TopImage() {
 
   const data = useStaticQuery(graphql`
     query {
-      TopImage01:file(relativePath:{eq:"topimg08.png"}) {
+      TopImage01:file(relativePath:{eq:"topimg06.png"}) {
         childImageSharp {
           fluid(maxWidth:2000) {
             ...GatsbyImageSharpFluid
