@@ -52,9 +52,10 @@ const Wrapper = styled.header`
     display: flex;
     justify-content: space-between;
     padding: 0 32px;
+    background-color: rgba(255, 255, 255,0.7);
     @media (min-width: 1025px) {
         height: 88px;
-        background-color: ${Color.white};
+        /* background-color: ${Color.white}; */
     }
 `
 
