@@ -9,28 +9,28 @@ function Service() {
     const items = [
         {
             src: 'service01.png',
-            title: 'レストラン・カフェ',
+            title: 'レストラン・カフェ・居酒屋',
             description: '万全の衛生対策で楽しく美味しい食を演出',
         },
         {
             src: 'service02.png',
-            title: '給食センター',
-            description: '万全の衛生対策で楽しく美味しい食を演出',
+            title: '給食センター・仕出し',
+            description: '楽しみのランチやお弁当は徹底した衛生管理から',
         },
         {
             src: 'service03.png',
             title: 'ホテル・結婚式場',
-            description: '万全の衛生対策で楽しく美味しい食を演出',
+            description: '晴れの場もくつろぎの時間も清潔感でおもてなし',
         },
         {
             src: 'service04.png',
-            title: '幼稚園・学校',
-            description: '万全の衛生対策で楽しく美味しい食を演出',
+            title: '学校・幼稚園',
+            description: '健やかに過ごせる安心安全な環境づくり',
         },
         {
             src: 'service05.png',
             title: '病院・介護施設',
-            description: '万全の衛生対策で楽しく美味しい食を演出',
+            description: '清潔で快適な環境づくりをお手伝い',
         },
     ]
     return (
