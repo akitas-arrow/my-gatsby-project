@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BasicTextStyle,MediumTextStyle, Color } from '../shared/style'
+import { MediumTextStyle, Color } from '../shared/style'
 import Container from '../shared/Container'
 import EnglishHeadlines from '../shared/TextStyle/EnglishHeadlines'
 import JapaneseHeadlines from '../shared/TextStyle/JapaneseHeadlines'
@@ -34,8 +34,7 @@ function LineUp() {
                     <Img fluid={data.file.childImageSharp.fluid}/>
                 </ImageBlock>
                 <TextBlock>
-                    <Text>
-                        ○○や○○など、各メーカーの商品を取り揃えております。テキストテキストテキストテキストテキストほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+                    <Text>一般家庭用から業務用まで日常使用する雑貨や消耗品を幅広く販売しています。<br/>お探しの物がございましたらお気軽にお問い合わせください。小ロットから迅速にご対応いたします。
                     </Text>
                     <Button slug='/lineUp' bg='white' color='main'>
                         取扱商品を見る
@@ -53,7 +52,7 @@ const Wrapper = styled.div`
     padding: 72px 24px;
     margin-bottom: 72px;
     @media (min-width: 768px) {
-    padding: 120px 24px;
+    padding: 120px 24px 72px;
     margin-bottom: 120px;
     }
 `
@@ -68,7 +67,6 @@ const Box = styled.div`
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-end;
-        /* align-items: center; */
     }
 `
 
@@ -91,6 +89,7 @@ const ImageBlock = styled.div`
     }
     @media (min-width: 1024px) {
         margin: 0;
+        margin-bottom: 40px;
         width: calc((100% - 40px) / 2);
     }
 `

@@ -30,7 +30,7 @@ const TableHeader = styled.th`
         display: block;
         width: 100%;
         border-bottom: none;
-        padding-top: 16px;
+        padding-top: 8px;
     }
 `
 
@@ -44,6 +44,7 @@ const TableData = styled.td`
         text-align: center;
         & ul {
             padding: 0;
+            margin: 0 0 8px;
         }
     }
 `

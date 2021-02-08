@@ -1,5 +1,7 @@
 import { keyframes } from 'styled-components';
 
-export const InView ={
-  
-}
+export const BottomIn = keyframes`
+  0% {
+    /* transform: translateY(-) */
+  }
+`

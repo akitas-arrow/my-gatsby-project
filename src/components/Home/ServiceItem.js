@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import styled from 'styled-components'
 import { BoldTextStyle, MediumTextStyle, Color } from '../shared/style'
 
-function ServiceItem({src, title, description, type}) {
+function ServiceItem({src, title, descriptions, type}) {
     const data = useStaticQuery(graphql`
         query {
             allFile {
@@ -32,7 +32,11 @@ function ServiceItem({src, title, description, type}) {
         <Container>
             <Image fluid={image.node.childImageSharp.fluid}/>
             <Title type={type}>{title}</Title>
-            <p className="description">{description}</p>
+            {
+                descriptions.map((description, index) => {
+                    return <p key={index} className="description">{description}</p>
+                })
+            }
         </Container>
     )
 }

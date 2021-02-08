@@ -5,7 +5,6 @@ import Service from "../components/Home/Service"
 import About from "../components/Home/About"
 import LineUp from "../components/Home/LineUp"
 import ContactButton from "../components/shared/ContactButton"
-// import TopImage from "../components/Home/TopImage"
 import StyledMainImage from "../components/Home/MainImage"
 import SEO from '../components/shared/seo'
 
@@ -16,7 +15,6 @@ const IndexPage = () => {
       <SEO/>
       <ContactButton />
       <StyledMainImage />
-      {/* <TopImage /> */}
       <News />
       <Service />
       <LineUp/>

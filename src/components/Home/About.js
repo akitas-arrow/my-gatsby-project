@@ -32,7 +32,7 @@ function About() {
             <Box>
                 <TextBlock>
                     <Text>
-                        ○○や○○など、各メーカーの商品を取り揃えております。テキストテキストテキストテキストテキストほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+                        創業より70年以上、雑貨業に専念してきました。<br/>お客様からの様々なご要望に応じて、ご提案や調達をした品物に満足いただける事が私たちの喜びとなっています。<br/>今後も日々勉強し皆様と共に成長していきます。
                     </Text>
                     <Button slug='/about' bg='white' color='main'>
                         会社案内を見る
@@ -53,7 +53,7 @@ const Wrapper = styled.div`
     padding: 72px 24px;
     margin-bottom: 72px;
     @media (min-width: 768px) {
-    padding: 120px 24px;
+    padding: 120px 24px 72px;
     }
 `
 
@@ -90,6 +90,7 @@ const ImageBlock = styled.div`
     }
     @media (min-width: 1024px) {
         margin: 0;
+        margin-bottom: 40px;
         width: calc((100% - 40px) / 2);
     }
 `
