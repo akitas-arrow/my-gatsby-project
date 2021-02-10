@@ -1,10 +1,16 @@
 import React from 'react'
+import { useInView } from 'react-intersection-observer'
+import {BottomIn} from '../shared/keyframes'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
-import styled from 'styled-components'
+import styled,{css} from 'styled-components'
 import { BoldTextStyle, MediumTextStyle, Color } from '../shared/style'
 
-function ServiceItem({src, title, descriptions, type}) {
+function ServiceItem({src, title, descriptions}) {
+    const [ref, inView] = useInView({
+        rootMargin: '-50px 0px',
+        triggerOnce: true
+    })
     const data = useStaticQuery(graphql`
         query {
             allFile {
@@ -29,9 +35,9 @@ function ServiceItem({src, title, descriptions, type}) {
     if (!image) return
 
     return (
-        <Container>
+        <Container ref={ref} inView={inView}>
             <Image fluid={image.node.childImageSharp.fluid}/>
-            <Title type={type}>{title}</Title>
+            <Title>{title}</Title>
             {
                 descriptions.map((description, index) => {
                     return <p key={index} className="description">{description}</p>
@@ -41,10 +47,16 @@ function ServiceItem({src, title, descriptions, type}) {
     )
 }
 
+const animation = css`
+    animation: 0.5s ${BottomIn} ease-in-out;
+`
+
 const Container = styled.div`
     text-align: center;
     width: 100%;
     margin-top: 48px;
+    opacity:${props => props.inView ? 1 : 0};
+    ${props => (props.inView ? animation : 'animation : 0;')};
     @media (min-width: 768px) {
         width: calc((100% - 40px) / 2);
         margin-top: 72px;

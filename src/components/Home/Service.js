@@ -1,11 +1,17 @@
 import React from 'react'
-import styled from 'styled-components'
+import { useInView } from 'react-intersection-observer'
+import {BottomIn} from '../shared/keyframes'
+import styled,{css} from 'styled-components'
 import { BoldTextStyle, Color } from '../shared/style'
 import ServiceItem from "./ServiceItem"
 import Wrapper from "../shared/Wrapper"
 import Container from "../shared/Container"
 
 function Service() {
+    const [ref, inView] = useInView({
+        rootMargin: '-50px 0px',
+        triggerOnce: true
+    })
     const items = [
         {
             src: 'service01.png',
@@ -36,7 +42,7 @@ function Service() {
     return (
         <Wrapper>
             <Container>
-                <Title>このような方々に<br/>ご利用頂いております</Title>
+                <Title ref={ref} inView={inView}>このような方々に<br/>ご利用頂いております</Title>
                 <Box>
                     {
                     items.map((item, index) => {
@@ -56,6 +62,10 @@ function Service() {
     )
 }
 
+const animation = css`
+    animation: 0.5s ${BottomIn} ease-in-out;
+`
+
 const Title = styled.h3`
     display: flex;
     justify-content: center;
@@ -64,6 +74,8 @@ const Title = styled.h3`
     ${BoldTextStyle}
     font-size: 16px;
     color:${Color.sub};
+    opacity:${props => props.inView ? 1 : 0};
+    ${props => (props.inView ? animation : 'animation : 0;')};
     ::before,
     ::after {
         content: '';

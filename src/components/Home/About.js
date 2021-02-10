@@ -1,6 +1,8 @@
 import React from 'react'
-import styled from 'styled-components'
-import { BasicTextStyle, MediumTextStyle ,Color } from '../shared/style'
+import { useInView } from 'react-intersection-observer'
+import styled,{css} from 'styled-components'
+import {BottomIn, SlideInLeft} from '../shared/keyframes'
+import { MediumTextStyle ,Color } from '../shared/style'
 import Container from '../shared/Container'
 import EnglishHeadlines from '../shared/TextStyle/EnglishHeadlines'
 import JapaneseHeadlines from '../shared/TextStyle/JapaneseHeadlines'
@@ -10,6 +12,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
 
 function About() {
+    const [ref, inView] = useInView({
+        rootMargin: '-50px 0px',
+        triggerOnce: true,
+        threshold: '0.5'
+    })
     const data = useStaticQuery(graphql`
         query {
             file(relativePath:{eq:"dummy-image.png"}) {
@@ -31,7 +38,7 @@ function About() {
             </Container>
             <Box>
                 <TextBlock>
-                    <Text>
+                    <Text ref={ref} inView={inView}>
                         創業より70年以上、雑貨業に専念してきました。<br/>お客様からの様々なご要望に応じて、ご提案や調達をした品物に満足いただける事が私たちの喜びとなっています。<br/>今後も日々勉強し皆様と共に成長していきます。
                     </Text>
                     <Button slug='/about' bg='white' color='main'>
@@ -42,11 +49,18 @@ function About() {
                     <Img fluid={data.file.childImageSharp.fluid}/>
                 </ImageBlock>
             </Box>
-            <Bg>
+            <Bg ref={ref} inView={inView}>
             </Bg>
         </Wrapper>
     )
 }
+
+const BottomInAnimation = css`
+    animation: 0.5s ${BottomIn} ease-in-out;
+`
+const SlideInAnimation = css`
+    animation: 0.5s ${SlideInLeft} ease-in-out;
+`
 
 const Wrapper = styled.div`
     position: relative;
@@ -79,7 +93,8 @@ const TextBlock = styled.div`
 
 const Text = styled.p`
     ${MediumTextStyle}
-    color: ${Color.main};
+    opacity:${props => props.inView ? 1 : 0};
+    ${props => (props.inView ? BottomInAnimation : 'animation : 0;')};
 `
 const ImageBlock = styled.div`
     width: 100%;
@@ -103,6 +118,8 @@ const Bg = styled.div`
         z-index: -1;
         height: 60%;
         width: 100%;
+        opacity:${props => props.inView ? 1 : 0};
+        ${props => (props.inView ? SlideInAnimation : 'animation : 0;')};
         @media (min-width: 768px) {
             height: 50%;
         }

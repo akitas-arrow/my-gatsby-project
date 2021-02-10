@@ -23,7 +23,7 @@ function MainImage({className}) {
       }
       desktopImage: file(relativePath: { eq: "desktop01.png" }) {
         childImageSharp {
-          fluid(quality: 80, maxWidth: 1920) {
+          fluid(quality: 70, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

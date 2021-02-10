@@ -1,5 +1,7 @@
 import React from 'react'
-import styled from 'styled-components'
+import { useInView } from 'react-intersection-observer'
+import {BottomIn, SlideInRight} from '../shared/keyframes'
+import styled,{css} from 'styled-components'
 import { MediumTextStyle, Color } from '../shared/style'
 import Container from '../shared/Container'
 import EnglishHeadlines from '../shared/TextStyle/EnglishHeadlines'
@@ -10,6 +12,11 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
 
 function LineUp() {
+    const [ref, inView] = useInView({
+        rootMargin: '-50px 0px',
+        triggerOnce: true,
+        threshold: '0.5'
+    })
     const data = useStaticQuery(graphql`
         query {
             file(relativePath:{eq:"dummy-image.png"}) {
@@ -34,18 +41,26 @@ function LineUp() {
                     <Img fluid={data.file.childImageSharp.fluid}/>
                 </ImageBlock>
                 <TextBlock>
-                    <Text>一般家庭用から業務用まで日常使用する雑貨や消耗品を幅広く販売しています。<br/>お探しの物がございましたらお気軽にお問い合わせください。小ロットから迅速にご対応いたします。
+                    <Text ref={ref} inView={inView}>
+                        一般家庭用から業務用まで日常使用する雑貨や消耗品を幅広く販売しています。<br/>お探しの物がございましたらお気軽にお問い合わせください。小ロットから迅速にご対応いたします。
                     </Text>
                     <Button slug='/lineUp' bg='white' color='main'>
                         取扱商品を見る
                     </Button>
                 </TextBlock>
             </Box>
-            <Bg>
+            <Bg ref={ref} inView={inView}>
             </Bg>
         </Wrapper>
     )
 }
+
+const BottomInAnimation = css`
+    animation: 0.5s ${BottomIn} ease-in-out;
+`
+const SlideInAnimation = css`
+    animation: 0.5s ${SlideInRight} ease-in-out;
+`
 
 const Wrapper = styled.div`
     position: relative;
@@ -79,6 +94,8 @@ const TextBlock = styled.div`
 
 const Text = styled.p`
     ${MediumTextStyle}
+    opacity:${props => props.inView ? 1 : 0};
+    ${props => (props.inView ? BottomInAnimation : 'animation : 0;')};
 `
 const ImageBlock = styled.div`
     width: 100%;
@@ -102,6 +119,8 @@ const Bg = styled.div`
         z-index: -1;
         height: 60%;
         width: 100%;
+        opacity:${props => props.inView ? 1 : 0};
+        ${props => (props.inView ? SlideInAnimation : 'animation : 0;')}
         @media (min-width: 768px) {
             height: 50%;
         }
