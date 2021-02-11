@@ -1,10 +1,17 @@
 import React from 'react'
-import styled from 'styled-components'
+import { useInView } from 'react-intersection-observer'
+import styled,{css} from 'styled-components'
+import {BottomIn, SlideInSkew} from '../shared/keyframes'
 import { BoldTextStyle, MediumTextStyle, Color } from '../shared/style'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 function LineUpItem({title, description, items, src, direction, color}) {
+    const [ref, inView] = useInView({
+        rootMargin: '-50px 0px',
+        triggerOnce: true,
+        threshold: '0.5'
+    })
     const data = useStaticQuery(graphql`
         query {
             allFile {
@@ -29,12 +36,12 @@ function LineUpItem({title, description, items, src, direction, color}) {
     if (!image) return
 
     return (
-        <Wrapper direction={direction} color={color}>
+        <Wrapper ref={ref} inView={inView} direction={direction} color={color}>
             <Box direction={direction}>
                 <ImageBlock>
                     <Img fluid={image.node.childImageSharp.fluid}/>
                 </ImageBlock>
-                <TextBlock>
+                <TextBlock ref={ref} inView={inView}>
                     <Title>
                         {title}
                     </Title>
@@ -49,6 +56,19 @@ function LineUpItem({title, description, items, src, direction, color}) {
     )
 }
 
+const BottomInAnimation = css`
+    animation: 0.5s ${BottomIn} ease-in-out;
+`
+const SlideIn = css`
+    transform-origin: left;
+    transform: scaleX(1) skewY(-5deg);
+`
+
+const SlideOut = css`
+    transform-origin: left;
+    transform: scaleX(0) skewY(0deg);
+`
+
 const Wrapper = styled.div`
     z-index: 0;
     width: 100%;
@@ -60,10 +80,17 @@ const Wrapper = styled.div`
     ::before {
         content: "";
         position: absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
+        top: 36px;
+        left: 0;
+        width: 100%;
+        height: 100%;
         z-index: -1;
         background:${props => Color[props.color]};
-        transform: ${props => props.direction === 'row' ? 'skewY(-5deg)' : 'skewY(-5deg)'};
+        transition: all 0.5s ease-in-out;
+        ${props => (props.inView ? SlideIn : SlideOut)}
+        @media (min-width: 1024px) {
+            top: 60px;
+        }
     }
 `
 
@@ -94,6 +121,8 @@ const ImageBlock = styled.div`
 const TextBlock = styled.div`
     max-width:608px;
     margin: 0 auto;
+    opacity:${props => props.inView ? 1 : 0};
+    ${props => (props.inView ? BottomInAnimation : 'animation : 0;')};
     @media (min-width: 1024px) {
         margin: 0;
         max-width: none;

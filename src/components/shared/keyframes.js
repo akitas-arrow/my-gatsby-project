@@ -31,3 +31,13 @@ export const SlideInLeft = keyframes`
     transform: scaleX(1);
   }
 `
+export const SlideInSkew = keyframes`
+  0% {
+    transform-origin: left;
+    transform: scaleX(0) skewY(0deg);
+  }
+  100% {
+    transform-origin: left;
+    transform: translateX(1) skewY(-5deg);
+  }
+`

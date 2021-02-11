@@ -1,19 +1,30 @@
 import React from 'react'
+import { useInView } from 'react-intersection-observer'
+import {BottomIn} from './keyframes'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import styled,{css} from 'styled-components'
 import { MediumTextStyle, Color } from './style'
 
 function Button({ bg, color, slug, children }) {
+    const [ref, inView] = useInView({
+        rootMargin: '-50px 0px',
+        triggerOnce: true,
+    })
     return (
-        <ButtonContainer to={slug} bg={bg} color={color}>
+        <ButtonContainer
+            ref={ref} inView={inView} to={slug} bg={bg} color={color}
+        >
             { children }
         </ButtonContainer>
     )
 }
 
+const animation = css`
+    animation: 0.5s ${BottomIn} ease-in-out;
+`
+
 const ButtonContainer = styled(Link)`
     text-decoration: none;
-    /* position: absolute; */
     z-index: 1;
     margin: 72px auto 0;
     box-sizing: border-box;
@@ -21,20 +32,18 @@ const ButtonContainer = styled(Link)`
     ${MediumTextStyle}
     display: table;
     color: ${props => Color[props.color] || Color.main};
-    /* color:${Color.white}; */
     font-size: 15px;
     height: 56px;
     line-height: 44px;
     padding: 0px 78px 12px 66px;
     background-color: ${props => Color[props.bg] || Color.bg};
-    /* background: transparent; */
-    /* border: 2px solid ${Color.main}; */
     position: relative;
     user-select: none;
     transition: all 0.3s;
+    opacity:${props => props.inView ? 1 : 0};
+    ${props => (props.inView ? animation : 'animation : 0;')};
     ::before {
         box-sizing: border-box;
-        /* background: ${Color.main}; */
         border: 2px solid ${Color.main};
         display: block;
         content: "";

@@ -1,20 +1,30 @@
 import React from 'react'
-import styled from 'styled-components'
+import { useInView } from 'react-intersection-observer'
+import {BottomIn} from '../keyframes'
+import styled, {css} from 'styled-components'
 import { Color, BoldTextStyle, BasicTextStyle } from '../style'
 import "@fontsource/roboto-mono/700.css"
 
 function PageTitle({ jp, eng }) {
+    const [ref, inView] = useInView({
+        rootMargin: '-50px 0px',
+        triggerOnce: true
+    })
     return (
         <Box>
-            <EngTitle>
+            <EngTitle ref={ref} inView={inView}>
                 {eng}
             </EngTitle>
-            <JpTitle>
+            <JpTitle ref={ref} inView={inView}>
                 {jp}
             </JpTitle>
         </Box>
     )
 }
+
+const animation = css`
+    animation: 0.5s ${BottomIn} ease-in-out;
+`
 
 const Box = styled.div`
     text-align: center;
@@ -29,6 +39,8 @@ const JpTitle = styled.h2`
     color: ${Color.sub};
     font-size: 14px;
     line-height: 1.5em;
+    opacity:${props => props.inView ? 1 : 0};
+    ${props => (props.inView ? animation : 'animation : 0;')};
     @media (min-width: 768px) {
         font-size: 18px;
     }
@@ -41,6 +53,8 @@ const EngTitle = styled.p`
     color: ${Color.sub};
     line-height: 1.5em;
     font-size: 26px;
+    opacity:${props => props.inView ? 1 : 0};
+    ${props => (props.inView ? animation : 'animation : 0;')};
     @media(min-width: 768px) {
         font-size: 42px;
     }
