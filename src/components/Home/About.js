@@ -56,10 +56,10 @@ function About() {
 }
 
 const BottomInAnimation = css`
-    animation: 0.5s ${BottomIn} ease-in-out;
+    animation: 1s ${BottomIn} ease both;
 `
 const SlideInAnimation = css`
-    animation: 0.5s ${SlideInLeft} ease-in-out;
+    animation: 0.5s ${SlideInLeft} ease both;
 `
 
 const Wrapper = styled.div`
@@ -93,7 +93,8 @@ const TextBlock = styled.div`
 
 const Text = styled.p`
     ${MediumTextStyle}
-    opacity:${props => props.inView ? 1 : 0};
+    /* opacity:${props => props.inView ? 1 : 0}; */
+    opacity: 0;
     ${props => (props.inView ? BottomInAnimation : 'animation : 0;')};
 `
 const ImageBlock = styled.div`

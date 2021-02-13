@@ -7,8 +7,9 @@ import { MediumTextStyle, Color } from '../shared/style'
 
 function BlogItem({title, date, link}) {
     const [ref, inView] = useInView({
-        rootMargin: '-50px 0px',
-        triggerOnce: true
+        rootMargin: '50px 0px',
+        triggerOnce: true,
+        threshold: 1
     })
     return (
         <Box to={`/${link}`} ref={ref} inView={inView}>
@@ -19,7 +20,7 @@ function BlogItem({title, date, link}) {
 }
 
 const animation = css`
-    animation: 0.5s ${BottomIn} ease-in-out;
+    animation: 1s ${BottomIn} ease both;
 `
 
 const Box = styled(Link)`
@@ -29,7 +30,7 @@ const Box = styled(Link)`
     padding-top: 32px;
     max-width: 1100px;
     text-decoration: none;
-    opacity:${props => props.inView ? 1 : 0};
+    opacity: 0;
     ${props => (props.inView ? animation : 'animation : 0;')};
     @media (min-width: 768px) {
         flex-direction: row;

@@ -145,6 +145,7 @@ function about() {
     )
 }
 
+
 const Bg = styled.div`
     z-index: 0;
     width: 100%;
@@ -197,7 +198,6 @@ const Hexagon = styled.div`
 `
 
 const MenuTitle = styled.h4`
-    /* padding-top: 72px; */
     padding-bottom: 48px;
     text-align: center;
     ${BoldTextStyle}
@@ -206,7 +206,6 @@ const MenuTitle = styled.h4`
     justify-content: center;
     align-items: center;
     @media (min-width: 768px) {
-        /* padding-top: 112px; */
         padding-bottom: 64px;
         font-size: 26px;
     }
@@ -225,7 +224,6 @@ const MenuTitle = styled.h4`
 `
 
 const Tables = styled.div`
-    /* background-color: pink; */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -262,7 +260,6 @@ const Box = styled.div`
 `
 
 const TextBlock = styled.div`
-    /* background-color: pink; */
     margin: 0 auto;
     max-width: 608px;
     @media (min-width: 1025px) {

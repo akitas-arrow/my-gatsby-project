@@ -1,7 +1,7 @@
 import React from 'react'
 import { useInView } from 'react-intersection-observer'
 import styled,{css} from 'styled-components'
-import {BottomIn, SlideInSkew} from '../shared/keyframes'
+import { BottomIn } from '../shared/keyframes'
 import { BoldTextStyle, MediumTextStyle, Color } from '../shared/style'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
@@ -10,7 +10,7 @@ function LineUpItem({title, description, items, src, direction, color}) {
     const [ref, inView] = useInView({
         rootMargin: '-50px 0px',
         triggerOnce: true,
-        threshold: '0.5'
+        threshold: 0.5
     })
     const data = useStaticQuery(graphql`
         query {
@@ -57,13 +57,12 @@ function LineUpItem({title, description, items, src, direction, color}) {
 }
 
 const BottomInAnimation = css`
-    animation: 0.5s ${BottomIn} ease-in-out;
+    animation: 1s ${BottomIn} ease both;
 `
 const SlideIn = css`
     transform-origin: left;
     transform: scaleX(1) skewY(-5deg);
 `
-
 const SlideOut = css`
     transform-origin: left;
     transform: scaleX(0) skewY(0deg);
@@ -86,7 +85,7 @@ const Wrapper = styled.div`
         height: 100%;
         z-index: -1;
         background:${props => Color[props.color]};
-        transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease;
         ${props => (props.inView ? SlideIn : SlideOut)}
         @media (min-width: 1024px) {
             top: 60px;
@@ -121,7 +120,8 @@ const ImageBlock = styled.div`
 const TextBlock = styled.div`
     max-width:608px;
     margin: 0 auto;
-    opacity:${props => props.inView ? 1 : 0};
+    /* opacity:${props => props.inView ? 1 : 0}; */
+    opacity: 0;
     ${props => (props.inView ? BottomInAnimation : 'animation : 0;')};
     @media (min-width: 1024px) {
         margin: 0;
@@ -136,7 +136,6 @@ const Title = styled.h4`
     font-size: 20px;
     @media (min-width: 768px) {
         padding-top: 0;
-        /* padding-bottom: 40px; */
         font-size: 30px;
     }
 `

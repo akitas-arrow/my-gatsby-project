@@ -9,6 +9,7 @@ function Button({ bg, color, slug, children }) {
     const [ref, inView] = useInView({
         rootMargin: '-50px 0px',
         triggerOnce: true,
+        threshold: 0.5
     })
     return (
         <ButtonContainer
@@ -20,7 +21,7 @@ function Button({ bg, color, slug, children }) {
 }
 
 const animation = css`
-    animation: 0.5s ${BottomIn} ease-in-out;
+    animation: 1s ${BottomIn} ease both;
 `
 
 const ButtonContainer = styled(Link)`
@@ -40,8 +41,9 @@ const ButtonContainer = styled(Link)`
     position: relative;
     user-select: none;
     transition: all 0.3s;
-    opacity:${props => props.inView ? 1 : 0};
-    ${props => (props.inView ? animation : 'animation : 0;')};
+    /* opacity:${props => props.inView ? 1 : 0}; */
+    opacity: 0;
+    ${props => (props.inView ? animation : 'animation : 0;')}
     ::before {
         box-sizing: border-box;
         border: 2px solid ${Color.main};

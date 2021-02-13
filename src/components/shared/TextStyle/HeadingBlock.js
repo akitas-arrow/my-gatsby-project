@@ -6,7 +6,8 @@ import styled, {css} from 'styled-components'
 function HeadingBlock({ children }) {
     const [ref, inView] = useInView({
         rootMargin: '-50px 0px',
-        triggerOnce: true
+        triggerOnce: true,
+        threshold: 1
     })
     return (
         <Box ref={ref} inView={inView}>
@@ -16,12 +17,12 @@ function HeadingBlock({ children }) {
 }
 
 const animation = css`
-    animation: 0.5s ${BottomIn} ease-in-out;
+    animation: 1s ${BottomIn} ease both;
 `
 
 const Box = styled.div`
     position: relative;
-    opacity:${props => props.inView ? 1 : 0};
+    opacity: 0;
     ${props => (props.inView ? animation : 'animation : 0;')};
 `
 

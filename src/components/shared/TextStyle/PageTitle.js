@@ -23,7 +23,7 @@ function PageTitle({ jp, eng }) {
 }
 
 const animation = css`
-    animation: 0.5s ${BottomIn} ease-in-out;
+    animation: 1s ${BottomIn} ease both;
 `
 
 const Box = styled.div`
@@ -39,7 +39,8 @@ const JpTitle = styled.h2`
     color: ${Color.sub};
     font-size: 14px;
     line-height: 1.5em;
-    opacity:${props => props.inView ? 1 : 0};
+    /* opacity:${props => props.inView ? 1 : 0}; */
+    opacity: 0;
     ${props => (props.inView ? animation : 'animation : 0;')};
     @media (min-width: 768px) {
         font-size: 18px;
@@ -53,7 +54,8 @@ const EngTitle = styled.p`
     color: ${Color.sub};
     line-height: 1.5em;
     font-size: 26px;
-    opacity:${props => props.inView ? 1 : 0};
+    /* opacity:${props => props.inView ? 1 : 0}; */
+    opacity: 0;
     ${props => (props.inView ? animation : 'animation : 0;')};
     @media(min-width: 768px) {
         font-size: 42px;

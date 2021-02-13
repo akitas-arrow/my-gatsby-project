@@ -9,7 +9,7 @@ import { BoldTextStyle, MediumTextStyle, Color } from '../shared/style'
 function ServiceItem({src, title, descriptions}) {
     const [ref, inView] = useInView({
         rootMargin: '-50px 0px',
-        triggerOnce: true
+        triggerOnce: true,
     })
     const data = useStaticQuery(graphql`
         query {
@@ -48,14 +48,15 @@ function ServiceItem({src, title, descriptions}) {
 }
 
 const animation = css`
-    animation: 0.5s ${BottomIn} ease-in-out;
+    animation: 1s ${BottomIn} ease both;
 `
 
 const Container = styled.div`
     text-align: center;
     width: 100%;
     margin-top: 48px;
-    opacity:${props => props.inView ? 1 : 0};
+    /* opacity:${props => props.inView ? 1 : 0}; */
+    opacity: 0;
     ${props => (props.inView ? animation : 'animation : 0;')};
     @media (min-width: 768px) {
         width: calc((100% - 40px) / 2);

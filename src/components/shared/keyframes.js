@@ -3,7 +3,7 @@ import { keyframes } from 'styled-components';
 export const BottomIn = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(50%);
+    transform: translateY(120px);
   }
   100% {
     opacity: 1;
@@ -29,15 +29,5 @@ export const SlideInLeft = keyframes`
   100% {
     transform-origin: left;
     transform: scaleX(1);
-  }
-`
-export const SlideInSkew = keyframes`
-  0% {
-    transform-origin: left;
-    transform: scaleX(0) skewY(0deg);
-  }
-  100% {
-    transform-origin: left;
-    transform: translateX(1) skewY(-5deg);
   }
 `

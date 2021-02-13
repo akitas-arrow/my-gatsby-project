@@ -9,7 +9,7 @@ function BlogItem({title, link, url, date}) {
   const [ref, inView] = useInView({
     rootMargin: '-50px 0px',
     triggerOnce: true,
-    threshold: '0.5'
+    threshold: 0.5
   })
   return (
     <Box ref={ref} inView={inView} to={`/${link}`}>
@@ -25,7 +25,7 @@ function BlogItem({title, link, url, date}) {
 }
 
 const animation = css`
-    animation: 0.5s ${BottomIn} ease-in-out;
+    animation: 1s ${BottomIn} ease both;
 `
 
 const Box = styled(Link)`
@@ -35,7 +35,8 @@ const Box = styled(Link)`
     width: 100%;
     margin-bottom: 48px;
     text-decoration: none;
-    opacity:${props => props.inView ? 1 : 0};
+    /* opacity:${props => props.inView ? 1 : 0}; */
+    opacity: 0;
     ${props => (props.inView ? animation : 'animation : 0;')};
     @media (min-width: 768px) {
       width: 50%;

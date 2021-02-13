@@ -10,7 +10,8 @@ import Container from "../shared/Container"
 function Service() {
     const [ref, inView] = useInView({
         rootMargin: '-50px 0px',
-        triggerOnce: true
+        triggerOnce: true,
+        threshold: 1
     })
     const items = [
         {
@@ -63,7 +64,7 @@ function Service() {
 }
 
 const animation = css`
-    animation: 0.5s ${BottomIn} ease-in-out;
+    animation: 1s ${BottomIn} ease both;
 `
 
 const Title = styled.h3`
@@ -74,7 +75,8 @@ const Title = styled.h3`
     ${BoldTextStyle}
     font-size: 16px;
     color:${Color.sub};
-    opacity:${props => props.inView ? 1 : 0};
+    /* opacity:${props => props.inView ? 1 : 0}; */
+    opacity: 0;
     ${props => (props.inView ? animation : 'animation : 0;')};
     ::before,
     ::after {
