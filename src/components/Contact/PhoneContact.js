@@ -28,7 +28,7 @@ function PhoneContact() {
 }
 
 const BottomInAnimation = css`
-    animation: 1s ${BottomIn} ease both;
+    animation: 1s ${BottomIn} ease both 0.5s;
 `
 const SlideIn = css`
     transform-origin: left;
@@ -66,7 +66,7 @@ const Bg = styled.div`
     ::before {
         content: "";
         position: absolute;
-        top: 72px;
+        top: 36px;
         left: 0;
         width: 100%;
         height: 100%;
@@ -74,6 +74,9 @@ const Bg = styled.div`
         background:${Color.gradient};
         transition: all 0.5s ease;
         ${props => (props.inView ? SlideIn : SlideOut)}
+        @media (min-width: 1024px) {
+            top: 60px;
+        }
     }
 `
 
