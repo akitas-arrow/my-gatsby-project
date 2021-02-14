@@ -1,7 +1,7 @@
 import React from 'react'
 import Wrapper from '../shared/Wrapper'
 import styled from 'styled-components'
-import {BasicTextStyle, BoldTextStyle, Color} from '../shared/style'
+import {BasicTextStyle, BoldTextStyle, MediumTextStyle, Color} from '../shared/style'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Form() {
@@ -147,6 +147,7 @@ const Input = styled.input`
 `
 
 const Ex = styled.p`
+  ${MediumTextStyle}
   color: #777;
 `
 
