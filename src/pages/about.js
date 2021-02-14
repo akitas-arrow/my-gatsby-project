@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color, BoldTextStyle } from '../components/shared/style'
+import { Color, BoldTextStyle, BasicTextStyle } from '../components/shared/style'
 import Layout from '../components/Layout'
 import Wrapper from '../components/shared/Wrapper'
 import Container from '../components/shared/Container'
@@ -260,6 +260,7 @@ const Box = styled.div`
 `
 
 const TextBlock = styled.div`
+    ${BasicTextStyle}
     margin: 0 auto;
     max-width: 608px;
     @media (min-width: 1025px) {

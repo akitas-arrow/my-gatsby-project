@@ -4,15 +4,12 @@ import "fontsource-noto-sans-jp/500.css"
 import "fontsource-noto-sans-jp/700.css"
 
 export const Color = {
-    // letter: '#333333',
     white: '#fff',
     main: '#24504a',
     sub: '#3db695',
     bg: '#c5ede3',
     sheer: 'rgba(197, 237, 227, 0.3)',
-    // gradient: 'linear-gradient(90deg, rgba(221,241,226,1) 0%, rgba(242,252,254,1) 100%)',
     gradient: 'linear-gradient(90deg, rgba(197,237,227,1) 0%, rgba(242,252,254,1) 100%)',
-    // gradient: 'linear-gradient(135deg, rgba(197,237,227,0.5) 50%, rgba(61,182,149,0.4) 100%)'
 }
 
 export const BasicTextStyle = css`
@@ -36,7 +33,6 @@ export const BoldTextStyle = css`
 
 export const PhoneNumberStyle = css`
     ${BasicTextStyle}
-    color: ${Color.main};
     font-size: 22px;
     font-weight: 500;
 `

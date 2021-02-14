@@ -2,7 +2,7 @@ import React from 'react'
 import { useInView } from 'react-intersection-observer'
 import styled,{css} from 'styled-components'
 import {BottomIn, SlideInLeft} from '../shared/keyframes'
-import { MediumTextStyle ,Color } from '../shared/style'
+import { Color } from '../shared/style'
 import Container from '../shared/Container'
 import EnglishHeadlines from '../shared/TextStyle/EnglishHeadlines'
 import JapaneseHeadlines from '../shared/TextStyle/JapaneseHeadlines'
@@ -92,7 +92,6 @@ const TextBlock = styled.div`
 `
 
 const Text = styled.p`
-    ${MediumTextStyle}
     /* opacity:${props => props.inView ? 1 : 0}; */
     opacity: 0;
     ${props => (props.inView ? BottomInAnimation : 'animation : 0;')};

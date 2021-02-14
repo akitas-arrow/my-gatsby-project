@@ -4,7 +4,7 @@ import {BottomIn} from '../shared/keyframes'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from "gatsby-image"
 import styled,{css} from 'styled-components'
-import { BoldTextStyle, MediumTextStyle, Color } from '../shared/style'
+import { BoldTextStyle, Color } from '../shared/style'
 
 function ServiceItem({src, title, descriptions}) {
     const [ref, inView] = useInView({
@@ -40,7 +40,7 @@ function ServiceItem({src, title, descriptions}) {
             <Title>{title}</Title>
             {
                 descriptions.map((description, index) => {
-                    return <p key={index} className="description">{description}</p>
+                    return <p key={index}>{description}</p>
                 })
             }
         </Container>
@@ -64,9 +64,6 @@ const Container = styled.div`
     }
     @media (min-width: 1024px) {
         width: calc((100% - 80px) / 3);
-    }
-    .description {
-        ${MediumTextStyle}
     }
 `
 

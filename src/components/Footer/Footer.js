@@ -1,10 +1,10 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
-import { Color, MediumTextStyle, PhoneNumberStyle } from '../shared/style.js'
-import SNSIconSet from '../shared/SNSIconSet'
+import { Color, PhoneNumberStyle } from '../shared/style.js'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Wrapper from '../shared/Wrapper'
+import SNSLinks from '../shared/SNSLinks.js'
 
 function Footer() {
     const data = useStaticQuery(graphql`
@@ -39,11 +39,7 @@ function Footer() {
                     <TextBlock>
                         <span>SNSでも情報発信しています。<br/>是非ご覧ください！</span>
                     </TextBlock>
-                    <Icons>
-                        <SNSIconSet
-                            color='sub'
-                        />
-                    </Icons>
+                    <SNSLinks color="sub"/>
                 </Box>
             </Container>
         </Wrapper>
@@ -63,7 +59,6 @@ const Container = styled.div`
 `
 
 const Box = styled.div`
-    /* background-color: pink; */
     width: 100%;
     @media (min-width: 768px) {
         width: calc((100% - 80px) / 3);
@@ -80,7 +75,6 @@ const Logo = styled.img`
 `
 
 const AddressBlock = styled.p`
-    ${MediumTextStyle}
     color: ${Color.sub};
     padding: 48px 0 40px 0;
     display:inline-block;
@@ -96,7 +90,6 @@ const PhoneNumber = styled.p`
 `
 
 const TextBlock = styled.p`
-    ${MediumTextStyle}
     padding-top: 48px;
     font-size: 15px;
     color: ${Color.sub};
@@ -106,10 +99,5 @@ const TextBlock = styled.p`
     @media (min-width:768px) {
         padding-top: 0;
     }
-`
-
-const Icons = styled.div`
-    padding-top: 24px;
-    font-size: 40px;
 `
 export default Footer

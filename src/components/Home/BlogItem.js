@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import {BottomIn} from '../shared/keyframes'
 import { Link } from 'gatsby'
 import styled, {css} from "styled-components"
-import { MediumTextStyle, Color } from '../shared/style'
+import { Color } from '../shared/style'
 
 function BlogItem({title, date, link}) {
     const [ref, inView] = useInView({
@@ -14,7 +14,7 @@ function BlogItem({title, date, link}) {
     return (
         <Box to={`/${link}`} ref={ref} inView={inView}>
             <Date>{date}</Date>
-            <Name className="name">{title}</Name>
+            <p className="name">{title}</p>
         </Box>
     )
 }
@@ -30,6 +30,7 @@ const Box = styled(Link)`
     padding-top: 32px;
     max-width: 1100px;
     text-decoration: none;
+    color:${Color.main};
     opacity: 0;
     ${props => (props.inView ? animation : 'animation : 0;')};
     @media (min-width: 768px) {
@@ -46,15 +47,10 @@ const Box = styled(Link)`
 
 const Date = styled.p`
     padding-bottom: 8px;
-    color:${Color.main};
     @media (min-width: 768px) {
         padding-bottom: 0;
         padding-right: 112px;
     }
-`
-
-const Name = styled.p`
-    ${MediumTextStyle}
 `
 
 export default BlogItem

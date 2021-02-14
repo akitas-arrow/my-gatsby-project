@@ -2,7 +2,7 @@ import React from 'react'
 import { useInView } from 'react-intersection-observer'
 import styled,{css} from 'styled-components'
 import { BottomIn } from '../shared/keyframes'
-import { BoldTextStyle, MediumTextStyle, Color } from '../shared/style'
+import { BoldTextStyle, Color } from '../shared/style'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -146,13 +146,11 @@ const ItemHeader = styled.p`
 `
 
 const Text = styled.p`
-    ${MediumTextStyle}
     padding-bottom: 32px;
     border-bottom: 3px dotted ${Color.main};
 `
 
 const Item = styled.p`
-    ${MediumTextStyle}
     padding-top: 16px;
 `
 export default LineUpItem

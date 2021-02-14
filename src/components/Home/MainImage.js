@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image-es5'
-import {BoldTextStyle, Color} from '../shared/style'
+import {BoldTextStyle} from '../shared/style'
 
 function MainImage({className}) {
   const { mobileImage, tabletImage, desktopImage } = useStaticQuery(graphql`
@@ -83,7 +83,6 @@ const Container = styled.div`
 
 const Title = styled.h1`
   ${BoldTextStyle}
-  color: ${Color.main};
   -ms-writing-mode: tb-rl;
   writing-mode: vertical-rl;
   font-size: 22px;

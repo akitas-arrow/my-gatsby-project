@@ -55,7 +55,6 @@ const Wrapper = styled.header`
     background-color: rgba(255, 255, 255,0.7);
     @media (min-width: 1025px) {
         height: 88px;
-        /* background-color: ${Color.white}; */
     }
 `
 
@@ -124,8 +123,6 @@ const Icons = styled.div`
         font-size: 22px;
     }
     @media (min-width: 1025px) {
-        /* height: 120px; */
-        /* line-height: 120px; */
         margin-left: 32px;
     }
 `

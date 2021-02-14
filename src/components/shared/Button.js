@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import {BottomIn} from './keyframes'
 import { Link } from 'gatsby'
 import styled,{css} from 'styled-components'
-import { MediumTextStyle, Color } from './style'
+import { Color } from './style'
 
 function Button({ bg, color, slug, children }) {
     const [ref, inView] = useInView({
@@ -30,7 +30,6 @@ const ButtonContainer = styled(Link)`
     margin: 72px auto 0;
     box-sizing: border-box;
     cursor: pointer;
-    ${MediumTextStyle}
     display: table;
     color: ${props => Color[props.color] || Color.main};
     font-size: 15px;

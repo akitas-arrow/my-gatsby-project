@@ -1,7 +1,7 @@
 import React from 'react'
-import { createGlobalStyle } from 'styled-components'
+import styled,{ createGlobalStyle } from 'styled-components'
 import "modern-css-reset"
-import { BasicTextStyle } from './shared/style.js'
+import { MediumTextStyle } from './shared/style.js'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
@@ -12,18 +12,23 @@ import Footer from './Footer/Footer'
 function Layout({ children }) {
     library.add(fab, far, faPhoneAlt, faFax, faChevronLeft, faChevronRight)
     return (
-        <div>
+        <AppWrapper>
             <GlobalStyle />
             <Header />
                 { children }
             <Footer />
-        </div>
+        </AppWrapper>
     )
 }
 
+const AppWrapper = styled.div`
+    height: 100vh;
+    overflow: scroll;
+`
+
 const GlobalStyle = createGlobalStyle`
     body {
-        ${BasicTextStyle}
+        ${MediumTextStyle}
     }
 `
 

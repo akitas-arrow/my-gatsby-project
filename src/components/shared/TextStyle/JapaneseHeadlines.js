@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color, BoldTextStyle } from '../style'
+import { BoldTextStyle } from '../style'
 
 function JapaneseHeadlines({ children, type }) {
     return (
@@ -12,7 +12,6 @@ function JapaneseHeadlines({ children, type }) {
 
 const HeadingText = styled.h2`
     ${BoldTextStyle}
-    color: ${Color.main};
     font-size: 22px;
     position : absolute;
     top: 1.2em;
