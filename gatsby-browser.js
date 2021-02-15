@@ -5,7 +5,6 @@
  */
 
 // You can delete this file if you're not using it
-
 exports.shouldUpdateScroll = () => {
   if (window.__navigatingToLink === true) {
     return [0, 0];

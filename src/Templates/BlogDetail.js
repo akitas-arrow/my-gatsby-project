@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import Wrapper from '../components/shared/Wrapper'
 import Container from '../components/shared/Container'
 import styled from 'styled-components'
-import {MediumTextStyle,BoldTextStyle} from '../components/shared/style'
+import {BasicTextStyle,BoldTextStyle} from '../components/shared/style'
 import Button from '../components/shared/Button'
 import ContactButton from '../components/shared/ContactButton'
 import SEO from '../components/shared/seo'
@@ -33,9 +33,9 @@ function BlogDetail({ data }) {
             <Wrapper>
                 <TitleBlock>
                     <Container>
-                        <Date>
+                        <p>
                             {data.microcmsNews.date}
-                        </Date>
+                        </p>
                         <Title>
                             {data.microcmsNews.title}
                         </Title>
@@ -67,11 +67,8 @@ const Title = styled.h2`
     }
 `
 
-const Date = styled.p`
-    ${MediumTextStyle}
-`
-
 const TextBox = styled.div`
+    ${BasicTextStyle}
     width: 100%;
     max-width: 656px;
     margin: 0 auto;
