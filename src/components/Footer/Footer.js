@@ -32,7 +32,7 @@ function Footer() {
                     </PhoneNumber>
                     <PhoneNumber>
                         <FontAwesomeIcon icon="fax" color={Color.sub}/>
-                        &emsp;052-412-5166
+                        &emsp;052-412-5384
                     </PhoneNumber>
                 </Box>
                 <Box>

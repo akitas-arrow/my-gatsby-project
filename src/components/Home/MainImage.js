@@ -9,7 +9,7 @@ function MainImage({className}) {
     query {
       mobileImage: file(relativePath: { eq: "mobile01.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth:750) {
+          fluid(quality: 70, maxWidth:750) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
