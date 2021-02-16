@@ -10,6 +10,16 @@ export const BottomIn = keyframes`
     transform: translateY(0);
   }
 `
+export const SlideInText = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`
 
 export const SlideInRight = keyframes`
   0% {

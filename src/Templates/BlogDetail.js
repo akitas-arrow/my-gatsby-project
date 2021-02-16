@@ -8,6 +8,7 @@ import {BasicTextStyle,BoldTextStyle} from '../components/shared/style'
 import Button from '../components/shared/Button'
 import ContactButton from '../components/shared/ContactButton'
 import SEO from '../components/shared/seo'
+import TitleBlock from '../components/BlogDetail/TitleBlock'
 
 export const query = graphql`
     query($slug : String!) {
@@ -27,20 +28,11 @@ function BlogDetail({ data }) {
         <Layout>
             <SEO
                 title={data.microcmsNews.title}
-                description="名古屋市にある家庭用から業務用の洗剤などの日用品や雑貨の卸問屋【トモエ屋】のお知らせページです。洗剤やトイレットペーパー、シャンプーなど日用品や雑貨を取り扱っております。"
+                description={`名古屋市にある家庭用から業務用の洗剤などの日用品や雑貨の卸問屋【トモエ屋】の${data.microcmsNews.title}に関するお知らせページです。洗剤やトイレットペーパー、シャンプーなど日用品や雑貨を取り扱っております。`}
             />
             <ContactButton />
             <Wrapper>
-                <TitleBlock>
-                    <Container>
-                        <p>
-                            {data.microcmsNews.date}
-                        </p>
-                        <Title>
-                            {data.microcmsNews.title}
-                        </Title>
-                    </Container>
-                </TitleBlock>
+                <TitleBlock title={data.microcmsNews.title} date={data.microcmsNews.date}/>
                 <Img src={`${data.microcmsNews.thumbnail.url}?fit=clip&h=520`} />
                 <TextBox
                     dangerouslySetInnerHTML={{__html: `${data.microcmsNews.body}`}}
@@ -55,17 +47,17 @@ function BlogDetail({ data }) {
 const Img = styled.img`
     margin: 48px auto;
 `
-const TitleBlock = styled.div`
-    width: 100%;
-`
+// const TitleBlock = styled.div`
+//     width: 100%;
+// `
 
-const Title = styled.h2`
-    ${BoldTextStyle}
-    font-size: 22px;
-    @media (min-width: 768px) {
-        font-size: 30px;
-    }
-`
+// const Title = styled.h2`
+//     ${BoldTextStyle}
+//     font-size: 22px;
+//     @media (min-width: 768px) {
+//         font-size: 30px;
+//     }
+// `
 
 const TextBox = styled.div`
     ${BasicTextStyle}

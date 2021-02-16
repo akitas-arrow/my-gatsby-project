@@ -37,7 +37,7 @@ const NavItem = styled(Link)`
             left: 0;
             width: 100%;
             height: 100%;
-            transition: all 0.5s ease;
+            transition: all 0.3s ease;
             transform: translateX(-100%);
             background: linear-gradient(transparent 55%, ${Color.bg} 55%, ${Color.bg} 70%, transparent 70%);
         }
