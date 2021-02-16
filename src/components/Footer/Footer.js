@@ -42,6 +42,9 @@ function Footer() {
                     <SNSLinks color="sub"/>
                 </Box>
             </Container>
+                {/* <BottomBlock>
+                    <p>プライバシーポリシー</p>
+                </BottomBlock> */}
         </Wrapper>
     )
 }
@@ -101,5 +104,11 @@ const TextBlock = styled.p`
     @media (min-width:768px) {
         padding-top: 0;
     }
+`
+
+const BottomBlock = styled.div`
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 `
 export default Footer
