@@ -14,6 +14,7 @@ function SNSIconSet({ size, color }) {
                     icon={['fab', 'youtube']}
                     color={Color[color]}
                     size={size}
+                    className="youtube"
                 />
             </Anchor>
             <Anchor
@@ -24,6 +25,7 @@ function SNSIconSet({ size, color }) {
                     icon={['fab', 'instagram']}
                     color={Color[color]}
                     size={size}
+                    className="instagram"
                 />
             </Anchor>
         </>
@@ -35,6 +37,14 @@ const Anchor = styled.a`
     margin-right: 24px;
     :last-child {
         margin-right: 0;
+    }
+    &:hover {
+        .youtube {
+            color: #da1725;
+        }
+        .instagram {
+            color:  #d93177;
+        }
     }
 `
 

@@ -123,6 +123,7 @@ const Icons = styled.div`
         font-size: 22px;
     }
     @media (min-width: 1025px) {
+        font-size: 20px;
         margin-left: 32px;
     }
 `

@@ -10,7 +10,7 @@ function ContactButton() {
                 <SpText>お問い合わせ</SpText>
             <Button>
                 <Text>お問い合わせ</Text>
-                <Icon icon={['far', 'envelope']} color={Color.white}/>
+                <Icon icon={['far', 'envelope']} color={Color.white} />
             </Button>
         </Box>
     )
@@ -61,7 +61,6 @@ const Text = styled.p`
         text-align: center;
         color: ${Color.white};
     }
-
 `
 
 const Icon = styled(FontAwesomeIcon)`

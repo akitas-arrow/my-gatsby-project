@@ -38,9 +38,26 @@ const Box = styled(Link)`
         max-width: 608px;
         margin: 0 auto;
     }
+    .name {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+    .name::after {
+        z-index: -1;
+        content: '';
+        transition: all 0.5s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(transparent 70%, ${Color.bg} 70%);
+        transform: translateX(-100%);
+    }
     :hover {
-        .name {
-            background: linear-gradient(transparent 70%, ${Color.bg} 70%);
+            .name::after {
+                transform:translateX(0);
         }
     }
 `

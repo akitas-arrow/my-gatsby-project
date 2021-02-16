@@ -20,12 +20,12 @@ function Footer() {
             <Container>
                 <Box>
                     <Logo src={data.file.publicURL} alt='有限会社トモエ屋' />
+                </Box>
+                <Box>
                     <AddressBlock>
                         〒453-0063 <br/>
                         名古屋市中村区東宿町2丁目112番地
                     </AddressBlock>
-                </Box>
-                <Box>
                     <PhoneNumber>
                         <FontAwesomeIcon icon="phone-alt" color={Color.sub}/>
                         &emsp;052-412-5166
@@ -76,21 +76,23 @@ const Logo = styled.img`
 
 const AddressBlock = styled.p`
     color: ${Color.sub};
-    padding: 48px 0 40px 0;
+    padding: 48px 0 32px 0;
     display:inline-block;
     text-align: left;
+    font-size: 15px;
     @media (min-width: 768px) {
-        padding: 24px 0 0 0;
+        padding: 0;
     }
 `
 
 const PhoneNumber = styled.p`
     ${PhoneNumberStyle}
     color:${Color.sub};
+    font-size: 18px;
 `
 
 const TextBlock = styled.p`
-    padding-top: 48px;
+    padding-top: 32px;
     font-size: 15px;
     color: ${Color.sub};
     & span {
