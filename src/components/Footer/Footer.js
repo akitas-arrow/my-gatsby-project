@@ -50,7 +50,7 @@ function Footer() {
                 <BottomBlock>
                     <a
                         href={`${data.site.siteMetadata.url}/privacy`}
-                        target="_blank" rel="noopener"
+                        target="_blank" rel="noopener noreferrer"
                     >
                         プライバシーポリシー
                     </a>
@@ -120,5 +120,8 @@ const BottomBlock = styled.div`
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
+    a {
+        color: ${Color.sub};
+    }
 `
 export default Footer
