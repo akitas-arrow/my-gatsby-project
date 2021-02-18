@@ -12,6 +12,11 @@ function Footer() {
             file(relativePath: {eq: "logo01.svg"}){
                 publicURL
             }
+            site {
+                siteMetadata {
+                    url
+                }
+            }
         }
     `)
 
@@ -42,9 +47,14 @@ function Footer() {
                     <SNSLinks color="sub"/>
                 </Box>
             </Container>
-                {/* <BottomBlock>
-                    <p>プライバシーポリシー</p>
-                </BottomBlock> */}
+                <BottomBlock>
+                    <a
+                        href={`${data.site.siteMetadata.url}/privacy`}
+                        target="_blank" rel="noopener"
+                    >
+                        プライバシーポリシー
+                    </a>
+                </BottomBlock>
         </Wrapper>
     )
 }
