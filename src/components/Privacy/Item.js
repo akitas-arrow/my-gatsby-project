@@ -19,13 +19,13 @@ function Item({title, paragraph, lists, addresses}) {
           </ListBlock>
         )}
         {addresses && (
-          <ListBlock>
+          <AddressListBlock>
             {addresses.map((address,index) => {
               return(
                 <Address key={index}>{address}</Address>
               )
             })}
-          </ListBlock>
+          </AddressListBlock>
         )}
       </Box>
   )
@@ -71,6 +71,13 @@ const List = styled.li`
     margin-right: 8px;
   }
 `
+
+const AddressListBlock = styled.ul`
+  padding-inline-start: 0;
+  margin-top: 32px;
+`
+
+
 
 const Address = styled.li`
   list-style: none;

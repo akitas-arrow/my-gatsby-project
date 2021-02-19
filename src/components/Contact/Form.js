@@ -1,10 +1,20 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import Wrapper from '../shared/Wrapper'
 import styled from 'styled-components'
 import {BasicTextStyle, BoldTextStyle, MediumTextStyle, Color} from '../shared/style'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Form() {
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+          siteMetadata {
+              url
+          }
+      }
+    }
+  `)
   return (
     <Wrapper>
       <Title>
@@ -96,6 +106,24 @@ function Form() {
             <Textarea name='message' id='message' required/>
           </Label>
         </InputItem>
+        <InputItem>
+          <Privacy>
+          このフォームから送信する個人情報の取り扱いについては「
+            <a
+              href={`${data.site.siteMetadata.url}/privacy`}
+              target="_blank" rel="noopener noreferrer"
+            >
+              プライバシーポリシー
+            </a>
+          」をご確認ください。
+          </Privacy>
+        </InputItem>
+        <InputItem className='checkbox'>
+          <Label>
+            <input type="checkbox"/>
+            個人情報の取扱いについて同意します。
+          </Label>
+        </InputItem>
         <Button type='submit'>送信する</Button>
       </FormBlock>
     </Wrapper>
@@ -122,6 +150,12 @@ const Title = styled.p`
 
 const InputItem = styled.div`
   margin-top: 32px;
+  &.checkbox {
+    text-align: center;
+    label {
+      cursor: pointer;
+    }
+  }
 `
 const Label = styled.label`
   ${BoldTextStyle}
@@ -163,6 +197,13 @@ const Textarea = styled.textarea`
   :focus {
     border: 2px solid ${Color.sub};
     outline: 0;
+  }
+`
+
+const Privacy = styled.p`
+  font-size: 15px;
+  a {
+    color: ${Color.sub};
   }
 `
 

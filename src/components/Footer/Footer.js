@@ -119,9 +119,15 @@ const TextBlock = styled.p`
 const BottomBlock = styled.div`
     width: 100%;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: 24px auto 0;
+    text-align: center;
     a {
         color: ${Color.sub};
+        font-size: 14px;
+    }
+    @media(min-width: 768px) {
+        margin-top: 0;
+        text-align: left;
     }
 `
 export default Footer
