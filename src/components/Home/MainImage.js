@@ -14,21 +14,21 @@ function MainImage({className}) {
   })
   const { mobileImage, tabletImage, desktopImage } = useStaticQuery(graphql`
     query {
-      mobileImage: file(relativePath: { eq: "mobile01.png" }) {
+      mobileImage: file(relativePath: { eq: "mobile.jpg" }) {
         childImageSharp {
           fluid(quality: 70, maxWidth:500) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      tabletImage: file(relativePath: { eq: "tablet.png" }) {
+      tabletImage: file(relativePath: { eq: "tablet.jpg" }) {
         childImageSharp {
           fluid(quality: 70, maxWidth:1300) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      desktopImage: file(relativePath: { eq: "desktop01.png" }) {
+      desktopImage: file(relativePath: { eq: "desktop.jpg" }) {
         childImageSharp {
           fluid(quality: 70, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp

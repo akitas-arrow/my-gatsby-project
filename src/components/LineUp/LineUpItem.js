@@ -19,7 +19,7 @@ function LineUpItem({title, description, items, src, direction, color}) {
                     node {
                         relativePath
                         childImageSharp {
-                            fluid(maxWidth: 800) {
+                            fluid(maxWidth: 608) {
                                 ...GatsbyImageSharpFluid
                             }
                         }

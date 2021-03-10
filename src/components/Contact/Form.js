@@ -14,7 +14,7 @@ const encode = (data) => {
 };
 
 function Form() {
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
     fetch("/", {
       method: "POST",
@@ -233,6 +233,7 @@ const Input = styled.input`
   border-radius: 3px;
   border: 2px solid #ddd;
   box-sizing: border-box;
+  -webkit-appearance: none;
   :focus {
     border: 2px solid ${Color.sub};
     outline: 0;
@@ -246,7 +247,7 @@ const Ex = styled.p`
 
 const Error = styled.p`
   ${MediumTextStyle}
-  color: #ff9999;
+  color: #ff6666;
 `
 
 const Textarea = styled.textarea`
@@ -258,6 +259,7 @@ const Textarea = styled.textarea`
   border-radius: 3px;
   border: 2px solid #ddd;
   box-sizing: border-box;
+  -webkit-appearance: none;
   :focus {
     border: 2px solid ${Color.sub};
     outline: 0;
