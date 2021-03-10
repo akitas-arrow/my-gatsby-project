@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Color, BasicTextStyle, MediumTextStyle } from '../shared/style'
+import { Color } from '../shared/style'
 
 function TableRow({th, td}) {
     return (
@@ -22,7 +22,6 @@ function TableRow({th, td}) {
 }
 
 const TableHeader = styled.th`
-    ${MediumTextStyle}
     border: none;
     border-bottom: 1px solid ${Color.bg};
     width: 152px;
@@ -35,7 +34,6 @@ const TableHeader = styled.th`
 `
 
 const TableData = styled.td`
-    ${BasicTextStyle}
     border: none;
     border-bottom: 1px solid ${Color.bg};
     @media (max-width: 480px) {

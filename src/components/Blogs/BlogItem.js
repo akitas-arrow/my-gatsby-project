@@ -13,7 +13,7 @@ function BlogItem({title, link, url, date}) {
   })
   return (
     <Box ref={ref} inView={inView} to={`/${link}`}>
-      <img src={`${url}?fit=crop&w=780&h=520`}/>
+      <img src={`${url}?fit=crop&w=780&h=520`} alt={title}/>
       <p>
         {date}
       </p>
@@ -36,7 +36,6 @@ const Box = styled(Link)`
     margin-bottom: 48px;
     text-decoration: none;
     color: ${Color.main};
-    /* opacity:${props => props.inView ? 1 : 0}; */
     opacity: 0;
     ${props => (props.inView ? animation : 'animation : 0;')};
     @media (min-width: 768px) {

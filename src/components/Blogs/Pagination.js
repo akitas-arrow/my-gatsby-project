@@ -5,7 +5,6 @@ import Prev from './Prev'
 import Next from './Next'
 
 function Pagination({ pageContext }) {
-  // const numberOfPages = 45;
   const numberOfPages = pageContext.numberOfPages;
   const humanPageNumber = pageContext.humanPageNumber;
   let pageNumbers = [];

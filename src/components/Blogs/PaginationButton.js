@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import {MediumTextStyle, Color} from '../shared/style'
+import { Color } from '../shared/style'
 
 function PaginationButton({link, num, humanPageNumber}) {
   if(num === humanPageNumber) {
@@ -12,7 +12,6 @@ function PaginationButton({link, num, humanPageNumber}) {
 }
 
 const Button = styled(Link)`
-  ${MediumTextStyle}
   font-size: 15px;
   color: ${Color.main};
   text-decoration: none;
@@ -22,7 +21,6 @@ const Button = styled(Link)`
 `
 
 const DisabledButton = styled.div`
-  ${MediumTextStyle}
   font-size: 15px;
   color: ${Color.white};
   text-decoration: none;

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import "@fontsource/roboto-mono/700.css"
-import { BasicTextStyle, Color } from '../style.js'
+import { Color } from '../style.js'
 
 function EnglishHeadlines({ children, type }) {
     return (
@@ -12,7 +12,6 @@ function EnglishHeadlines({ children, type }) {
 }
 
 const HeadingText = styled.h2`
-    ${BasicTextStyle}
     font-family: "Roboto Mono";
     font-weight: 700;
     color: ${Color.bg};

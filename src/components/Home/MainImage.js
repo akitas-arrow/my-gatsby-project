@@ -16,21 +16,21 @@ function MainImage({className}) {
     query {
       mobileImage: file(relativePath: { eq: "mobile.jpg" }) {
         childImageSharp {
-          fluid(quality: 70, maxWidth:500) {
+          fluid(quality: 100, maxWidth:600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       tabletImage: file(relativePath: { eq: "tablet.jpg" }) {
         childImageSharp {
-          fluid(quality: 70, maxWidth:1300) {
+          fluid(quality: 100, maxWidth:801) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       desktopImage: file(relativePath: { eq: "desktop.jpg" }) {
         childImageSharp {
-          fluid(quality: 70, maxWidth: 1920) {
+          fluid(quality: 100, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

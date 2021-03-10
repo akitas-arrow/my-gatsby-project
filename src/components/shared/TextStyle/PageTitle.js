@@ -2,7 +2,7 @@ import React from 'react'
 import { useInView } from 'react-intersection-observer'
 import {BottomIn} from '../keyframes'
 import styled, {css} from 'styled-components'
-import { Color, BoldTextStyle, BasicTextStyle } from '../style'
+import { Color, BoldTextStyle } from '../style'
 import "@fontsource/roboto-mono/700.css"
 
 function PageTitle({ jp, eng }) {
@@ -48,7 +48,6 @@ const JpTitle = styled.h2`
 `
 
 const EngTitle = styled.p`
-    ${BasicTextStyle}
     font-family: "Roboto Mono";
     font-weight: 700;
     color: ${Color.sub};

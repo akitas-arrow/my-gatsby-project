@@ -3,7 +3,6 @@ import Layout from '../components/Layout'
 import { graphql } from 'gatsby'
 import Wrapper from '../components/shared/Wrapper'
 import styled from 'styled-components'
-import {BasicTextStyle} from '../components/shared/style'
 import Button from '../components/shared/Button'
 import ContactButton from '../components/shared/ContactButton'
 import SEO from '../components/shared/seo'
@@ -46,20 +45,8 @@ function BlogDetail({ data }) {
 const Img = styled.img`
     margin: 48px auto;
 `
-// const TitleBlock = styled.div`
-//     width: 100%;
-// `
-
-// const Title = styled.h2`
-//     ${BoldTextStyle}
-//     font-size: 22px;
-//     @media (min-width: 768px) {
-//         font-size: 30px;
-//     }
-// `
 
 const TextBox = styled.div`
-    ${BasicTextStyle}
     width: 100%;
     max-width: 656px;
     margin: 0 auto;

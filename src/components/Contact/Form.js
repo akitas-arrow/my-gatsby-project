@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Wrapper from '../shared/Wrapper'
 import styled from 'styled-components'
-import {BasicTextStyle, BoldTextStyle, MediumTextStyle, Color} from '../shared/style'
+import { BoldTextStyle, MediumTextStyle, Color} from '../shared/style'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useForm } from 'react-hook-form'
 import {navigate} from 'gatsby'
@@ -227,7 +227,7 @@ const Required = styled.span`
 `
 
 const Input = styled.input`
-  ${BasicTextStyle}
+  ${MediumTextStyle}
   width: 100%;
   padding: 4px 8px;
   border-radius: 3px;
@@ -251,7 +251,7 @@ const Error = styled.p`
 `
 
 const Textarea = styled.textarea`
-  ${BasicTextStyle}
+  ${MediumTextStyle}
   width: 100%;
   height: 20em;
   resize: none;
