@@ -26,7 +26,8 @@ function BlogDetail({ data }) {
         <Layout>
             <SEO
                 title={data.microcmsNews.title}
-                description={`名古屋市にある家庭用から業務用の洗剤などの日用品や雑貨の卸問屋【トモエ屋】の${data.microcmsNews.title}に関するお知らせページです。洗剤やトイレットペーパー、シャンプーなど日用品や雑貨を取り扱っております。`}
+                description={`名古屋市にある家庭用から業務用の洗剤などの日用品や雑貨の卸問屋【トモエ屋】の${data.microcmsNews.title}をお知らせするページです。洗剤やトイレットペーパー、シャンプーなど日用品や雑貨を取り扱っております。`}
+                article={true}
             />
             <ContactButton />
             <Wrapper>

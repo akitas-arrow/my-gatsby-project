@@ -12,6 +12,7 @@ module.exports = {
   PRESERVE_WEBPACK_CACHE: true,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -26,13 +27,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `名古屋市の家庭用・業務用の日用品の卸問屋【トモエ屋】`,
+        short_name: `トモエ屋`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fff`,
+        theme_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/images/tomoeya-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/tomoeya-icon.png`,
       },
     },
     {
