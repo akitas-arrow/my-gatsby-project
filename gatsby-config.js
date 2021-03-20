@@ -12,6 +12,7 @@ module.exports = {
   PRESERVE_WEBPACK_CACHE: true,
   },
   plugins: [
+    `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     {

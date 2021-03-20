@@ -26,7 +26,7 @@ function lineUp() {
             title: '紙製品・ポリ袋',
             description: '業務用の長～いトイレットペーパーや雨の日の傘袋など特殊なものから毎日の定番までお任せください。',
             items: 'トイレット・ティッシュペーパー、ウェットティッシュ、ハンドタオル、キッチンタオル、ゴミ袋、レジ袋、規格袋　等',
-            src: 'tissues.jpg'
+            src: 'polyethylene-bag.jpg'
         },
         {
             title: '厨房関連品',

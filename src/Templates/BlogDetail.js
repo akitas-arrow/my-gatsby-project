@@ -51,6 +51,10 @@ const TextBox = styled.div`
     width: 100%;
     max-width: 656px;
     margin: 0 auto;
+    line-height: 2;
+    h5 {
+        margin: 0;
+    }
 `
 
 export default BlogDetail
