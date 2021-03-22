@@ -19,9 +19,9 @@ function About() {
     })
     const data = useStaticQuery(graphql`
         query {
-            file(relativePath:{eq:"about.png"}) {
+            file(relativePath:{eq:"about01.png"}) {
                 childImageSharp {
-                    fluid{
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }

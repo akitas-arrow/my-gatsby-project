@@ -8,7 +8,7 @@ function ProfileImage() {
         query {
             file(relativePath:{eq:"president09.jpg"}) {
                 childImageSharp {
-                    fluid{
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }

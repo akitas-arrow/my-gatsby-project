@@ -21,7 +21,7 @@ function LineUp() {
         query {
             file(relativePath:{eq:"detergent.jpg"}) {
                 childImageSharp {
-                    fluid{
+                    fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
                     }
                 }

@@ -131,11 +131,6 @@ function about() {
                                 <br/>
                                 是非弊社を日用品の調達パートナーとしてご用命ください。
                             </p>
-                            {/* <p>
-                                代表取締役社長
-                                <br/>
-                                瀧　一裕
-                            </p> */}
                         </TextBlock>
                     </Box>
                 </Container>
@@ -271,10 +266,6 @@ const TextBlock = styled.div`
         width: calc((100% - 80px) / 2);
         font-size: 16px;
     }
-    /* & p:last-child {
-        text-align: right;
-        padding-top: 64px;
-    } */
 `
 
 export default about
