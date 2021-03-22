@@ -131,11 +131,11 @@ function about() {
                                 <br/>
                                 是非弊社を日用品の調達パートナーとしてご用命ください。
                             </p>
-                            <p>
+                            {/* <p>
                                 代表取締役社長
                                 <br/>
                                 瀧　一裕
-                            </p>
+                            </p> */}
                         </TextBlock>
                     </Box>
                 </Container>
@@ -240,10 +240,12 @@ const Table = styled.table`
     border-collapse: collapse;
     width: 100%;
     max-width: 608px;
+    font-size: 15px;
     @media (min-width:1025px) {
         max-width: none;
         margin: 0;
         width: calc((100% - 80px) / 2);
+        font-size: 16px;
     }
     @media (max-width: 480px) {
         border-bottom: none;
@@ -254,7 +256,7 @@ const Box = styled.div`
     display: flex;
     flex-direction: column;
     @media (min-width: 1025px) {
-        flex-direction: row;
+        flex-direction: row-reverse;
         justify-content: space-between;
     }
 `
@@ -262,15 +264,17 @@ const Box = styled.div`
 const TextBlock = styled.div`
     margin: 0 auto;
     max-width: 608px;
+    font-size: 15px;
     @media (min-width: 1025px) {
         max-width: none;
         margin: 0;
         width: calc((100% - 80px) / 2);
+        font-size: 16px;
     }
-    & p:last-child {
+    /* & p:last-child {
         text-align: right;
         padding-top: 64px;
-    }
+    } */
 `
 
 export default about
