@@ -19,7 +19,7 @@ function About() {
     })
     const data = useStaticQuery(graphql`
         query {
-            file(relativePath:{eq:"about01.png"}) {
+            file(relativePath:{eq:"van04.png"}) {
                 childImageSharp {
                     fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
@@ -92,14 +92,12 @@ const TextBlock = styled.div`
 `
 
 const Text = styled.p`
-    /* opacity:${props => props.inView ? 1 : 0}; */
     opacity: 0;
     ${props => (props.inView ? BottomInAnimation : 'animation : 0;')};
 `
 const ImageBlock = styled.div`
     width: 100%;
     margin: 48px 0;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     @media (min-width: 768px) {
         margin: 72px 0;
     }
