@@ -15,6 +15,7 @@ module.exports = {
     `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
