@@ -11,7 +11,7 @@ import JapaneseHeadlines from "../components/shared/TextStyle/JapaneseHeadlines"
 function NotFound() {
     return (
         <Layout>
-            <SEO title="404 Not Found" description="ページが見つかりません" />
+            <SEO title="404 Not Found" description="ページが見つかりません" noindex={true} />
             <Wrapper>
               <Container>
                 <HeadingBlock>

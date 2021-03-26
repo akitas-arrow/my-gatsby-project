@@ -5,7 +5,7 @@ import { graphql, useStaticQuery} from "gatsby"
 import ogpImage from '../../images/tomoeya-ogp.png'
 import PropTypes from "prop-types"
 
-const SEO = ({ title, description, article }) => {
+const SEO = ({ title, description, article, noindex }) => {
   const { site } = useStaticQuery(query)
   const {
     defaultTitle,
@@ -26,6 +26,8 @@ const SEO = ({ title, description, article }) => {
       <meta name="robots" content="noindex,nofollow" /> {/* 消す */}
       <meta name="robots" content="noindex"/> {/* 消す */}
       <meta name="googlebot" content="noindex"/> {/* 消す */}
+      {(noindex ? true : null) && <meta name="robots" content="noindex"/>}
+      {(noindex ? true : null) && <meta name="googlebot" content="noindex"/>}
       <html lang="ja" />
       <link rel="canonical" href={seo.url} />
       <title>{seo.title}</title>

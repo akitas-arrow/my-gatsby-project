@@ -5,11 +5,13 @@ import Icon from '../components/Thanks/Icon'
 import Button from '../components/shared/Button'
 import Wrapper from '../components/shared/Wrapper'
 import PageTitle from '../components/shared/TextStyle/PageTitle'
+import SEO from '../components/shared/seo'
 
 
 function thanks() {
   return (
     <Layout>
+      <SEO title="お問い合わせありがとうございます" description="お問い合わせを受け付けました" noindex={true} />
       <Wrapper>
         <Container>
           <PageTitle jp="お問い合わせありがとうございました" eng="THANKS"/>
