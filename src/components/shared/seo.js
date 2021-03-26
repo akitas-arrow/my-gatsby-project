@@ -1,7 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
-import { graphql, useStaticQuery} from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import ogpImage from '../../images/tomoeya-ogp.png'
 import PropTypes from "prop-types"
 
@@ -23,11 +23,8 @@ const SEO = ({ title, description, article, noindex }) => {
   }
   return (
     <Helmet>
-      <meta name="robots" content="noindex,nofollow" /> {/* 消す */}
-      <meta name="robots" content="noindex"/> {/* 消す */}
-      <meta name="googlebot" content="noindex"/> {/* 消す */}
-      {(noindex ? true : null) && <meta name="robots" content="noindex"/>}
-      {(noindex ? true : null) && <meta name="googlebot" content="noindex"/>}
+      {(noindex ? true : null) && <meta name="robots" content="noindex" />}
+      {(noindex ? true : null) && <meta name="googlebot" content="noindex" />}
       <html lang="ja" />
       <link rel="canonical" href={seo.url} />
       <title>{seo.title}</title>
@@ -37,13 +34,13 @@ const SEO = ({ title, description, article, noindex }) => {
       {(article ? true : null) && <meta property="og:type" content="article" />}
       {seo.title && <meta property="og:title" content={seo.title} />}
       {seo.description && (
-          <meta property="og:description" content={seo.description} />
+        <meta property="og:description" content={seo.description} />
       )}
       {seo.image && <meta property="og:image" content={seo.image} />}
       <meta name="twitter:card" content="summary_large_image" />
       {seo.title && <meta name="twitter:title" content={seo.title} />}
       {seo.description && (
-          <meta name="twitter:description" content={seo.description} />
+        <meta name="twitter:description" content={seo.description} />
       )}
       {seo.image && <meta name="twitter:image" content={seo.image} />}
     </Helmet>
