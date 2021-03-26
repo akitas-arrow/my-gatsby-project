@@ -4,6 +4,7 @@ import Container from '../components/shared/Container'
 import PageTitle from '../components/Privacy/PageTitle'
 import Wrapper from '../components/shared/Wrapper'
 import Item from '../components/Privacy/Item'
+import SEO from "../components/shared/seo"
 
 function privacy() {
   const data = [
