@@ -48,6 +48,7 @@ function privacy() {
   ]
   return (
     <Layout>
+      <SEO title="プライバシーポリシー" description="有限会社トモエ屋（以下「当社」という）は、以下のとおり個人情報保護方針を定め、個人情報保護の仕組みを構築し、全従業員に個人情報保護の重要性の認識と取組みを徹底させることにより、個人情報の保護を推進致します。" />
       <Wrapper paddingBottom='0'>
         <Container>
           <PageTitle jp="プライバシーポリシー" eng="PRIVACY POLICY"/>
