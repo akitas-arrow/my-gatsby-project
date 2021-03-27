@@ -5,8 +5,8 @@ module.exports = {
   siteMetadata: {
     title: "名古屋市の家庭用・業務用の日用品の卸問屋【トモエ屋】",
     description: "トモエ屋は名古屋市中村区を拠点に洗剤、トイレットペーパー、ポリ袋など家庭用から業務用までの日用品を販売する卸問屋です。毎日必要な消耗品や日常使用する備品をお値打ち、迅速にお届けいたします。",
-    siteUrl: `https://peaceful-rosalind-053cd5.netlify.app`,
-    url: `https://peaceful-rosalind-053cd5.netlify.app`,
+    siteUrl: `https://tomoeya-web.co.jp`,
+    url: `https://tomoeya-web.co.jp`,
   },
   flags: {
   PRESERVE_WEBPACK_CACHE: true,
