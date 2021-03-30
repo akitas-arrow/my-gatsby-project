@@ -24,7 +24,7 @@ function Footer() {
         <Wrapper bg={Color.sheer}>
             <Container>
                 <Box>
-                    <Logo src={data.file.publicURL} alt='有限会社トモエ屋' />
+                    <Logo src={data.file.publicURL} height='56' alt='有限会社トモエ屋' />
                 </Box>
                 <Box>
                     <AddressBlock>

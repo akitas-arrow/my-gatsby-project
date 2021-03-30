@@ -13,7 +13,7 @@ function Logo() {
 
     return (
         <LogoWrapper to='/'>
-            <LogoImage src={data.file.publicURL} alt='有限会社トモエ屋' />
+            <LogoImage src={data.file.publicURL} height='35' alt='有限会社トモエ屋' />
         </LogoWrapper>
     )
 }
