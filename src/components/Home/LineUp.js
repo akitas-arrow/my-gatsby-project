@@ -19,7 +19,7 @@ function LineUp() {
     })
     const data = useStaticQuery(graphql`
         query {
-            file(relativePath:{eq:"detergent.jpg"}) {
+            file(relativePath:{eq:"detergent0001.jpg"}) {
                 childImageSharp {
                     fluid(maxWidth: 600) {
                         ...GatsbyImageSharpFluid
