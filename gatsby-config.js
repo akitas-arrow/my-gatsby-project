@@ -17,6 +17,17 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify`,
     {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: process.env.INSTAGRAM_USERNAME,
+        access_token: process.env.INSTAGRAM_API_KEY,
+        instagram_id: process.env.INSTAGRAM_ID,
+        paginate: 100,
+        maxPosts: 1000,
+        hashtags: true
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -25,6 +36,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-background-image-es5`,
     {
       resolve: `gatsby-plugin-manifest`,
